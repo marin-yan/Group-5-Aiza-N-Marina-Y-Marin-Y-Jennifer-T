@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class WelcomeScreen extends World
 {
-
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
