@@ -50,5 +50,7 @@ public class Customer extends SuperSmoothMover
         setLocation(getPreciseX() + stepX, getPreciseY() + stepY);
     }
     
-    
+    public void orderFood() {
+        
+    }
 }
