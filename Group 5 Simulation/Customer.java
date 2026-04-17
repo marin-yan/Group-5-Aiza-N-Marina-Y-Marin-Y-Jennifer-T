@@ -53,4 +53,6 @@ public class Customer extends SuperSmoothMover
         double stepY = (dy / distance) * WALK_SPEED;
         setLocation(getPreciseX() + stepX, getPreciseY() + stepY);
     }
+    
+    
 }
