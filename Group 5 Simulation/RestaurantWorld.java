@@ -12,8 +12,13 @@ public class RestaurantWorld extends World
     private GreenfootImage backgroundImage_player1;
     private GreenfootImage backgroundImage_player2;
     private GreenfootImage background;
+<<<<<<< Updated upstream
     private GreenfootImage bg;
     private int middleLineThickness;
+=======
+    
+    
+>>>>>>> Stashed changes
     /**
      * Constructor for objects of class MyWorld.
      * 

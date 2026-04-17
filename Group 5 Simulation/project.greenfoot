@@ -2,9 +2,15 @@
 class.Customer.image=customer.png
 editor.fx.0.height=728
 editor.fx.0.width=800
+<<<<<<< Updated upstream
 editor.fx.0.x=670
 editor.fx.0.y=37
 height=819
+=======
+editor.fx.0.x=335
+editor.fx.0.y=63
+height=799
+>>>>>>> Stashed changes
 package.numDependencies=0
 package.numTargets=8
 project.charset=UTF-8
@@ -78,7 +84,11 @@ target8.width=120
 target8.x=0
 target8.y=0
 version=3.1.0
+<<<<<<< Updated upstream
 width=1470
+=======
+width=1450
+>>>>>>> Stashed changes
 world.lastInstantiated=RestaurantWorld
 xPosition=0
 yPosition=33
