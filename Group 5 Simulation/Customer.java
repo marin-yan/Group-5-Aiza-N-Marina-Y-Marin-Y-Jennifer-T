@@ -16,23 +16,19 @@ public class Customer extends SuperSmoothMover
     
     private boolean atCounter;
     
-    public Customer()
-    {
+    public Customer() {
         setImage("customer.png");
     }
     
-    public void addedToWorld(World world)
-    {
+    public void addedToWorld(World world) {
         setLocation(ENTRY_X, ENTRY_Y);
     }
     
-    public void act()
-    {
+    public void act()  {
         walkToCounter();
     }
     
-    private void walkToCounter()
-    {
+    private void walkToCounter() {
         if (atCounter)
         {
             return;
