@@ -21,7 +21,11 @@ readme.x=10
 readme.y=10
 simulation.speed=50
 target1.height=70
+<<<<<<< Updated upstream
 target1.name=RestaurantWorld
+=======
+target1.name=WelcomeScreen
+>>>>>>> Stashed changes
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
@@ -84,6 +88,13 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
+<<<<<<< Updated upstream
 width=1440
 xPosition=0
 yPosition=25
+=======
+width=1412
+world.lastInstantiated=WelcomeScreen
+xPosition=87
+yPosition=91
+>>>>>>> Stashed changes
