@@ -12,8 +12,17 @@ public class Menu extends Actor
      * Act - do whatever the Menu wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    private String[] menuOptions = {"Cookie", "Stack of Cookies"};
+    
     public void act()
     {
         // Add your action code here.
     }
+    
+    public String [] getMenuOptions() {
+        return menuOptions;
+    }
+    
+    
 }
