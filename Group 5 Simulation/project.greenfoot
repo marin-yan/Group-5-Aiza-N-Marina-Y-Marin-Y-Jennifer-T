@@ -3,12 +3,17 @@ class.Customer.image=customer.png
 editor.fx.0.height=728
 editor.fx.0.width=800
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 editor.fx.0.x=670
 editor.fx.0.y=37
 height=819
 =======
 editor.fx.0.x=335
 editor.fx.0.y=63
+=======
+editor.fx.0.x=670
+editor.fx.0.y=37
+>>>>>>> Stashed changes
 height=799
 >>>>>>> Stashed changes
 package.numDependencies=0
@@ -28,7 +33,7 @@ readme.x=10
 readme.y=10
 simulation.speed=50
 target1.height=70
-target1.name=RestaurantWorld
+target1.name=WelcomeScreen
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
@@ -85,10 +90,14 @@ target8.x=0
 target8.y=0
 version=3.1.0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 width=1470
 =======
 width=1450
 >>>>>>> Stashed changes
 world.lastInstantiated=RestaurantWorld
+=======
+width=1450
+>>>>>>> Stashed changes
 xPosition=0
 yPosition=33
