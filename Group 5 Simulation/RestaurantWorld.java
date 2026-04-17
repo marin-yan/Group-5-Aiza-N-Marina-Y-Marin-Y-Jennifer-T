@@ -8,9 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RestaurantWorld extends World
 {
+    // Set up background image variables
     private GreenfootImage backgroundImage_player1;
     private GreenfootImage backgroundImage_player2;
     private GreenfootImage background;
+    private GreenfootImage bg;
+    private int middleLineThickness;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -25,8 +28,11 @@ public class RestaurantWorld extends World
         backgroundImage_player1 = new GreenfootImage("backgroundImage_player1.png");
         backgroundImage_player2 = new GreenfootImage("backgroundImage_player2.png");
         background.drawImage(backgroundImage_player1, 0, 0);
-        background.drawImage(backgroundImage_player2, getWidth() / 2, 0);
-        
+        background.drawImage(backgroundImage_player2, getWidth() / 2, 1);
         setBackground (background);
+        bg = getBackground();
+        bg.setColor(new Color(139, 69, 19));
+        middleLineThickness = 5;
+        bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
     }
 }
