@@ -14,6 +14,7 @@ public class RestaurantWorld extends World
     private GreenfootImage background;
     private GreenfootImage bg;
     private int middleLineThickness;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -30,9 +31,12 @@ public class RestaurantWorld extends World
         background.drawImage(backgroundImage_player1, 0, 0);
         background.drawImage(backgroundImage_player2, getWidth() / 2, 1);
         setBackground (background);
+        
         bg = getBackground();
         bg.setColor(new Color(139, 69, 19));
         middleLineThickness = 5;
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
+
+        addObject(new Customer(), 0, 0);
     }
 }
