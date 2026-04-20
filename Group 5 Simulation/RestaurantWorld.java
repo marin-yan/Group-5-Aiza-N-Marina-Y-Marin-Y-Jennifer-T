@@ -21,13 +21,13 @@ public class RestaurantWorld extends World
      */
     public RestaurantWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
         
         // Set up background image
         background = new GreenfootImage(getWidth(), getHeight());
-        backgroundImage_player1 = new GreenfootImage("backgroundImage_player1.png");
-        backgroundImage_player2 = new GreenfootImage("backgroundImage_player2.png");
+        backgroundImage_player1 = new GreenfootImage("images/Background/backgroundImage_player1.png");
+        backgroundImage_player2 = new GreenfootImage("images/Background/backgroundImage_player2.png");
         background.drawImage(backgroundImage_player1, 0, 0);
         background.drawImage(backgroundImage_player2, getWidth() / 2, 1);
         setBackground (background);
