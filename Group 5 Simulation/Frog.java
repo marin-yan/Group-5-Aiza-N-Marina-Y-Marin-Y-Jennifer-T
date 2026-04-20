@@ -11,7 +11,9 @@ public class Frog extends Customer
     // Initializing the arrays
     GreenfootImage[] walkDown = new GreenfootImage[4];
     GreenfootImage[] walkUp = new GreenfootImage[4];
-     
+    GreenfootImage[] walkRight = new GreenfootImage[2];
+    GreenfootImage[] walkLeft = new GreenfootImage[2];
+    
     // Initial direction
     String facing = "down";
     
@@ -37,8 +39,23 @@ public class Frog extends Customer
             walkUp[i].scale(75, 75);
         }
         
+        // Walk right animation - set images
+        for(int i = 0; i < walkRight.length; i++){
+            walkRight[i] = new GreenfootImage("images/frog/right" + i + ".png");
+            walkRight[i].scale(75, 75);
+        }
+        
+        // Walk left animation - set images
+        for(int i = 0; i < walkLeft.length; i++){
+            walkLeft[i] = new GreenfootImage("images/frog/left" + i + ".png");
+            walkLeft[i].scale(75, 75);
+        }
+        
+        //For testing
         setImage(walkDown[0]);
         //setImage(walkUp[0]);
+        //setImage(walkRight[0]);
+        //setImage(walkLeft[0]);
     }
     
     public void act(){
@@ -46,6 +63,12 @@ public class Frog extends Customer
         if(counter % 6 == 0){
             if(facing.equals("down")){
                 walkingDown();
+            }else if(facing.equals("up")){
+                walkingUp();
+            }else if(facing.equals("right")){
+                walkingRight();
+            }else if(facing.equals("left")){
+                walkingLeft();
             }
         }
     }
@@ -57,8 +80,20 @@ public class Frog extends Customer
     }
     
     public void walkingUp(){
-        setLocation(getX() + speed, getY());
+        setLocation(getX(), getY() - speed);
         setImage(walkUp[walkingIndex]);
         walkingIndex = (walkingIndex + 1) % walkUp.length;
+    }
+    
+    public void walkingRight(){
+        move(speed);
+        setImage(walkRight[walkingIndex]);
+        walkingIndex = (walkingIndex + 1) % walkRight.length;
+    }
+    
+    public void walkingLeft(){
+        move(-speed);
+        setImage(walkLeft[walkingIndex]);
+        walkingIndex = (walkingIndex + 1) % walkLeft.length;
     }
 }
