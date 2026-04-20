@@ -1,13 +1,12 @@
 #Greenfoot project file
 class.Customer.image=customer.png
-class.IntroScreen.image=StartScreen.png
 dependency1.from=RestaurantWorld
 dependency1.to=Customer
 dependency1.type=UsesDependency
-editor.fx.0.height=766
-editor.fx.0.width=1294
-editor.fx.0.x=-7
-editor.fx.0.y=-7
+editor.fx.0.height=737
+editor.fx.0.width=814
+editor.fx.0.x=232
+editor.fx.0.y=4
 height=766
 package.numDependencies=1
 package.numTargets=11
@@ -47,7 +46,7 @@ target11.width=120
 target11.x=0
 target11.y=0
 target2.height=70
-target2.name=IntroScreen
+target2.name=StartScreen
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120

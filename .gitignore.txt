@@ -1,0 +1,6 @@
+.class
+.ctxt
+
+doc/
+.bak
+.DS_Store
