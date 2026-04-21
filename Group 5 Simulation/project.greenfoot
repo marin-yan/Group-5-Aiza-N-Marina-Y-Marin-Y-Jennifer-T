@@ -32,7 +32,14 @@ target1.width=120
 target1.x=0
 target1.y=0
 version=3.1.0
+<<<<<<< Updated upstream
 width=1412
 world.lastInstantiated=WelcomeScreen
 xPosition=87
 yPosition=91
+=======
+width=1440
+world.lastInstantiated=RestaurantWorld
+xPosition=0
+yPosition=113
+>>>>>>> Stashed changes
