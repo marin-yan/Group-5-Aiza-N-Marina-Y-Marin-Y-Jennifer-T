@@ -15,6 +15,7 @@ public class RestaurantWorld extends World
     private GreenfootImage bg;
     private int middleLineThickness;
     
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -23,6 +24,7 @@ public class RestaurantWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
+        Menu menu = new Menu();
         
         // Set up background image
         background = new GreenfootImage(getWidth(), getHeight());
@@ -31,12 +33,12 @@ public class RestaurantWorld extends World
         background.drawImage(backgroundImage_player1, 0, 0);
         background.drawImage(backgroundImage_player2, getWidth() / 2, 1);
         setBackground (background);
-        
+        setBackground(background);
+    
         bg = getBackground();
         bg.setColor(new Color(139, 69, 19));
         middleLineThickness = 5;
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
 
-        addObject(new Customer(), 0, 0);
     }
 }

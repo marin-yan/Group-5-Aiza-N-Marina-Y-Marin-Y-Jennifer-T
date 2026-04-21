@@ -25,9 +25,11 @@ public class Frog extends Customer
     
     // Speed of the customer
     private int speed = 5;
+
     
     public Frog(){
         // Walk down animation - set images
+        super(new Menu());
         for(int i = 0; i < walkDown.length; i++){
             walkDown[i] = new GreenfootImage("images/frog/down" + i + ".png");
             walkDown[i].scale(75, 75);
