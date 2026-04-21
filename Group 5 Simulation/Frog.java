@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Frog here.
  * 
- * @author (Frog animation - Jennifer) 
+ * @author (Jennifer) 
  * @version (a version number or a date)
  */
 public class Frog extends Customer
@@ -13,7 +13,7 @@ public class Frog extends Customer
     GreenfootImage[] walkUp = new GreenfootImage[4];
     GreenfootImage[] walkRight = new GreenfootImage[2];
     GreenfootImage[] walkLeft = new GreenfootImage[2];
-    
+    /*
     // Initial direction
     String facing = "down";
     
@@ -25,11 +25,12 @@ public class Frog extends Customer
     
     // Speed of the customer
     private int speed = 5;
-
-    
+    */
+   
+    // Make the animation slower / more precise
+    private int counter = 0;
     public Frog(){
         // Walk down animation - set images
-        super(new Menu());
         for(int i = 0; i < walkDown.length; i++){
             walkDown[i] = new GreenfootImage("images/frog/down" + i + ".png");
             walkDown[i].scale(75, 75);
@@ -74,7 +75,7 @@ public class Frog extends Customer
             }
         }
     }
-    
+
     public void walkingDown(){
         setLocation(getX(), getY() + speed);
         setImage(walkDown[walkingIndex]);
