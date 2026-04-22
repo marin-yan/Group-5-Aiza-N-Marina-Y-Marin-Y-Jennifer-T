@@ -28,12 +28,11 @@ public class Customer extends SuperSmoothMover
     // Speed of the customer
     protected int speed = 5;
     
-    
     // Initializing the arrays
-    GreenfootImage[] walkDown;
-    GreenfootImage[] walkUp;
-    GreenfootImage[] walkRight;
-    GreenfootImage[] walkLeft;
+    protected GreenfootImage[] walkDown;
+    protected GreenfootImage[] walkUp;
+    protected GreenfootImage[] walkRight;
+    protected GreenfootImage[] walkLeft;
 
     public Customer() {
         setImage("customer.png");
