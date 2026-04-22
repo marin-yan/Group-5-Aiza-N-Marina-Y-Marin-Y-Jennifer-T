@@ -9,16 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartScreen extends World
 {
     private Button startButton;
-
-    /**
-     * Constructor for objects of class StartScreen.
-     * 
-     */
+    
     public StartScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1); 
-        setBackground (new GreenfootImage ("images/Background/StartScreen1.png"));
+        setBackground(new GreenfootImage("images/Background/StartScreen.png"));
         startButton = new Button("Start", 150);
         addObject(startButton, getWidth() / 2, getHeight() / 5 * 4);
     }
@@ -29,5 +25,4 @@ public class StartScreen extends World
             Greenfoot.setWorld(new RestaurantWorld()); 
         }
     }
-
 }
