@@ -44,6 +44,7 @@ import java.util.Arrays;
  * @author Jordan Cohen
  * @version 2.2.0 - Jan 2023
  */
+
 public class SuperStatBar extends Actor
 {
 
