@@ -1,13 +1,20 @@
 #Greenfoot project file
-class.Customer.image=customer.png
 dependency1.from=RestaurantWorld
 dependency1.to=Customer
 dependency1.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=232
 editor.fx.0.y=4
 height=766
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=819
+>>>>>>> Stashed changes
 package.numDependencies=1
 package.numTargets=11
 project.charset=UTF-8
@@ -46,7 +53,11 @@ target11.width=120
 target11.x=0
 target11.y=0
 target2.height=70
+<<<<<<< Updated upstream
 target2.name=StartScreen
+=======
+target2.name=Money
+>>>>>>> Stashed changes
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
@@ -102,7 +113,14 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
+<<<<<<< Updated upstream
 width=1294
 world.lastInstantiated=RestaurantWorld
 xPosition=0
 yPosition=0
+=======
+width=1440
+world.lastInstantiated=RestaurantWorld
+xPosition=0
+yPosition=25
+>>>>>>> Stashed changes
