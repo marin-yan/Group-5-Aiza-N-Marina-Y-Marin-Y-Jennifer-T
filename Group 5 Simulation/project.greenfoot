@@ -4,6 +4,7 @@ class.IntroScreen.image=StartScreen.png
 dependency1.from=RestaurantWorld
 dependency1.to=Customer
 dependency1.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=766
 editor.fx.0.width=1294
 editor.fx.0.x=-7
@@ -11,6 +12,21 @@ editor.fx.0.y=-7
 height=766
 package.numDependencies=1
 package.numTargets=11
+=======
+dependency2.from=StartScreen
+dependency2.to=Button
+dependency2.type=UsesDependency
+dependency3.from=StartScreen
+dependency3.to=RestaurantWorld
+dependency3.type=UsesDependency
+editor.fx.0.height=737
+editor.fx.0.width=814
+editor.fx.0.x=232
+editor.fx.0.y=4
+height=766
+package.numDependencies=3
+package.numTargets=13
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -40,12 +56,33 @@ target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
+<<<<<<< Updated upstream
 target11.name=SuperStatBar
+=======
+target11.name=Button
+>>>>>>> Stashed changes
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
+<<<<<<< Updated upstream
+=======
+target12.height=70
+target12.name=Menu
+target12.showInterface=false
+target12.type=ClassTarget
+target12.width=120
+target12.x=0
+target12.y=0
+target13.height=70
+target13.name=Waiter
+target13.showInterface=false
+target13.type=ClassTarget
+target13.width=120
+target13.x=0
+target13.y=0
+>>>>>>> Stashed changes
 target2.height=70
 target2.name=IntroScreen
 target2.showInterface=false
@@ -104,6 +141,10 @@ target9.x=0
 target9.y=0
 version=3.1.0
 width=1294
+<<<<<<< Updated upstream
 world.lastInstantiated=RestaurantWorld
+=======
+world.lastInstantiated=StartScreen
+>>>>>>> Stashed changes
 xPosition=0
 yPosition=0
