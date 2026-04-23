@@ -15,6 +15,10 @@ public class RestaurantWorld extends World
     private GreenfootImage bg;
     private int middleLineThickness;
     
+    //variables for buttons
+    private int player1Index = 0;
+    private int player2Index = 0;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -38,5 +42,19 @@ public class RestaurantWorld extends World
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
 
         addObject(new Customer(), 0, 0);
+    }
+    
+    public void changeBackground(int player, int direction)
+    {
+        if (player == 1)
+        {
+            player1Index += direction;
+        }
+        else
+        {
+            player2Index += direction;
+        }
+    
+        //all the logic after this
     }
 }

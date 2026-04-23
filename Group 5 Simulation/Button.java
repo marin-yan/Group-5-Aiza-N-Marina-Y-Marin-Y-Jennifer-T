@@ -23,6 +23,34 @@ public class Button extends Actor
         setImage(image);
     }
     
+    //make these additions in world
+    /**
+     *   addObject(new StartButton(), 300, 200);
+
+     *   addObject(new ArrowButton(1, -1), 100, 300);
+     *   addObject(new ArrowButton(1, 1), 200, 300);
+        
+     *   addObject(new ArrowButton(2, -1), 400, 300);
+     *   addObject(new ArrowButton(2, 1), 500, 300);
+        
+     *   addObject(new SelectButton(), 300, 400);
+     */
+    
+    
+    //Remove if needed
+    public void act()
+    {
+        if (Greenfoot.mouseClicked(this))
+        {
+            onClick();
+        }
+    }
+    
+    public void onClick()
+    {
+        // default: do nothing
+    }
+    
     
     /**
      * <p> Center a String on a Canvas via the getStringWidth method. This version will center
