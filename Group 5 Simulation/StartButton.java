@@ -4,7 +4,7 @@ import greenfoot.World;
 /**
  * Write a description of class StartButton here.
  * 
- * @author (your name) 
+ * @author (Aiza) 
  * @version (a version number or a date)
  */
 public class StartButton extends Button

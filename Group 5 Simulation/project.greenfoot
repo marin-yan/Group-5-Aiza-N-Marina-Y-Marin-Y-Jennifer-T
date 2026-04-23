@@ -203,10 +203,16 @@ version=3.1.0
 width=1440
 <<<<<<< Updated upstream
 world.lastInstantiated=StartWorld
+<<<<<<< Updated upstream
 xPosition=11
 yPosition=39
 =======
+<<<<<<< HEAD
 world.lastInstantiated=StartScreen
 xPosition=26
 yPosition=30
+=======
+xPosition=104
+yPosition=25
+>>>>>>> Buttons--Aiza
 >>>>>>> Stashed changes
