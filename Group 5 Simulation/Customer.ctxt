@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=Customer
-<<<<<<< Updated upstream
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Customer\ here.\r\n\ \r\n\ @author\ (Jennifer,\ Marin)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-=======
 comment0.text=\n\ Write\ a\ description\ of\ class\ Customer\ here.\n\ \n\ @author\ (Jennifer,\ Marin)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
->>>>>>> Stashed changes
 comment1.params=
 comment1.target=Customer()
+comment10.params=
+comment10.target=void\ move()
 comment2.params=world
 comment2.target=void\ addedToWorld(greenfoot.World)
 comment3.params=
@@ -23,4 +21,4 @@ comment8.params=
 comment8.target=void\ walkingRight()
 comment9.params=
 comment9.target=void\ walkingLeft()
-numComments=10
+numComments=11
