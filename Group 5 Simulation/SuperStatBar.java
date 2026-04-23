@@ -42,6 +42,7 @@ import java.util.Arrays;
  * </ul>
  * 
  * @author Jordan Cohen
+ * Edited by Aiza
  * @version 2.2.0 - Jan 2023
  */
 public class SuperStatBar extends Actor
