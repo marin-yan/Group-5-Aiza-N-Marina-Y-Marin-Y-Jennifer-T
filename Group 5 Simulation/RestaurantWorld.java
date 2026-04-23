@@ -18,7 +18,7 @@ public class RestaurantWorld extends World
     //variables for buttons
     private int player1Index = 0;
     private int player2Index = 0;
-    //Arrays for player to choose background
+    //Arrays for the player to choose background
     private GreenfootImage[] player1Backgrounds;
     private GreenfootImage[] player2Backgrounds;    
     
