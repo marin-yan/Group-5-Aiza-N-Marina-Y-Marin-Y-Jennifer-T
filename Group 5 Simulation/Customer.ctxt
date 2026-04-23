@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Customer
+<<<<<<< Updated upstream
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Customer\ here.\r\n\ \r\n\ @author\ (Jennifer,\ Marin)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ Customer\ here.\n\ \n\ @author\ (Jennifer,\ Marin)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+>>>>>>> Stashed changes
 comment1.params=
 comment1.target=Customer()
 comment2.params=world
