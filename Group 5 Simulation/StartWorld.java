@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class StartScreen here.
  * 
- * @author (your name) 
+ * @author (Marina) 
  * @version (a version number or a date)
  */
 public class StartWorld extends World
@@ -17,6 +17,8 @@ public class StartWorld extends World
         setBackground(new GreenfootImage("images/Background/StartWorld.png"));
         startButton = new Button("Start", 150);
         addObject(startButton, getWidth() / 2, getHeight() / 5 * 4);
+        addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 +20);
+        Greenfoot.setWorld(this);
     }
     
     public void act()
