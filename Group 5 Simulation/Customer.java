@@ -27,6 +27,7 @@ public class Customer extends SuperSmoothMover
     
     // Speed of the customer
     protected int speed = 5;
+    protected int animationSpeed;
     
     // Initializing the arrays
     protected GreenfootImage[] walkDown;
@@ -94,5 +95,20 @@ public class Customer extends SuperSmoothMover
         move(-speed);
         setImage(walkLeft[walkingIndex]);
         walkingIndex = (walkingIndex + 1) % walkLeft.length;
+    }
+    
+    public void move(){
+        counter++;
+        if(counter % animationSpeed == 0){
+            if(facing.equals("down")){
+                walkingDown();
+            }else if(facing.equals("up")){
+                walkingUp();
+            }else if(facing.equals("right")){
+                walkingRight();
+            }else if(facing.equals("left")){
+                walkingLeft();
+            }
+        }
     }
 }

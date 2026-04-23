@@ -41,17 +41,7 @@ public class Waiter extends Staff
     }
     
     public void act(){
-         counter++;
-        if(counter % 12 == 0){
-            if(facing.equals("down")){
-                walkingDown();
-            }else if(facing.equals("up")){
-                walkingUp();
-            }else if(facing.equals("right")){
-                walkingRight();
-            }else if(facing.equals("left")){
-                walkingLeft();
-            }
-        }
+        animationSpeed = 12;
+        move();
     }
 }
