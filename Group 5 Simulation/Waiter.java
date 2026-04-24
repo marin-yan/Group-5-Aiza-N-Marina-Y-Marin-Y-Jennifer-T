@@ -3,45 +3,48 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Waiter here.
  * 
- * @author (Jennifer) 
+ * @author (Jennifer)
+ * Credit: Pinterest -Trang yury
  * @version (a version number or a date)
  */
 public class Waiter extends Staff
 {
     public Waiter(){
         // Set variables
-        walkDown = new GreenfootImage[5];
-        walkUp = new GreenfootImage[5];
-        walkRight = new GreenfootImage[5];
-        walkLeft = new GreenfootImage[5];
+        walkDown = new GreenfootImage[4];
+        walkUp = new GreenfootImage[4];
+        walkRight = new GreenfootImage[4];
+        walkLeft = new GreenfootImage[4]; 
         
         // Walk down animation - set images
         for(int i = 0; i < walkDown.length; i++){
-            walkDown[i] = new GreenfootImage("images/waiter1/down" + i + ".png");
-            //walkDown[i].scale(65, 90);//77,161
+            walkDown[i] = new GreenfootImage("images/waiter/down" + i + ".png");
+            walkDown[i].scale(49, 102);
         }
         
         // Walk up animation - set images
         for(int i = 0; i < walkUp.length; i++){
-            walkUp[i] = new GreenfootImage("images/waiter1/up" + i + ".png");
-            //walkUp[i].scale(65, 90);
+            walkUp[i] = new GreenfootImage("images/waiter/up" + i + ".png");
+            walkUp[i].scale(49, 102);
         }
         
         // Walk right animation - set images
         for(int i = 0; i < walkRight.length; i++){
-            walkRight[i] = new GreenfootImage("images/waiter1/right" + i + ".png");
+            walkRight[i] = new GreenfootImage("images/waiter/right" + i + ".png");
+            walkRight[i].scale(49, 102);
         }
         
         // Walk left animation - set images
         for(int i = 0; i < walkLeft.length; i++){
-            walkLeft[i] = new GreenfootImage("images/waiter1/left" + i + ".png");
+            walkLeft[i] = new GreenfootImage("images/waiter/left" + i + ".png");
+            walkLeft[i].scale(49, 102);
         }
     
         setImage(walkDown[0]);
     }
     
     public void act(){
-        animationSpeed = 12;
+        animationSpeed = 7;
         move();
     }
 }

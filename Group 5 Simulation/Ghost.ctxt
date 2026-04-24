@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Ghost
+comment0.text=\n\ Write\ a\ description\ of\ class\ Ghost\ here.\n\ \n\ @author\ (Jennifer)\n\ Credit\:\ Pinterest\ "Hollow\ Knight\ |\ Ghost\ |\ animation\ sheet"\ -\ Harbista|STU\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Ghost()
+comment2.params=
+comment2.target=void\ act()
+numComments=3
