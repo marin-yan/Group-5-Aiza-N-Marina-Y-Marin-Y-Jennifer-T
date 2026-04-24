@@ -44,6 +44,7 @@ public class RestaurantWorld extends World
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
 
         addObject(new Customer(), 0, 0);
+        addObject(new Frog(), 0, 0);
     }
     
     public void changeBackground(int player, int direction)
