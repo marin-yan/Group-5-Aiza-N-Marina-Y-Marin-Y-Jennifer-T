@@ -23,7 +23,7 @@ public class StartWorld extends World
     public void act()
     {
         if (Greenfoot.mouseClicked(startButton)) {
-            Greenfoot.setWorld(new RestaurantWorld()); 
+            Greenfoot.setWorld(new StoryWorld()); 
         }
     }
 }
