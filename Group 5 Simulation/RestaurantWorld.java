@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (background image - Jennifer) (Buttons -- Aiza)
+ * @author (background image, tables - Jennifer) (Buttons -- Aiza)
  * Credit: reference Pinterest "Animal restaurant app" - Kaleidos
  *         drew and created by Michelle T. (90%) & Jennifer T. (10%)
  * @version (a version number or a date)
@@ -20,6 +20,10 @@ public class RestaurantWorld extends World
     //variables for buttons
     private int player1Index = 0;
     private int player2Index = 0;
+    
+    // level: used for (tables setup)
+    private int levelLeft = 1;
+    private int levelRight = 1;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -44,7 +48,57 @@ public class RestaurantWorld extends World
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
 
         addObject(new Customer(), 0, 0);
-        addObject(new Frog(), 0, 0);
+        
+        setupTables();
+    }
+    
+    // Set up tables' positions according to the level
+    public void setupTables(){
+        if(levelLeft == 1){
+            addObject(new Table(), 200, 500);
+            addObject(new Table(), 400, 500);
+            addObject(new Table(), 200, 650);
+            addObject(new Table(), 400, 650);
+        }else if(levelLeft == 2){
+            addObject(new Table(), 150, 500);
+            addObject(new Table(), 300, 500);
+            addObject(new Table(), 450, 500);
+            addObject(new Table(), 150, 650);
+            addObject(new Table(), 300, 650);
+            addObject(new Table(), 450, 650);
+        }else if(levelLeft == 3){
+            addObject(new Table(), 120, 500);
+            addObject(new Table(), 240, 500);
+            addObject(new Table(), 360, 500);
+            addObject(new Table(), 480, 500);
+            addObject(new Table(), 120, 650);
+            addObject(new Table(), 240, 650);
+            addObject(new Table(), 360, 650);
+            addObject(new Table(), 480, 650);
+        }
+        
+        if(levelRight == 1){
+            addObject(new Table(), 800, 500);
+            addObject(new Table(), 1000, 500);
+            addObject(new Table(), 800, 650);
+            addObject(new Table(), 1000, 650);
+        }else if(levelRight == 2){
+            addObject(new Table(), 750, 500);
+            addObject(new Table(), 900, 500);
+            addObject(new Table(), 1050, 500);
+            addObject(new Table(), 750, 650);
+            addObject(new Table(), 900, 650);
+            addObject(new Table(), 1050, 650);
+        }else if(levelRight == 3){
+            addObject(new Table(), 720, 500);
+            addObject(new Table(), 840, 500);
+            addObject(new Table(), 960, 500);
+            addObject(new Table(), 1080, 500);
+            addObject(new Table(), 720, 650);
+            addObject(new Table(), 840, 650);
+            addObject(new Table(), 960, 650);
+            addObject(new Table(), 1080, 650);
+        }
     }
     
     public void changeBackground(int player, int direction)

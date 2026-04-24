@@ -10,14 +10,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Money extends SuperStatBar
 {
     // Track index of the coin
-    protected int coinIndex = 0;
+    private int coinIndex = 0;
     
     // Make the animation slower / more precise
-    protected int counter = 0;
+    private int counter = 0;
     
     // Speed of the customer
-    protected int speed = 5;
-    protected int animationSpeed;
+    private int speed = 5;
+    private int animationSpeed;
     
     private GreenfootImage[] coins;
     
