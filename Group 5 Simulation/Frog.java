@@ -47,17 +47,7 @@ public class Frog extends Customer
     }
 
     public void act(){
-        counter++;
-        if(counter % 6 == 0){
-            if(facing.equals("down")){
-                walkingDown();
-            }else if(facing.equals("up")){
-                walkingUp();
-            }else if(facing.equals("right")){
-                walkingRight();
-            }else if(facing.equals("left")){
-                walkingLeft();
-            }
-        }
+        animationSpeed = 6;
+        move();
     }
 }

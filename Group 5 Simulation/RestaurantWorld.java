@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (background image - Jennifer) 
+ * @author (background image - Jennifer) (Buttons -- Aiza) 
  * @version (a version number or a date)
  */
 public class RestaurantWorld extends World
@@ -18,6 +18,9 @@ public class RestaurantWorld extends World
     //variables for buttons
     private int player1Index = 0;
     private int player2Index = 0;
+    //Arrays for the player to choose background
+    private GreenfootImage[] player1Backgrounds;
+    private GreenfootImage[] player2Backgrounds;    
     
     /**
      * Constructor for objects of class MyWorld.
