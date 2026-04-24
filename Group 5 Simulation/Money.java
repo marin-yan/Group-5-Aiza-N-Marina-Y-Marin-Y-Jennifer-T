@@ -9,15 +9,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Money extends SuperStatBar
 {
+    // Track index of the coin
+    protected int coinIndex = 0;
+    
+    // Make the animation slower / more precise
+    protected int counter = 0;
+    
+    // Speed of the customer
+    protected int speed = 5;
+    protected int animationSpeed;
+    
+    private GreenfootImage[] coins;
+    
     public Money(){
-        GreenfootImage[] coins = new GreenfootImage[7];
+        coins = new GreenfootImage[7];
         for(int i = 0; i < coins.length; i++){
-            coins[i] = new GreenfootImage("images/coin/" + i + ".png");
-            //coins[i].scale(75, 75);
+            coins[i] = new GreenfootImage("images/Coin/coin" + i + ".png");
+            coins[i].scale(45, 45);
+            if(i == 0 || i == 6){
+                coins[i].scale(15, 45);
+            }
+            setImage(coins[3]);
         }
     }
     
     public void act(){
-        
+        counter++;
+        animationSpeed = 10;
+        if(counter % animationSpeed == 0){
+            setImage(coins[coinIndex]);
+            coinIndex = (coinIndex + 1) % coins.length;
+        }
     }
 }
