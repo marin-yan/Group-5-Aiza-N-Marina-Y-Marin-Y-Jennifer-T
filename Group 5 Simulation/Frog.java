@@ -3,7 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Frog here.
  * 
- * @author (Jennifer) 
+ * @author (Jennifer)
+ * Credit: Pinterest "Frog boy sprite sheet" - Ziggy
  * @version (a version number or a date)
  */
 public class Frog extends Customer

@@ -3,15 +3,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Table here.
  * 
- * @author (your name) 
+ * @author (Jennifer)
+ * Credit: Pinterest "Animal Restaurant app" - Kaleidos
  * @version (a version number or a date)
  */
 public class Table extends Actor
 {
-    /**
-     * Act - do whatever the Table wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private GreenfootImage tableImage;
+    
+    public Table(){
+        // Set image
+        tableImage = new GreenfootImage("images/Table.png");
+        tableImage.scale(85, 85);
+        setImage(tableImage);
+    }
+    
     public void act()
     {
         // Add your action code here.
