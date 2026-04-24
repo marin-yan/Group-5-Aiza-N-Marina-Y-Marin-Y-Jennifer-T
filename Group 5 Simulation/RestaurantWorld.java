@@ -21,6 +21,9 @@ public class RestaurantWorld extends World
     private int player1Index = 0;
     private int player2Index = 0;
     
+    // level: used for (table setup)
+    private int level = 0;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -58,5 +61,9 @@ public class RestaurantWorld extends World
         }
     
         //all the logic after this
+    }
+    
+    public int getLevel(){
+        return level;
     }
 }
