@@ -15,7 +15,7 @@ public class Owner extends Staff
     // Change # here for testing
     // Here should have a button for players to choose the character they want
     // character 2 and 3 could have special ending
-    private int num = 2;
+    private int num = 3;
     
     public Owner(){
         // Work for all characters
