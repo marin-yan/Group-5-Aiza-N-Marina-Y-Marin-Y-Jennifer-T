@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StoryWorld extends World
 {
-
+    private int timer = 0;
+    
     /**
      * Constructor for objects of class StoryWorld.
      * 
@@ -17,7 +18,16 @@ public class StoryWorld extends World
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1); 
-        setBackground(new GreenfootImage("images/Background/customization background.png"));
+        setBackground(new GreenfootImage("images/Background/story background.png"));
         Greenfoot.setWorld(this);
     }
+    
+    public void act() {
+        timer++;
+        
+        if (timer > 300) {
+            Greenfoot.setWorld(new CustomizeWorld());
+        }
+    }
 }
+
