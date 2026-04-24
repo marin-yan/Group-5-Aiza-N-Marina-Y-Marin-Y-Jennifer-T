@@ -16,8 +16,7 @@ public class StartWorld extends World
         super(1200, 800, 1); 
         setBackground(new GreenfootImage("images/Background/StartWorld.png"));
         startButton = new Button("Start", 150);
-        addObject(startButton, getWidth() / 2, getHeight() / 5 * 4);
-        addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 +20);
+        addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 + 20);
         Greenfoot.setWorld(this);
     }
     
