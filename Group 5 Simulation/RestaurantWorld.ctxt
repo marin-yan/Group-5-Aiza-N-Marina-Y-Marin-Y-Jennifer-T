@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=RestaurantWorld
-comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (background\ image\ -\ Jennifer)\n\ Credit\:\ reference\ Pinterest\ "Animal\ restaurant\ app"\ -\ Kaleidos\n\ \ \ \ \ \ \ \ \ drew\ and\ created\ by\ Michelle\ T.\ (90%)\ &\ Jennifer\ T.\ (10%)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (background\ image\ -\ Jennifer)(Buttons\ --\ Aiza)\n\ Credit\:\ reference\ Pinterest\ "Animal\ restaurant\ app"\ -\ Kaleidos\n\ \ \ \ \ \ \ \ \ drew\ and\ created\ by\ Michelle\ T.\ (90%)\ &\ Jennifer\ T.\ (10%)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=RestaurantWorld()
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\n\ \n

@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (background image - Jennifer)
+ * @author (background image - Jennifer)(Buttons -- Aiza)
  * Credit: reference Pinterest "Animal restaurant app" - Kaleidos
  *         drew and created by Michelle T. (90%) & Jennifer T. (10%)
  * @version (a version number or a date)
