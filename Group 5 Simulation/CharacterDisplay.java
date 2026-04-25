@@ -21,7 +21,7 @@ public class CharacterDisplay extends Actor
             c = new GreenfootImage("images/owner3/down1.png");
         }
         
-        c.scale(250, 250);
+        c.scale(200, 200);
         setImage(c);
     }
     

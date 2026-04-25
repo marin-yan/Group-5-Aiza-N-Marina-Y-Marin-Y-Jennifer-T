@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ArrowButton here.
  * 
- * @author (Aiza) 
+ * @author (Aiza) (Jennifer - onclick())
  * @version (a version number or a date)
  */
 public class ArrowButton extends Button
@@ -12,11 +12,6 @@ public class ArrowButton extends Button
     private int player;
     //direction is either 1 or -1
     private int direction;
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
     
     public ArrowButton(int player, int direction)
     {
@@ -32,5 +27,11 @@ public class ArrowButton extends Button
             return "<";
         else
             return ">";
+    }
+    
+    // Change display images in CustomizeWorld
+    public void onClick(){
+        CustomizeWorld world = (CustomizeWorld)getWorld();
+        world.changeCharacter(player, direction);
     }
 }

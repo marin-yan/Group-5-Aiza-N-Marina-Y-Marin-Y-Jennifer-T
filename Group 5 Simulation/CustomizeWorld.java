@@ -15,6 +15,12 @@ public class CustomizeWorld extends World
     private GreenfootImage bg; // white
     private GreenfootImage bg1;
     
+    // Characters
+    private int character1 = 0;
+    private CharacterDisplay display1;
+    private int character2 = 0;
+    private CharacterDisplay display2;
+    
     /**
      * Constructor for objects of class CustomizeWorld.
      * 
@@ -33,13 +39,62 @@ public class CustomizeWorld extends World
         setBackground(background);
         
         // Left display 
-        addObject(new CharacterDisplay(0), 280, 300);
-        addObject(new Button("❮", 80), 190, 405);
-        addObject(new Button("❯", 80), 395, 405);
+        display1 = new CharacterDisplay(character1);
+        addObject(display1, 280, 300);
+        addObject(new ArrowButton(1, -1), 190, 405);
+        addObject(new ArrowButton(1, 1), 395,405);
         
-        // Right display 
-        addObject(new CharacterDisplay(0), 880, 300);
-        addObject(new Button("❮", 80), 790, 405);
-        addObject(new Button("❯", 80), 995, 405);
+        // Right display
+        display2 = new CharacterDisplay(character2);
+        addObject(display2, 880, 300);
+        addObject(new ArrowButton(2, -1), 790, 405);
+        addObject(new ArrowButton(2, 1), 995, 405);
+    }
+    
+    public void changeCharacter(int player, int direction){
+        if(player == 1){
+            character1 += direction;
+            
+            if(character1 > 3){
+                character1 = 0;
+            }
+            
+            if(character1 < 0){
+                character1 = 3;
+            }
+            
+            removeObject(display1);
+            display1 = new CharacterDisplay(character1);
+            if(character1 == 0){
+                addObject(display1, 280, 300);
+            }else if(character1 == 1){
+                addObject(display1, 285, 285);
+            }else{
+                addObject(display1, 295, 290);
+            }
+        }
+        
+        if(player == 2){
+            character2 += direction;
+            
+            if(character2 > 3){
+                character2 = 0;
+            }
+            
+            if(character2 < 0){
+                character2 = 3;
+            }
+            
+            removeObject(display2);
+            display2 = new CharacterDisplay(character2);
+            if(character2 == 0){
+                addObject(display2, 880, 300);
+            }else if(character2 == 1){
+                addObject(display2, 885, 285);
+            }else{
+                addObject(display2, 895, 290);
+            }
+
+        }
     }
 }
