@@ -32,10 +32,14 @@ public class CustomizeWorld extends World
         background.drawImage(bg1, 575, -100);
         setBackground(background);
         
-        // Left display character
+        // Left display 
         addObject(new CharacterDisplay(0), 280, 300);
+        addObject(new Button("❮", 80), 190, 405);
+        addObject(new Button("❯", 80), 395, 405);
         
-        // Right display character
+        // Right display 
         addObject(new CharacterDisplay(0), 880, 300);
+        addObject(new Button("❮", 80), 790, 405);
+        addObject(new Button("❯", 80), 995, 405);
     }
 }
