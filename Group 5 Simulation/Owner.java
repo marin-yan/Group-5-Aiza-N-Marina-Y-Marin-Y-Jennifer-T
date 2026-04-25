@@ -17,7 +17,9 @@ public class Owner extends Staff
     // character 2 and 3 could have special ending
     private int num = 3;
     
-    public Owner(){
+    public Owner(int num){
+        this.num = num;
+        
         // Work for all characters
         walkDown = new GreenfootImage[3];
         walkUp = new GreenfootImage[3];
@@ -35,7 +37,7 @@ public class Owner extends Staff
             }else if(num == 3){
                 walkDown[i] = new GreenfootImage("images/owner3/down" + i + ".png");    
             }
-            walkDown[i].scale(100, 100);    
+            walkDown[i].scale(100, 100);
         }
         
         // Walk left animation - set images
