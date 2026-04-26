@@ -59,8 +59,6 @@ public class RestaurantWorld extends World
         addObject(new Owner(character1), 390, 210);
         
         setupTables();
-        
-        
     }
     
     // Set up tables' positions according to the level

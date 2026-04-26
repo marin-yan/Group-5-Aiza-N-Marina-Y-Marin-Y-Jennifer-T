@@ -31,16 +31,19 @@ public class Owner extends Staff
     private static final int C_X = 315;
     private static final int C_Y = 300;
     
-    private static final int D_X = 25;
+    private static final int D_X = 15;
     private static final int D_Y = 300;
     
+    private static final int E_X = 15;
+    private static final int E_Y = 205;
     
-    private static final int COUNTER_X = 120;
+    
+    private static final int COUNTER_X = 155;
     private static final int COUNTER_Y = 190;
 
     public Owner(int num){
         this.num = num;
-        animationSpeed = 8;
+        animationSpeed = 6;
         
         // Work for all characters
         walkDown = new GreenfootImage[3];
@@ -127,8 +130,18 @@ public class Owner extends Staff
             if(at(C_X, C_Y)){
                 state = 3;
             }
-        }else if (state == 3){
+        }else if(state == 3){
             moveTo(D_X, D_Y);
+            if(at(D_X, D_Y)){
+                state = 4;
+            }
+        }else if(state == 4){
+            moveTo(E_X, E_Y);
+            if(at(E_X, E_Y)){
+                setImage(new GreenfootImage(1, 1)); // Disappear
+                getWorld().addObject(new CounterOwner(num), COUNTER_X, COUNTER_Y);
+                state = 5;
+            }
         }
     }
     
@@ -145,7 +158,7 @@ public class Owner extends Staff
         }
         
         moving = true;
-        
+    
         // Decide facing direction (for animation)
         if (Math.abs(dx) > Math.abs(dy)){
             facing = (dx > 0) ? "right" : "left";
