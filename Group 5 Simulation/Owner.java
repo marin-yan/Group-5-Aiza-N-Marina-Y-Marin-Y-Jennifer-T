@@ -17,6 +17,7 @@ public class Owner extends Staff
     // Here should have a button for players to choose the character they want
     // character 2 and 3 could have special ending
     private int num;
+    private boolean isLeftSide;
 
     // Define locations
     private int state = 0;
@@ -41,8 +42,9 @@ public class Owner extends Staff
     private static final int COUNTER_X = 155;
     private static final int COUNTER_Y = 190;
 
-    public Owner(int num){
+    public Owner(int num, boolean isLeftSide){
         this.num = num;
+        this.isLeftSide = isLeftSide;
         animationSpeed = 6;
         
         // Work for all characters
@@ -111,13 +113,19 @@ public class Owner extends Staff
     }
     
     public void act(){
-        goRoute();
+        if(isLeftSide){
+            goRouteLeft();
+        }else{
+            goRouteRight();
+        }
     }
     
-    public void goRoute(){
+    public void goRouteLeft(){
         if(state == 0){
             moveTo(A_X, A_Y);
             if(at(A_X, A_Y)){
+                // Can have a welcome sign here
+                //getWorld().showText("Welcome to my restaurant!", 300, 80);
                 state = 1;
             }
         }else if(state == 1){
@@ -140,6 +148,37 @@ public class Owner extends Staff
             if(at(E_X, E_Y)){
                 setImage(new GreenfootImage(1, 1)); // Disappear
                 getWorld().addObject(new CounterOwner(num), COUNTER_X, COUNTER_Y);
+                state = 5;
+            }
+        }
+    }
+    
+    public void goRouteRight(){
+        if(state == 0){
+            moveTo(810, A_Y);
+            if(at(810, A_Y)){
+                state = 1;
+            }
+        }else if(state == 1){
+            moveTo(885, B_Y);
+            if(at(885, B_Y)){
+                state = 2;
+            }
+        }else if(state == 2){
+            moveTo(885, C_Y);
+            if(at(885, C_Y)){
+                state = 3;
+            }
+        }else if(state == 3){
+            moveTo(1185, D_Y);
+            if(at(1185, D_Y)){
+                state = 4;
+            }
+        }else if(state == 4){
+            moveTo(1185, E_Y);
+            if(at(1185, E_Y)){
+                setImage(new GreenfootImage(1, 1));
+                getWorld().addObject(new CounterOwner(num), 1045, COUNTER_Y);
                 state = 5;
             }
         }

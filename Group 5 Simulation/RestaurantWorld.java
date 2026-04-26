@@ -47,7 +47,7 @@ public class RestaurantWorld extends World
         backgroundImage_player1 = new GreenfootImage("images/Background/backgroundImage_player1.png");
         backgroundImage_player2 = new GreenfootImage("images/Background/backgroundImage_player2.png");
         background.drawImage(backgroundImage_player1, 0, 0);
-        background.drawImage(backgroundImage_player2, getWidth() / 2, 1);
+        background.drawImage(backgroundImage_player2, getWidth() / 2 - 20, 0);
         setBackground (background);
         
         bg = getBackground();
@@ -56,7 +56,8 @@ public class RestaurantWorld extends World
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
 
         //addObject(new Customer(), 0, 0);
-        addObject(new Owner(character1), 390, 210);
+        addObject(new Owner(character1, true), 390, 210);
+        addObject(new Owner(character2, false), 810, 210);
         
         setupTables();
     }
