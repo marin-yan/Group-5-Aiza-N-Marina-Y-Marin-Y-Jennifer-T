@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class CustomizeWorld here.
  * 
- * @author (Aiza)(Jennifer)
+ * @author (Jennifer)
  * Credit: Pinterest "Bg for edits" - zeee
  *         Pinterest -JUNGLORS
  * @version (a version number or a date)
@@ -20,6 +20,8 @@ public class CustomizeWorld extends World
     private CharacterDisplay display1;
     private int character2 = 0;
     private CharacterDisplay display2;
+    
+    private Button readyButton;
     
     /**
      * Constructor for objects of class CustomizeWorld.
@@ -38,6 +40,17 @@ public class CustomizeWorld extends World
         background.drawImage(bg1, 575, -100);
         setBackground(background);
         
+        // Black Text
+        GreenfootImage textBg = getBackground();
+        textBg.setColor(Color.BLACK);
+        textBg.setFont(new Font(25)); //"FontName, bold, italic, size"
+        textBg.drawString("Waiter Count", 140, 545);
+        textBg.drawString("Waiter Speed", 140, 625);
+        textBg.drawString("Carry Limit", 150, 705);
+        textBg.drawString("Waiter Count", 750, 545);
+        textBg.drawString("Waiter Speed", 750, 625);
+        textBg.drawString("Carry Limit", 760, 705);
+        
         // Left display 
         display1 = new CharacterDisplay(character1);
         addObject(display1, 280, 300);
@@ -49,6 +62,10 @@ public class CustomizeWorld extends World
         addObject(display2, 880, 300);
         addObject(new ArrowButton(2, -1), 790, 405);
         addObject(new ArrowButton(2, 1), 995, 405);
+        
+        // ready Button
+        readyButton = new Button("Ready", 150);
+        addObject(readyButton, 1123, 772);
     }
     
     public void changeCharacter(int player, int direction){
@@ -94,7 +111,12 @@ public class CustomizeWorld extends World
             }else{
                 addObject(display2, 895, 290);
             }
-
+        }
+    }
+    
+    public void act(){
+        if(Greenfoot.mouseClicked(readyButton)){
+            Greenfoot.setWorld(new RestaurantWorld());
         }
     }
 }
