@@ -25,14 +25,22 @@ public class RestaurantWorld extends World
     private int levelLeft = 1;
     private int levelRight = 1;
     
+    // Characters chosen by the user
+    private int character1;
+    private int character2;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public RestaurantWorld()
+    public RestaurantWorld(int character1, int character2)
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
+        
+        // Set up characters 
+        this.character1 = character1;
+        this.character2 = character2;
         
         // Set up background image
         background = new GreenfootImage(getWidth(), getHeight());
@@ -47,9 +55,12 @@ public class RestaurantWorld extends World
         middleLineThickness = 5;
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
 
-        addObject(new Customer(), 0, 0);
+        //addObject(new Customer(), 0, 0);
+        addObject(new Owner(character1), 390, 210);
         
         setupTables();
+        
+        
     }
     
     // Set up tables' positions according to the level

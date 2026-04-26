@@ -15,6 +15,6 @@ public class SelectionButton extends Button
 
     public void onClick()
     {
-        Greenfoot.setWorld(new RestaurantWorld());
+        Greenfoot.setWorld(new RestaurantWorld(0, 0));
     }
 }

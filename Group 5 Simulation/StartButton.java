@@ -25,6 +25,6 @@ public class StartButton extends Button
 
     public void onClick()
     {
-        Greenfoot.setWorld(new RestaurantWorld()); // or whatever your game world is
+        Greenfoot.setWorld(new RestaurantWorld(0, 0)); // or whatever your game world is
     }
 }

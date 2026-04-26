@@ -116,7 +116,7 @@ public class CustomizeWorld extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(readyButton)){
-            Greenfoot.setWorld(new RestaurantWorld());
+            Greenfoot.setWorld(new RestaurantWorld(character1, character2));
         }
     }
 }

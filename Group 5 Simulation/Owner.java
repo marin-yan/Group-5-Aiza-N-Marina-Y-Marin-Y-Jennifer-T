@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *         Pinterest -isoup
  *         Pinterest "主人公男ドット" - モン コワイ
  *         Pinterest "主人公女ドット" - モン コワイ
+ *         code "void moveTo(), boolean at(int x, inty)" with help of ChatGPT
  * @version (a version number or a date)
  */
 public class Owner extends Staff
@@ -15,10 +16,31 @@ public class Owner extends Staff
     // Change # here for testing
     // Here should have a button for players to choose the character they want
     // character 2 and 3 could have special ending
-    private int num = 3;
+    private int num;
+
+    // Define locations
+    private int state = 0;
+    private boolean moving = false;
     
+    private static final int A_X = 390;
+    private static final int A_Y = 275;
+    
+    private static final int B_X = 315;
+    private static final int B_Y = 275;
+    
+    private static final int C_X = 315;
+    private static final int C_Y = 300;
+    
+    private static final int D_X = 25;
+    private static final int D_Y = 300;
+    
+    
+    private static final int COUNTER_X = 120;
+    private static final int COUNTER_Y = 190;
+
     public Owner(int num){
         this.num = num;
+        animationSpeed = 8;
         
         // Work for all characters
         walkDown = new GreenfootImage[3];
@@ -86,7 +108,55 @@ public class Owner extends Staff
     }
     
     public void act(){
-        animationSpeed = 8;
+        goRoute();
+    }
+    
+    public void goRoute(){
+        if(state == 0){
+            moveTo(A_X, A_Y);
+            if(at(A_X, A_Y)){
+                state = 1;
+            }
+        }else if(state == 1){
+            moveTo(B_X, B_Y);
+            if(at(B_X, B_Y)){
+                state = 2;
+            }
+        }else if(state == 2){
+            moveTo(C_X, C_Y);
+            if(at(C_X, C_Y)){
+                state = 3;
+            }
+        }else if (state == 3){
+            moveTo(D_X, D_Y);
+        }
+    }
+    
+    public void moveTo(int x, int y){
+        double dx = x - getPreciseX();
+        double dy = y - getPreciseY();
+        double distance = Math.sqrt(dx * dx + dy * dy);
+    
+        // Stop when close enough
+        if (distance < speed){
+            setLocation(x, y);
+            moving = false;
+            return;
+        }
+        
+        moving = true;
+        
+        // Decide facing direction (for animation)
+        if (Math.abs(dx) > Math.abs(dy)){
+            facing = (dx > 0) ? "right" : "left";
+        }else{
+            facing = (dy > 0) ? "down" : "up";
+        }
+
         move();
+    }
+    
+    public boolean at(int x, int y){
+        return Math.abs(getPreciseX() - x) < 2 && Math.abs(getPreciseY() - y) < 2;
     }
 }
