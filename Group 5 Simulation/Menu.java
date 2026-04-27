@@ -17,7 +17,7 @@ public class Menu extends Actor
     
     private GreenfootImage[] menuImages = {
         new GreenfootImage("Menu/cookie.png"),
-        new GreenfootImage("Menu/cookiestack.webp")
+        new GreenfootImage("Menu/cookiestack.jpg")
     };
     
     public void act()
@@ -25,9 +25,15 @@ public class Menu extends Actor
         // Add your action code here.
     }
     
-    public String [] getMenuOptions() {
+    public String[] getMenuOptions() {
         return menuOptions;
     }
-    
-    
+
+    public GreenfootImage[] getMenuImages() {
+        return menuImages;
+    }
+
+    public int getMenuSize() {
+        return menuOptions.length;
+    }
 }

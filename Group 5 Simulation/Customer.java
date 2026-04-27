@@ -42,7 +42,12 @@ public class Customer extends SuperSmoothMover
     protected Table targetTable;
     protected boolean seated = false;
     private int pathStage = 0;
-
+    
+    private Menu menu = new Menu();
+    private OrderIcon orderIcon;
+    private int orderedFoodIndex;
+    boolean ordered = false;
+    
     public Customer() {
         setImage("customer.png");
     }
@@ -54,6 +59,10 @@ public class Customer extends SuperSmoothMover
     public void act()  {
         if (!seated && targetTable != null ){
             moveToTable();
+        } else if (seated && !ordered) {
+            showOrderIcon();
+            orderFood();
+            ordered = true;
         }
     }
     
@@ -80,7 +89,17 @@ public class Customer extends SuperSmoothMover
     }
     
     public void orderFood() {
+        orderedFoodIndex = Greenfoot.getRandomNumber(menu.getMenuSize());
+        int randomOrder = Greenfoot.getRandomNumber(menu.getMenuSize()) + 1;
         
+        if (randomOrder == 1) {
+            orderedFoodIndex = 0;
+        } else if (randomOrder == 2) {
+            orderedFoodIndex = 1;
+        }
+        
+        GreenfootImage orderedImage = menu.getMenuImages()[orderedFoodIndex];
+        orderIcon.setImage(orderedImage);
     }
         
     public void walkingDown(){
@@ -139,7 +158,8 @@ public class Customer extends SuperSmoothMover
     
     public void moveToTable() {
         if (isFirstTableTarget()) {
-            followFirstTablePath();
+            followFirstTablePath()
+            ;
             return;
         }
         
@@ -169,7 +189,7 @@ public class Customer extends SuperSmoothMover
             move();
         }
         } else {
-        seated = true;
+            seated = true;
         }
     }
     
@@ -230,8 +250,8 @@ public class Customer extends SuperSmoothMover
     }
     
     private void moveDirectlyToTargetTable() {
-        int targetX = targetTable.getX();
-        int targetY = targetTable.getY() - 40;
+        int targetX = targetTable.getX() - 60;
+        int targetY = targetTable.getY() - 30;
         
         if (Math.abs(getX() - targetX) > 2) {
             if (getX() < targetX) {
@@ -251,6 +271,13 @@ public class Customer extends SuperSmoothMover
             }
         } else {
             seated = true;
+        }
+    }
+    
+    private void showOrderIcon() {
+        if (orderIcon == null) {
+            orderIcon = new OrderIcon();
+            getWorld().addObject(orderIcon, getX() + 70, getY() - 70);
         }
     }
 }
