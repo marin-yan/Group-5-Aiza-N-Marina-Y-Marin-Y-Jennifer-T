@@ -45,7 +45,7 @@ public class Owner extends Staff
     public Owner(int num, boolean isLeftSide){
         this.num = num;
         this.isLeftSide = isLeftSide;
-        animationSpeed = 6;
+        animationSpeed = 5;
         
         // Work for all characters
         walkDown = new GreenfootImage[3];
