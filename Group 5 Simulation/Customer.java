@@ -158,8 +158,7 @@ public class Customer extends SuperSmoothMover
     
     public void moveToTable() {
         if (isFirstTableTarget()) {
-            followFirstTablePath()
-            ;
+            followFirstTablePath();
             return;
         }
         
@@ -279,5 +278,9 @@ public class Customer extends SuperSmoothMover
             orderIcon = new OrderIcon();
             getWorld().addObject(orderIcon, getX() + 70, getY() - 70);
         }
+    }
+    
+    public boolean hasOrdered(){
+        return ordered;
     }
 }
