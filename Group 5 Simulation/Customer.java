@@ -42,6 +42,9 @@ public class Customer extends SuperSmoothMover
     protected Table targetTable;
     protected boolean seated = false;
     private int pathStage = 0;
+    
+    // Order Food
+    private boolean ordered;
 
     public Customer() {
         setImage("customer.png");
@@ -252,5 +255,9 @@ public class Customer extends SuperSmoothMover
         } else {
             seated = true;
         }
+    }
+    
+    public boolean hasOrdered(){
+        return ordered;
     }
 }
