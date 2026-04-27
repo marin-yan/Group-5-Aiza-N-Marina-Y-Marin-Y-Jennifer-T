@@ -20,6 +20,7 @@ public class Customer extends SuperSmoothMover
     
     // Initial direction
     String facing = "down";
+    String lastFacing = "";
     
     // Track index of walking
     protected int walkingIndex = 0;
@@ -108,6 +109,13 @@ public class Customer extends SuperSmoothMover
     
     public void move(){
         counter++;
+        
+        // Reset animation when direction changes 
+        if(!facing.equals(lastFacing)){
+            walkingIndex = 0;
+            lastFacing = facing;
+        }
+        
         if(counter % animationSpeed == 0){
             if(facing.equals("down")){
                 walkingDown();
