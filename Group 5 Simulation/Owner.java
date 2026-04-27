@@ -21,7 +21,6 @@ public class Owner extends Staff
 
     // Define locations
     private int state = 0;
-    private boolean moving = false;
     
     private static final int A_X = 390;
     private static final int A_Y = 275;
