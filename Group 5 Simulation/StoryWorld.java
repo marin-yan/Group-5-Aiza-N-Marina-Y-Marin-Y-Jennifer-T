@@ -4,12 +4,11 @@ import java.util.ArrayList;
 /**
  * Write a description of class StoryWorld here.
  * 
- * @author (your name) 
+ * @author (Marina with help from Aiza) 
  * @version (a version number or a date)
  */
 public class StoryWorld extends World
 {
-    private int timer = 1000;
     private GreenfootImage ownerImage;
     private TextLine[] fullText = {
         new TextLine("Gordon Ramsay", "Welcome back to the long awaited finale of the 25th season of Hell's Kitchen! I hope you're hungry because our 2 finalist will be cooking up some delicious dished for everyone."),
@@ -46,7 +45,7 @@ public class StoryWorld extends World
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1); 
-        background = new GreenfootImage("images/Background/StoryWorld2.png");
+        background = new GreenfootImage("images/Background/StoryWorld.png");
         setBackground(background);
         Greenfoot.setWorld(this);
         
@@ -66,8 +65,8 @@ public class StoryWorld extends World
         // checks if line not completed and if there's more characters to type
         if (!lineComplete && charCount < fullText[currentLine].message.length()) {
             delayCounter++;
-            // delay each character display by 2 frames 
-            if (delayCounter >= 2) {
+            // delay each character display by 1 frame
+            if (delayCounter >= 1) {
                 delayCounter = 0;
                 charCount++;
                 displayedText = fullText[currentLine].message.substring(0, charCount);
@@ -75,7 +74,6 @@ public class StoryWorld extends World
             }
             
         } else if (!lineComplete && charCount >= fullText[currentLine].message.length()) {
-            
             lineComplete = true;
             updateWorldText();
             
