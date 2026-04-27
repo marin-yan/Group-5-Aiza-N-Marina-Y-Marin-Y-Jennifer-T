@@ -12,6 +12,9 @@ public class Staff extends SuperSmoothMover
     String facing = "down";
     String lastFacing = "";
     
+    // Track moving
+    protected boolean moving = false;
+    
     // Track index of walking
     protected int walkingIndex = 0;
     

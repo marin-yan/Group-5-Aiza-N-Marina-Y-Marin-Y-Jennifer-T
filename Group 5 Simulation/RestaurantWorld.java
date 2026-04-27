@@ -67,9 +67,12 @@ public class RestaurantWorld extends World
         middleLineThickness = 5;
         bg.fillRect((getWidth() / 2) - (middleLineThickness / 2), 0, middleLineThickness, getHeight());
 
-        //addObject(new Customer(), 0, 0);
+        // Add the owners
         addObject(new Owner(character1, true), 390, 210);
         addObject(new Owner(character2, false), 810, 210);
+        
+        // Add the waiter(s)
+        addObject(new Waiter(), 35, 390);
         
         setupTables();
     }

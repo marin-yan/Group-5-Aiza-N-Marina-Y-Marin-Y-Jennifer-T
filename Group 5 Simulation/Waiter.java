@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class Waiter here.
@@ -8,8 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Waiter extends Staff
-{
+{   
     public Waiter(){
+        animationSpeed = 7;
+        
         // Set variables
         walkDown = new GreenfootImage[4];
         walkUp = new GreenfootImage[4];
@@ -44,7 +47,45 @@ public class Waiter extends Staff
     }
     
     public void act(){
-        animationSpeed = 7;
+        moveToCustomer();
+    }
+    
+    public void moveToCustomer(){
+        // A list of customers 
+        List<Customer> customers = getWorld().getObjects(Customer.class);
+        
+        if(!customers.isEmpty()){
+            for(int i = 0; i < customers.size(); i++){
+                Customer customer = customers.get(i);
+                if(customer.hasOrdered()){
+                    moveTo(customer.getX(), customer.getY());
+                    return;
+                }
+            }
+        }
+    }
+    
+    public void moveTo(int x, int y){
+        double dx = x - getPreciseX();
+        double dy = y - getPreciseY();
+        double distance = Math.sqrt(dx * dx + dy * dy);
+    
+        // Stop when close enough
+        if (distance < speed){
+            setLocation(x, y);
+            moving = false;
+            return;
+        }
+        
+        moving = true;
+    
+        // Decide facing direction (for animation)
+        if (Math.abs(dx) > Math.abs(dy)){
+            facing = (dx > 0) ? "right" : "left";
+        }else{
+            facing = (dy > 0) ? "down" : "up";
+        }
+
         move();
     }
 }
