@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=CustomizeWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ CustomizeWorld\ here.\r\n\ \r\n\ @author\ (Jennifer)\r\n\ Credit\:\ Pinterest\ "Bg\ for\ edits"\ -\ zeee\r\n\ \ \ \ \ \ \ \ \ Pinterest\ -JUNGLORS\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ CustomizeWorld\ here.\n\ \n\ @author\ (Aiza)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=CustomizeWorld()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CustomizeWorld.\r\n\ \r\n
-comment2.params=player\ direction
-comment2.target=void\ changeCharacter(int,\ int)
-comment3.params=
-comment3.target=void\ act()
-numComments=4
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ CustomizeWorld.\n\ \n
+<<<<<<< Updated upstream
+comment2.params=
+comment2.target=void\ act()
+numComments=3
+=======
+numComments=2
+>>>>>>> Stashed changes

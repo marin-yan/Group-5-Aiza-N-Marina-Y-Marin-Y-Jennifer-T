@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=Owner
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Chef\ here.\r\n\ \r\n\ @author\ (Jennifer)\r\n\ Credit\:\ Pinterest\ "basil\ pixel"\ -\ Pixel\ Art\ Ideas\r\n\ \ \ \ \ \ \ \ \ Pinterest\ -isoup\r\n\ \ \ \ \ \ \ \ \ Pinterest\ "\u4E3B\u4EBA\u516C\u7537\u30C9\u30C3\u30C8"\ -\ \u30E2\u30F3\ \u30B3\u30EF\u30A4\r\n\ \ \ \ \ \ \ \ \ Pinterest\ "\u4E3B\u4EBA\u516C\u5973\u30C9\u30C3\u30C8"\ -\ \u30E2\u30F3\ \u30B3\u30EF\u30A4\r\n\ \ \ \ \ \ \ \ \ code\ "void\ moveTo(),\ boolean\ at(int\ x,\ inty)"\ with\ help\ of\ ChatGPT\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=num\ isLeftSide
-comment1.target=Owner(int,\ boolean)
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+comment0.text=\n\ Write\ a\ description\ of\ class\ Chef\ here.\n\ \n\ @author\ (Jennifer)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ Chef\ here.\n\ \n\ @author\ (Jennifer)\n\ Credit\:\ Pinterest\ "basil\ pixel"\ -\ Pixel\ Art\ Ideas\n\ \ \ \ \ \ \ \ \ Pinterest\ -isoup\n\ \ \ \ \ \ \ \ \ Pinterest\ "\u4E3B\u4EBA\u516C\u7537\u30C9\u30C3\u30C8"\ -\ \u30E2\u30F3\ \u30B3\u30EF\u30A4\n\ \ \ \ \ \ \ \ \ Pinterest\ "\u4E3B\u4EBA\u516C\u5973\u30C9\u30C3\u30C8"\ -\ \u30E2\u30F3\ \u30B3\u30EF\u30A4\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+>>>>>>> Stashed changes
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ Chef\ here.\n\ \n\ @author\ (Jennifer)\n\ Credit\:\ Pinterest\ "basil\ pixel"\ -\ Pixel\ Art\ Ideas\n\ \ \ \ \ \ \ \ \ Pinterest\ -isoup\n\ \ \ \ \ \ \ \ \ Pinterest\ "\u4E3B\u4EBA\u516C\u7537\u30C9\u30C3\u30C8"\ -\ \u30E2\u30F3\ \u30B3\u30EF\u30A4\n\ \ \ \ \ \ \ \ \ Pinterest\ "\u4E3B\u4EBA\u516C\u5973\u30C9\u30C3\u30C8"\ -\ \u30E2\u30F3\ \u30B3\u30EF\u30A4\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+>>>>>>> Stashed changes
+comment1.params=
+comment1.target=Owner()
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ goRouteLeft()
-comment4.params=
-comment4.target=void\ goRouteRight()
-comment5.params=x\ y
-comment5.target=void\ moveTo(int,\ int)
-comment6.params=x\ y
-comment6.target=boolean\ at(int,\ int)
-numComments=7
+numComments=3

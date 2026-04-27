@@ -2,61 +2,65 @@
 dependency1.from=StartWorld
 dependency1.to=Button
 dependency1.type=UsesDependency
-dependency10.from=RestaurantWorld
-dependency10.to=Customer
-dependency10.type=UsesDependency
-dependency11.from=RestaurantWorld
-dependency11.to=Frog
-dependency11.type=UsesDependency
-dependency12.from=RestaurantWorld
-dependency12.to=Ghost
-dependency12.type=UsesDependency
-dependency13.from=Customer
-dependency13.to=Table
-dependency13.type=UsesDependency
-dependency14.from=Owner
-dependency14.to=CounterOwner
-dependency14.type=UsesDependency
-dependency15.from=StartButton
-dependency15.to=RestaurantWorld
-dependency15.type=UsesDependency
-dependency16.from=ArrowButton
-dependency16.to=CustomizeWorld
-dependency16.type=UsesDependency
-dependency17.from=SelectionButton
-dependency17.to=RestaurantWorld
-dependency17.type=UsesDependency
 dependency2.from=StartWorld
 dependency2.to=StoryWorld
 dependency2.type=UsesDependency
-dependency3.from=CustomizeWorld
-dependency3.to=CharacterDisplay
+dependency3.from=StoryWorld
+dependency3.to=CustomizeWorld
 dependency3.type=UsesDependency
-dependency4.from=CustomizeWorld
-dependency4.to=Button
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+dependency4.from=StartButton
+dependency4.to=RestaurantWorld
+=======
+dependency4.from=RestaurantWorld
+dependency4.to=Customer
+>>>>>>> Stashed changes
 dependency4.type=UsesDependency
-dependency5.from=CustomizeWorld
-dependency5.to=ArrowButton
+dependency5.from=RestaurantWorld
+dependency5.to=Frog
 dependency5.type=UsesDependency
-dependency6.from=CustomizeWorld
+<<<<<<< Updated upstream
+editor.fx.0.height=728
+editor.fx.0.width=1077
+editor.fx.0.x=184
+editor.fx.0.y=47
+height=819
+package.numDependencies=5
+package.numTargets=16
+=======
+dependency4.from=RestaurantWorld
+dependency4.to=Table
+dependency4.type=UsesDependency
+dependency5.from=StartButton
+dependency5.to=RestaurantWorld
+dependency5.type=UsesDependency
+dependency6.from=SelectionButton
 dependency6.to=RestaurantWorld
 dependency6.type=UsesDependency
-dependency7.from=StoryWorld
-dependency7.to=CustomizeWorld
+editor.fx.0.height=728
+editor.fx.0.width=1077
+editor.fx.0.x=113
+editor.fx.0.y=114
+height=819
+package.numDependencies=6
+package.numTargets=19
+>>>>>>> Stashed changes
+=======
+dependency6.from=StartButton
+dependency6.to=RestaurantWorld
+dependency6.type=UsesDependency
+dependency7.from=SelectionButton
+dependency7.to=RestaurantWorld
 dependency7.type=UsesDependency
-dependency8.from=RestaurantWorld
-dependency8.to=Owner
-dependency8.type=UsesDependency
-dependency9.from=RestaurantWorld
-dependency9.to=Table
-dependency9.type=UsesDependency
-editor.fx.0.height=758
-editor.fx.0.width=652
-editor.fx.0.x=-6
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
 editor.fx.0.y=0
-height=766
-package.numDependencies=17
-package.numTargets=23
+height=804
+package.numDependencies=7
+package.numTargets=20
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -70,170 +74,243 @@ readme.name=@README
 readme.width=48
 readme.x=10
 readme.y=10
-simulation.speed=78
+simulation.speed=50
 target1.height=70
-target1.name=CounterOwner
+target1.name=Owner
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
-target10.name=EndScreen
+target10.name=CustomizeWorld
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
-target11.name=StartWorld
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target11.name=Money
+=======
+target11.name=StoryWorld
+>>>>>>> Stashed changes
+=======
+target11.name=StoryWorld
+>>>>>>> Stashed changes
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
-target12.name=CustomizeWorld
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target12.name=Button
+=======
+target12.name=StartButton
+>>>>>>> Stashed changes
+=======
+target12.name=StartButton
+>>>>>>> Stashed changes
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
 target13.height=70
-target13.name=SuperStatBar
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target13.name=ArrowButton
+=======
+target13.name=RestaurantWorld
+>>>>>>> Stashed changes
+=======
+target13.name=RestaurantWorld
+>>>>>>> Stashed changes
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=120
 target13.x=0
 target13.y=0
 target14.height=70
-target14.name=StoryWorld
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target14.name=Menu
+=======
+target14.name=Money
+>>>>>>> Stashed changes
+=======
+target14.name=Money
+>>>>>>> Stashed changes
 target14.showInterface=false
 target14.type=ClassTarget
 target14.width=120
 target14.x=0
 target14.y=0
 target15.height=70
-target15.name=StartButton
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target15.name=Waiter
+=======
+target15.name=Button
+>>>>>>> Stashed changes
+=======
+target15.name=Button
+>>>>>>> Stashed changes
 target15.showInterface=false
 target15.type=ClassTarget
 target15.width=120
 target15.x=0
 target15.y=0
 target16.height=70
-target16.name=RestaurantWorld
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target16.name=SelectionButton
+=======
+target16.name=ArrowButton
+>>>>>>> Stashed changes
+=======
+target16.name=ArrowButton
+>>>>>>> Stashed changes
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=120
 target16.x=0
 target16.y=0
+<<<<<<< Updated upstream
+=======
 target17.height=70
-target17.name=Money
+<<<<<<< Updated upstream
+target17.name=Menu
+=======
+target17.name=Ghost
+>>>>>>> Stashed changes
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=120
 target17.x=0
 target17.y=0
 target18.height=70
-target18.name=ArrowButton
+<<<<<<< Updated upstream
+target18.name=Waiter
+=======
+target18.name=Menu
+>>>>>>> Stashed changes
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=120
 target18.x=0
 target18.y=0
 target19.height=70
-target19.name=Button
+<<<<<<< Updated upstream
+target19.name=SelectionButton
+=======
+target19.name=Waiter
+>>>>>>> Stashed changes
 target19.showInterface=false
 target19.type=ClassTarget
 target19.width=120
 target19.x=0
 target19.y=0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 target2.height=70
-target2.name=Owner
+target2.name=Table
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
 target2.x=0
 target2.y=0
 target20.height=70
-target20.name=Ghost
+target20.name=SelectionButton
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=120
 target20.x=0
 target20.y=0
-target21.height=70
-target21.name=Menu
-target21.showInterface=false
-target21.type=ClassTarget
-target21.width=120
-target21.x=0
-target21.y=0
-target22.height=70
-target22.name=Waiter
-target22.showInterface=false
-target22.type=ClassTarget
-target22.width=120
-target22.x=0
-target22.y=0
-target23.height=70
-target23.name=SelectionButton
-target23.showInterface=false
-target23.type=ClassTarget
-target23.width=120
-target23.x=0
-target23.y=0
 target3.height=70
-target3.name=Table
+target3.name=Customer
 target3.showInterface=false
 target3.type=ClassTarget
 target3.width=120
 target3.x=0
 target3.y=0
 target4.height=70
-target4.name=GordonRamsay
+target4.name=Frog
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
-target5.name=Customer
+target5.name=SuperSmoothMover
 target5.showInterface=false
-target5.type=ClassTarget
-target5.width=120
+target5.type=AbstractTarget
+target5.width=130
 target5.x=0
 target5.y=0
 target6.height=70
-target6.name=Frog
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target6.name=StartWorld
+=======
+target6.name=Staff
+>>>>>>> Stashed changes
+=======
+target6.name=Staff
+>>>>>>> Stashed changes
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
-target7.name=SuperSmoothMover
+target7.name=EndScreen
 target7.showInterface=false
-target7.type=AbstractTarget
-target7.width=130
+target7.type=ClassTarget
+target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
-target8.name=CharacterDisplay
+target8.name=EndScreen
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=0
 target8.y=0
 target9.height=70
-target9.name=Staff
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+target9.name=StartButton
+=======
+target9.name=SuperStatBar
+>>>>>>> Stashed changes
+=======
+target9.name=SuperStatBar
+>>>>>>> Stashed changes
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-width=1294
+<<<<<<< Updated upstream
+width=1440
 world.lastInstantiated=StartWorld
-xPosition=0
-yPosition=0
+<<<<<<< Updated upstream
+xPosition=76
+yPosition=141
+=======
+xPosition=48
+yPosition=108
+>>>>>>> Stashed changes
+=======
+width=1425
+world.lastInstantiated=StartWorld
+xPosition=7
+yPosition=33
+>>>>>>> Stashed changes
