@@ -49,9 +49,6 @@ public class Frog extends Customer
 
     public void act(){
         animationSpeed = 6;
-        facing = "down";
-        move(5);
-        facing = "left";
-        move(5);
+        super.act();
     }
 }

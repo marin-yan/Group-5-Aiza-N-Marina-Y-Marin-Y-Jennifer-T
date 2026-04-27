@@ -10,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Table extends Actor
 {
     private GreenfootImage tableImage;
+    private boolean occupied = false;
     
     public Table(){
         // Set image
@@ -21,5 +22,13 @@ public class Table extends Actor
     public void act()
     {
         // Add your action code here.
+    }
+    
+    public boolean isOccupied() {
+        return occupied;
+    }
+    
+    public void setOccupied(boolean occupied) {
+        this.occupied = occupied;
     }
 }

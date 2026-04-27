@@ -10,11 +10,13 @@ public class Customer extends SuperSmoothMover
 {
     private static final int ENTRY_X = 405;
     private static final int ENTRY_Y = 210;
+    private static final int FIRST_TABLE_X = 200;
+    private static final int FIRST_TABLE_Y = 500;
+    private static final int THIRD_TABLE_X = 200;
+    private static final int THIRD_TABLE_Y = 650;
     private static final int COUNTER_X = 225;
     private static final int COUNTER_Y = 275;
     private static final double WALK_SPEED = 2.2;
-    
-    private boolean atCounter;
     
     // Initial direction
     String facing = "down";
@@ -34,6 +36,11 @@ public class Customer extends SuperSmoothMover
     protected GreenfootImage[] walkUp;
     protected GreenfootImage[] walkRight;
     protected GreenfootImage[] walkLeft;
+    private boolean atCounter;
+    
+    protected Table targetTable;
+    protected boolean seated = false;
+    private int pathStage = 0;
 
     public Customer() {
         setImage("customer.png");
@@ -44,7 +51,9 @@ public class Customer extends SuperSmoothMover
     }
     
     public void act()  {
-        walkToCounter();
+        if (!seated && targetTable != null ){
+            moveToTable();
+        }
     }
     
     private void walkToCounter() {
@@ -109,6 +118,131 @@ public class Customer extends SuperSmoothMover
             }else if(facing.equals("left")){
                 walkingLeft();
             }
+        }
+    }
+    
+    public void setTargetTable (Table table) {
+        targetTable = table;
+        pathStage = 0;
+        if (targetTable != null) {
+            targetTable.setOccupied(true);
+        }
+    }
+    
+    public void moveToTable() {
+        if (isFirstTableTarget()) {
+            followFirstTablePath();
+            return;
+        }
+        
+        if (isThirdTableTarget()) {
+            followThirdTablePath();
+            return;
+        }
+        
+        int targetX = targetTable.getX();
+        int targetY = targetTable.getY() - 40;
+        
+        if (Math.abs(getX() - targetX) > 2) {
+            if (getX() < targetX) {
+                facing = "right";
+                move();
+            } else {
+                facing = "left";
+                move();
+            }
+        } else if (Math.abs(getY() - targetY) > 2) {
+        
+        if (getY() < targetY) {
+            facing = "down";
+            move();
+        } else {
+            facing = "up";
+            move();
+        }
+        } else {
+        seated = true;
+        }
+    }
+    
+    private boolean isFirstTableTarget() {
+        return targetTable != null
+            && targetTable.getX() == FIRST_TABLE_X
+            && targetTable.getY() == FIRST_TABLE_Y;
+    }
+    
+    private boolean isThirdTableTarget() {
+        return targetTable != null
+            && targetTable.getX() == THIRD_TABLE_X
+            && targetTable.getY() == THIRD_TABLE_Y;
+    }
+    
+    private void followFirstTablePath() {
+        if (pathStage == 0) {
+            if (Math.abs(getY() - FIRST_TABLE_Y) > 2) {
+                facing = "down";
+                move();
+                return;
+            }
+            pathStage = 1;
+        }
+        
+        if (pathStage == 1) {
+            if (Math.abs(getX() - FIRST_TABLE_X) > 2) {
+                facing = "left";
+                move();
+                return;
+            }
+            pathStage = 2;
+        }
+        
+        moveDirectlyToTargetTable();
+    }
+    
+    private void followThirdTablePath() {
+        if (pathStage == 0) {
+            if (Math.abs(getY() - FIRST_TABLE_Y) > 2) {
+                facing = "down";
+                move();
+                return;
+            }
+            pathStage = 1;
+        }
+        
+        if (pathStage == 1) {
+            if (Math.abs(getX() - THIRD_TABLE_X) > 2) {
+                facing = "left";
+                move();
+                return;
+            }
+            pathStage = 2;
+        }
+        
+        moveDirectlyToTargetTable();
+    }
+    
+    private void moveDirectlyToTargetTable() {
+        int targetX = targetTable.getX();
+        int targetY = targetTable.getY() - 40;
+        
+        if (Math.abs(getX() - targetX) > 2) {
+            if (getX() < targetX) {
+                facing = "right";
+                move();
+            } else {
+                facing = "left";
+                move();
+            }
+        } else if (Math.abs(getY() - targetY) > 2) {
+            if (getY() < targetY) {
+                facing = "down";
+                move();
+            } else {
+                facing = "up";
+                move();
+            }
+        } else {
+            seated = true;
         }
     }
 }

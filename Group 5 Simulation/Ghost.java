@@ -42,6 +42,6 @@ public class Ghost extends Customer
     
     public void act(){
         animationSpeed = 12;
-        move();
+        super.act();
     }
 }

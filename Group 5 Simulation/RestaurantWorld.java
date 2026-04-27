@@ -10,6 +10,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RestaurantWorld extends World
 {
+    private static final int[][] LEFT_TABLE_ORDER = {
+        {400, 500},
+        {200, 500},
+        {200, 650},
+        {400, 650}
+    };
+
     // Set up background image variables
     private GreenfootImage backgroundImage_player1;
     private GreenfootImage backgroundImage_player2;
@@ -28,6 +35,11 @@ public class RestaurantWorld extends World
     // Characters chosen by the user
     private int character1;
     private int character2;
+    
+    // for customers
+    private int spawnCounter = 0;
+    private int spawnDelay = 1200;
+    private int maxCustomers = 4;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -123,5 +135,51 @@ public class RestaurantWorld extends World
         }
     
         //all the logic after this
+    }
+    
+    public void act() {
+        spawnCounter++;
+        
+        if (spawnCounter >= spawnDelay && getObjects(Customer.class).size() < maxCustomers) {
+            spawnRandomCustomer();
+            spawnCounter = 0;
+        }
+    }
+    
+    private void spawnRandomCustomer() {
+        Customer customer;
+        int randomCustomer = Greenfoot.getRandomNumber(2) +1 ;
+        
+        if (randomCustomer == 1) {
+            customer = new Frog();
+        } else {
+            customer = new Ghost();
+        }
+        
+        addObject(customer, 405, 210);
+        Table nextTable = getNextTableInOrder();
+
+        if (nextTable != null) {
+            customer.setTargetTable(nextTable);
+        } else {
+            removeObject(customer);
+        }
+    }
+    
+    public Table getNextTableInOrder() {
+        java.util.List<Table> tables = getObjects(Table.class);
+        
+        for (int i = 0; i < LEFT_TABLE_ORDER.length; i++) {
+            int targetX = LEFT_TABLE_ORDER[i][0];
+            int targetY = LEFT_TABLE_ORDER[i][1];
+            
+            for (Table table : tables) {
+                if (table.getX() == targetX && table.getY() == targetY && !table.isOccupied()) {
+                    return table;
+                }
+            }
+        }
+        
+        return null;
     }
 }
