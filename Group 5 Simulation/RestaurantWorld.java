@@ -38,7 +38,7 @@ public class RestaurantWorld extends World
     
     // for customers
     private int spawnCounter = 0;
-    private int spawnDelay = 1200;
+    private int spawnDelay = 800;
     private int maxCustomers = 4;
     
     //variables for stat bar 

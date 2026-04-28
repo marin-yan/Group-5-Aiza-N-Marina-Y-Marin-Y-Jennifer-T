@@ -52,6 +52,7 @@ public class Customer extends SuperSmoothMover
     private boolean ordered = false;
     private boolean served = false;
     private boolean gaveMoney = false;
+
     
     public Customer() {
         setImage("customer.png");
@@ -308,6 +309,10 @@ public class Customer extends SuperSmoothMover
         if(orderIcon != null){
             getWorld().removeObject(orderIcon);
             orderIcon = null;
+        }
+        
+        if (targetTable != null) {
+            targetTable.setOccupied(false);
         }
         
         if(!gaveMoney){
