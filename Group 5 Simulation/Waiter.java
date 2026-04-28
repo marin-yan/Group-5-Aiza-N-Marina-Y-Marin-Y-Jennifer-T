@@ -14,8 +14,8 @@ public class Waiter extends Staff
     private Customer targetCustomer;
     
     public Waiter(){
-        animationSpeed = 7;
-        speed = 2;
+        animationSpeed = 10;
+        speed = 1;
         
         // Set variables
         walkDown = new GreenfootImage[4];
@@ -63,18 +63,12 @@ public class Waiter extends Staff
                 state = 2;
             }
         }else if(state == 2){
-            // Go to a sace zone
-            moveTo(400, 390);
-            if(at(400, 390)){
+            // Kitchen area - left side
+            moveTo(0, 400);
+            if(at(0, 400)){
                 state = 3;
             }
         }else if(state == 3){
-            // Kitchen area - left side
-            moveTo(0, 390);
-            if(at(0, 390)){
-                state = 4;
-            }
-        }else if(state == 4){
             moveTo(targetCustomer.getX(), targetCustomer.getY());
             if(at(targetCustomer.getX(), targetCustomer.getY())){
                 targetCustomer.setOrdered(false);

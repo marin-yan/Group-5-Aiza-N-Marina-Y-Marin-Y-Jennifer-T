@@ -29,7 +29,7 @@ public class Customer extends SuperSmoothMover
     protected int counter = 0;
     
     // Speed of the customer
-    protected int speed = 5;
+    protected int speed = 4;
     protected int animationSpeed;
     
     // Track moving
@@ -51,6 +51,7 @@ public class Customer extends SuperSmoothMover
     private int orderedFoodIndex;
     private boolean ordered = false;
     private boolean served = false;
+    private boolean gaveMoney = false;
     
     public Customer() {
         setImage("customer.png");
@@ -63,13 +64,11 @@ public class Customer extends SuperSmoothMover
     public void act()  {
         if (!seated && targetTable != null ){
             moveToTable();
-        } else if (seated && !ordered) {
+        }else if (served){
+            leaveRestaurant();
+        }else if (seated){
             showOrderIcon();
             orderFood();
-            ordered = true;
-        } else if (served)
-        {
-            leaveRestaurant();
         }
     }
     
@@ -96,6 +95,10 @@ public class Customer extends SuperSmoothMover
     }
     
     public void orderFood() {
+        if(ordered){
+            return;
+        }
+        
         orderedFoodIndex = Greenfoot.getRandomNumber(menu.getMenuSize());
         int randomOrder = Greenfoot.getRandomNumber(menu.getMenuSize()) + 1;
         
@@ -107,6 +110,8 @@ public class Customer extends SuperSmoothMover
         
         GreenfootImage orderedImage = menu.getMenuImages()[orderedFoodIndex];
         orderIcon.setImage(orderedImage);
+        
+        ordered = true;
     }
         
     public void walkingDown(){
@@ -300,11 +305,23 @@ public class Customer extends SuperSmoothMover
     }
     
     public void leaveRestaurant(){
-        moveTo(ENTRY_X, ENTRY_Y);
-        if(at(ENTRY_X, ENTRY_Y)){
-            //getWorld().removeObject(this);
+        if(orderIcon != null){
+            getWorld().removeObject(orderIcon);
+            orderIcon = null;
         }
-    }
+        
+        if(!gaveMoney){
+            // Add the coin
+            getWorld().addObject(new Money(), getX() + 40, getY());
+            gaveMoney = true;
+        }
+        
+        if(!at(ENTRY_X, ENTRY_Y)){
+            moveTo(ENTRY_X, ENTRY_Y);
+        }else{
+            getWorld().removeObject(this);
+        }
+        }
     
     public void moveTo(int x, int y){
         int dx = x - getX();
