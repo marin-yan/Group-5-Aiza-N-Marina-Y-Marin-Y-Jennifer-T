@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (background image, tables - Jennifer) (Buttons -- Aiza)
+ * @author (background image, tables - Jennifer) (Buttons + stat bar -- Aiza)
  * Credit: reference Pinterest "Animal restaurant app" - Kaleidos
  *         drew and created by Michelle T. (90%) & Jennifer T. (10%)
  * @version (a version number or a date)
@@ -41,6 +41,13 @@ public class RestaurantWorld extends World
     private int spawnDelay = 1200;
     private int maxCustomers = 4;
     
+    //variables for stat bar 
+    private CoinCounter leftCounter;
+    private CoinCounter rightCounter;
+    
+    private LevelStatBar leftBar;
+    private LevelStatBar rightBar;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -72,7 +79,11 @@ public class RestaurantWorld extends World
         addObject(new Owner(character2, false), 810, 210);
         
         // Add the waiter(s)
-        addObject(new Waiter(), 35, 390);
+        //addObject(new Waiter(), 35, 390);
+        
+        //changed original line (commented above if needed) to adjust waiters on both sides
+        addObject(new Waiter(true), 100, 390); //left
+        addObject(new Waiter(false), 1000, 390); //right 
         
         setupTables();
     }

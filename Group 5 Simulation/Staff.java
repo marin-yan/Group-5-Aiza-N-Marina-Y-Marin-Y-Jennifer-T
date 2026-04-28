@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Staff here.
  * 
- * @author (Jennifer) 
+ * @author (Jennifer)(Stat bar updates -- Aiza) 
  * @version (a version number or a date)
  */
 public class Staff extends SuperSmoothMover
@@ -31,9 +31,12 @@ public class Staff extends SuperSmoothMover
     protected GreenfootImage[] walkRight;
     protected GreenfootImage[] walkLeft;
     
-    public void act()
-    {
-        // Add your action code here.
+    //Variables for stat bar updates -- left/right side owner
+    private boolean isLeftTeam;
+    
+    
+    public Staff(boolean isLeftTeam) {
+        this.isLeftTeam = isLeftTeam;
     }
        
     public void walkingDown(){
@@ -80,5 +83,10 @@ public class Staff extends SuperSmoothMover
                 walkingLeft();
             }
         }
+    }
+    
+    //getter for left or right side
+    public boolean isLeftTeam() {
+        return isLeftTeam;
     }
 }

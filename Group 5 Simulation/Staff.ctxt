@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Staff
-comment0.text=\n\ Write\ a\ description\ of\ class\ Staff\ here.\n\ \n\ @author\ (Jennifer)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=void\ act()
+comment0.text=\n\ Write\ a\ description\ of\ class\ Staff\ here.\n\ \n\ @author\ (Jennifer)(Stat\ bar\ updates\ --\ Aiza)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=isLeftTeam
+comment1.target=Staff(boolean)
 comment2.params=
 comment2.target=void\ walkingDown()
 comment3.params=
@@ -13,4 +13,6 @@ comment5.params=
 comment5.target=void\ walkingLeft()
 comment6.params=
 comment6.target=void\ move()
-numComments=7
+comment7.params=
+comment7.target=boolean\ isLeftTeam()
+numComments=8

@@ -10,7 +10,10 @@ import java.util.List;
  */
 public class Waiter extends Staff
 {   
-    public Waiter(){
+    public Waiter(boolean isLeftTeam){
+        //side of screen 
+        super(isLeftTeam);
+        
         animationSpeed = 7;
         
         // Set variables

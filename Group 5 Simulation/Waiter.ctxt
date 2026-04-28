@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Waiter
 comment0.text=\n\ Write\ a\ description\ of\ class\ Waiter\ here.\n\ \n\ @author\ (Jennifer)\n\ Credit\:\ Pinterest\ -Trang\ yury\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Waiter()
+comment1.params=isLeftTeam
+comment1.target=Waiter(boolean)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
