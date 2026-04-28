@@ -38,7 +38,7 @@ public class Owner extends Staff
     private static final int COUNTER_X = 155;
     private static final int COUNTER_Y = 190;
 
-    public Owner(int num, boolean isLeftTeam){
+    public Owner(int num, boolean isLeftSide){
         this.num = num;
         this.isLeftSide = isLeftSide;
         animationSpeed = 8;
