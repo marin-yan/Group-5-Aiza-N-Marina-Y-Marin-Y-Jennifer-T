@@ -82,8 +82,8 @@ public class RestaurantWorld extends World
         //addObject(new Waiter(), 35, 390);
         
         //changed original line (commented above if needed) to adjust waiters on both sides
-        addObject(new Waiter(true), 100, 390); //left
-        addObject(new Waiter(false), 1000, 390); //right 
+        addObject(new Waiter(), 100, 390); //left
+        //addObject(new Waiter(false), 1000, 390); //right 
         
         setupTables();
     }
