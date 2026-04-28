@@ -16,6 +16,12 @@ public class RestaurantWorld extends World
         {200, 650},
         {400, 650}
     };
+    private static final int[][] RIGHT_TABLE_ORDER = {
+        {800, 500},
+        {1000, 500},
+        {1000, 650},
+        {800, 650}
+    };
 
     // Set up background image variables
     private GreenfootImage backgroundImage_player1;
@@ -154,13 +160,20 @@ public class RestaurantWorld extends World
     public void act() {
         spawnCounter++;
         
-        if (spawnCounter >= spawnDelay && getObjects(Customer.class).size() < maxCustomers) {
-            spawnRandomCustomer();
+        if (spawnCounter >= spawnDelay) {
+            if (countCustomersOnSide(true) < maxCustomers) {
+                spawnRandomCustomer(true);
+            }
+            
+            if (countCustomersOnSide(false) < maxCustomers) {
+                spawnRandomCustomer(false);
+            }
+            
             spawnCounter = 0;
         }
     }
     
-    private void spawnRandomCustomer() {
+    private void spawnRandomCustomer(boolean isLeftSide) {
         Customer customer;
         int randomCustomer = Greenfoot.getRandomNumber(2) +1 ;
         
@@ -170,8 +183,9 @@ public class RestaurantWorld extends World
             customer = new Ghost();
         }
         
-        addObject(customer, 405, 210);
-        Table nextTable = getNextTableInOrder();
+        customer.configureSide(isLeftSide);
+        addObject(customer, isLeftSide ? 405 : 810, 210);
+        Table nextTable = getNextTableInOrder(isLeftSide);
 
         if (nextTable != null) {
             customer.setTargetTable(nextTable);
@@ -180,12 +194,13 @@ public class RestaurantWorld extends World
         }
     }
     
-    public Table getNextTableInOrder() {
+    public Table getNextTableInOrder(boolean isLeftSide) {
         java.util.List<Table> tables = getObjects(Table.class);
+        int[][] tableOrder = isLeftSide ? LEFT_TABLE_ORDER : RIGHT_TABLE_ORDER;
         
-        for (int i = 0; i < LEFT_TABLE_ORDER.length; i++) {
-            int targetX = LEFT_TABLE_ORDER[i][0];
-            int targetY = LEFT_TABLE_ORDER[i][1];
+        for (int i = 0; i < tableOrder.length; i++) {
+            int targetX = tableOrder[i][0];
+            int targetY = tableOrder[i][1];
             
             for (Table table : tables) {
                 if (table.getX() == targetX && table.getY() == targetY && !table.isOccupied()) {
@@ -195,5 +210,18 @@ public class RestaurantWorld extends World
         }
         
         return null;
+    }
+
+    private int countCustomersOnSide(boolean isLeftSide) {
+        java.util.List<Customer> customers = getObjects(Customer.class);
+        int count = 0;
+        
+        for (Customer customer : customers) {
+            if (customer.isOnLeftSide() == isLeftSide) {
+                count++;
+            }
+        }
+        
+        return count;
     }
 }
