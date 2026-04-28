@@ -18,9 +18,6 @@ public class Owner extends Staff
     // character 2 and 3 could have special ending
     private int num;
     private boolean isLeftSide;
-
-    // Define locations
-    private int state = 0;
     
     private static final int A_X = 390;
     private static final int A_Y = 275;
@@ -44,7 +41,8 @@ public class Owner extends Staff
     public Owner(int num, boolean isLeftSide){
         this.num = num;
         this.isLeftSide = isLeftSide;
-        animationSpeed = 5;
+        animationSpeed = 8;
+        speed = 8;
         
         // Work for all characters
         walkDown = new GreenfootImage[3];
@@ -205,9 +203,5 @@ public class Owner extends Staff
         }
 
         move();
-    }
-    
-    public boolean at(int x, int y){
-        return Math.abs(getPreciseX() - x) < 2 && Math.abs(getPreciseY() - y) < 2;
     }
 }

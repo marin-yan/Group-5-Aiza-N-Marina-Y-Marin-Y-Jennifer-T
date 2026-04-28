@@ -6,12 +6,16 @@ import java.util.List;
  * 
  * @author (Jennifer)
  * Credit: Pinterest -Trang yury
+ *         code "void moveTo(), serveCustomer()" with help of ChatGPT
  * @version (a version number or a date)
  */
 public class Waiter extends Staff
 {   
+    private Customer targetCustomer;
+    
     public Waiter(){
         animationSpeed = 7;
+        speed = 2;
         
         // Set variables
         walkDown = new GreenfootImage[4];
@@ -47,45 +51,84 @@ public class Waiter extends Staff
     }
     
     public void act(){
-        moveToCustomer();
+        serveCustomer();
     }
     
-    public void moveToCustomer(){
-        // A list of customers 
+    public void serveCustomer(){
+        if(state == 0){
+            findCustomer();
+        }else if(state == 1){
+            moveTo(targetCustomer.getX(), targetCustomer.getY());
+            if(at(targetCustomer.getX(), targetCustomer.getY())){
+                state = 2;
+            }
+        }else if(state == 2){
+            // Go to a sace zone
+            moveTo(400, 390);
+            if(at(400, 390)){
+                state = 3;
+            }
+        }else if(state == 3){
+            // Kitchen area - left side
+            moveTo(0, 390);
+            if(at(0, 390)){
+                state = 4;
+            }
+        }else if(state == 4){
+            moveTo(targetCustomer.getX(), targetCustomer.getY());
+            if(at(targetCustomer.getX(), targetCustomer.getY())){
+                targetCustomer.setOrdered(false);
+                targetCustomer.setServed(true);
+                
+                targetCustomer = null;
+                state = 0;
+            }
+        }
+    }
+    
+    public void findCustomer(){
         List<Customer> customers = getWorld().getObjects(Customer.class);
         
-        if(!customers.isEmpty()){
-            for(int i = 0; i < customers.size(); i++){
-                Customer customer = customers.get(i);
-                if(customer.hasOrdered()){
-                    moveTo(customer.getX(), customer.getY());
-                    return;
-                }
+        for(int i = 0; i < customers.size(); i++){
+            Customer customer = customers.get(i);
+            
+            if(customer.hasOrdered()){
+                targetCustomer = customer;
+                state = 1;
+                return;
             }
         }
     }
     
     public void moveTo(int x, int y){
-        double dx = x - getPreciseX();
-        double dy = y - getPreciseY();
-        double distance = Math.sqrt(dx * dx + dy * dy);
+        int dx = x - getX();
+        int dy = y - getY();
+
+        // Move horizontally first
+        if(Math.abs(dx) > 2){
+            moving = true;
+
+            if (dx > 0){
+                facing = "right";
+                setLocation(getX() + speed, getY());
+            }else{
+                facing = "left";
+                setLocation(getX() - speed, getY());
+            }
+        }else if(Math.abs(dy) > 2){ // Then move vertically
+            moving = true;
     
-        // Stop when close enough
-        if (distance < speed){
-            setLocation(x, y);
+            if(dy > 0){
+                facing = "down";
+                setLocation(getX(), getY() + speed);
+            }else{
+                facing = "up";
+                setLocation(getX(), getY() - speed);
+            }
+        }else{
             moving = false;
-            return;
         }
         
-        moving = true;
-    
-        // Decide facing direction (for animation)
-        if (Math.abs(dx) > Math.abs(dy)){
-            facing = (dx > 0) ? "right" : "left";
-        }else{
-            facing = (dy > 0) ? "down" : "up";
-        }
-
         move();
     }
 }

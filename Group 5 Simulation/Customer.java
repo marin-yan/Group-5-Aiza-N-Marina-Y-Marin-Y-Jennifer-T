@@ -32,6 +32,9 @@ public class Customer extends SuperSmoothMover
     protected int speed = 5;
     protected int animationSpeed;
     
+    // Track moving
+    protected boolean moving = false;
+    
     // Initializing the arrays
     protected GreenfootImage[] walkDown;
     protected GreenfootImage[] walkUp;
@@ -46,7 +49,8 @@ public class Customer extends SuperSmoothMover
     private Menu menu = new Menu();
     private OrderIcon orderIcon;
     private int orderedFoodIndex;
-    boolean ordered = false;
+    private boolean ordered = false;
+    private boolean served = false;
     
     public Customer() {
         setImage("customer.png");
@@ -63,6 +67,9 @@ public class Customer extends SuperSmoothMover
             showOrderIcon();
             orderFood();
             ordered = true;
+        } else if (served)
+        {
+            leaveRestaurant();
         }
     }
     
@@ -282,5 +289,56 @@ public class Customer extends SuperSmoothMover
     
     public boolean hasOrdered(){
         return ordered;
+    }
+    
+    public void setOrdered(boolean value){
+        ordered = value;
+    }
+    
+    public void setServed(boolean value){
+        served = value;
+    }
+    
+    public void leaveRestaurant(){
+        moveTo(ENTRY_X, ENTRY_Y);
+        if(at(ENTRY_X, ENTRY_Y)){
+            //getWorld().removeObject(this);
+        }
+    }
+    
+    public void moveTo(int x, int y){
+        int dx = x - getX();
+        int dy = y - getY();
+
+        // Move horizontally first
+        if(Math.abs(dx) > 2){
+            moving = true;
+
+            if (dx > 0){
+                facing = "right";
+                setLocation(getX() + speed, getY());
+            }else{
+                facing = "left";
+                setLocation(getX() - speed, getY());
+            }
+        }else if(Math.abs(dy) > 2){ // Then move vertically
+            moving = true;
+    
+            if(dy > 0){
+                facing = "down";
+                setLocation(getX(), getY() + speed);
+            }else{
+                facing = "up";
+                setLocation(getX(), getY() - speed);
+            }
+        }else{
+            moving = false;
+        }
+        
+        move();
+    }
+    
+    public boolean at(int x, int y){
+        return Math.abs(getPreciseX() - x) < 5 && Math.abs(getPreciseY() - y) < 5;
     }
 }

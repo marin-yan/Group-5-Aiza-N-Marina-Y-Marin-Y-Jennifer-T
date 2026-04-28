@@ -22,8 +22,10 @@ public class Staff extends SuperSmoothMover
     protected int counter = 0;
     
     // Speed of the customer
-    protected int speed = 5;
+    protected int speed;
     protected int animationSpeed;
+    
+    protected int state = 0;
     
     // Initializing the arrays
     protected GreenfootImage[] walkDown;
@@ -80,5 +82,9 @@ public class Staff extends SuperSmoothMover
                 walkingLeft();
             }
         }
+    }
+    
+    public boolean at(int x, int y){
+        return Math.abs(getPreciseX() - x) < 5 && Math.abs(getPreciseY() - y) < 5;
     }
 }

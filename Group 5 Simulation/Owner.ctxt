@@ -11,6 +11,4 @@ comment4.params=
 comment4.target=void\ goRouteRight()
 comment5.params=x\ y
 comment5.target=void\ moveTo(int,\ int)
-comment6.params=x\ y
-comment6.target=boolean\ at(int,\ int)
-numComments=7
+numComments=6
