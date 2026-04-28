@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=LevelStatBar
+comment0.text=\n\ Write\ a\ description\ of\ class\ LevelStatBar\ here.\n\ \n\ @author\ (Aiza)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=LevelStatBar()
+comment2.params=amount
+comment2.target=void\ addCoins(int)
+comment3.params=
+comment3.target=int\ getLevel()
+comment4.params=
+comment4.target=int\ getTotalCoins()
+comment5.params=
+comment5.target=void\ act()
+numComments=6

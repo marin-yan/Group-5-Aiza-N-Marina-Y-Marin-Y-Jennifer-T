@@ -5,62 +5,31 @@ dependency1.type=UsesDependency
 dependency2.from=StartWorld
 dependency2.to=StoryWorld
 dependency2.type=UsesDependency
-dependency3.from=StoryWorld
-dependency3.to=CustomizeWorld
+dependency3.from=CustomizeWorld
+dependency3.to=SelectionButton
 dependency3.type=UsesDependency
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-dependency4.from=StartButton
-dependency4.to=RestaurantWorld
-=======
-dependency4.from=RestaurantWorld
-dependency4.to=Customer
->>>>>>> Stashed changes
+dependency4.from=CustomizeWorld
+dependency4.to=StoryWorld
 dependency4.type=UsesDependency
 dependency5.from=RestaurantWorld
-dependency5.to=Frog
+dependency5.to=Customer
 dependency5.type=UsesDependency
-<<<<<<< Updated upstream
-editor.fx.0.height=728
-editor.fx.0.width=1077
-editor.fx.0.x=184
-editor.fx.0.y=47
-height=819
-package.numDependencies=5
-package.numTargets=16
-=======
-dependency4.from=RestaurantWorld
-dependency4.to=Table
-dependency4.type=UsesDependency
-dependency5.from=StartButton
-dependency5.to=RestaurantWorld
-dependency5.type=UsesDependency
-dependency6.from=SelectionButton
-dependency6.to=RestaurantWorld
+dependency6.from=RestaurantWorld
+dependency6.to=Frog
 dependency6.type=UsesDependency
+dependency7.from=StartButton
+dependency7.to=RestaurantWorld
+dependency7.type=UsesDependency
+dependency8.from=SelectionButton
+dependency8.to=RestaurantWorld
+dependency8.type=UsesDependency
 editor.fx.0.height=728
 editor.fx.0.width=1077
 editor.fx.0.x=113
 editor.fx.0.y=114
 height=819
-package.numDependencies=6
-package.numTargets=19
->>>>>>> Stashed changes
-=======
-dependency6.from=StartButton
-dependency6.to=RestaurantWorld
-dependency6.type=UsesDependency
-dependency7.from=SelectionButton
-dependency7.to=RestaurantWorld
-dependency7.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-height=804
-package.numDependencies=7
+package.numDependencies=8
 package.numTargets=20
->>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -90,134 +59,68 @@ target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target11.name=Money
-=======
 target11.name=StoryWorld
->>>>>>> Stashed changes
-=======
-target11.name=StoryWorld
->>>>>>> Stashed changes
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target12.name=Button
-=======
 target12.name=StartButton
->>>>>>> Stashed changes
-=======
-target12.name=StartButton
->>>>>>> Stashed changes
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
 target13.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target13.name=ArrowButton
-=======
 target13.name=RestaurantWorld
->>>>>>> Stashed changes
-=======
-target13.name=RestaurantWorld
->>>>>>> Stashed changes
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=120
 target13.x=0
 target13.y=0
 target14.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target14.name=Menu
-=======
 target14.name=Money
->>>>>>> Stashed changes
-=======
-target14.name=Money
->>>>>>> Stashed changes
 target14.showInterface=false
 target14.type=ClassTarget
 target14.width=120
 target14.x=0
 target14.y=0
 target15.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target15.name=Waiter
-=======
 target15.name=Button
->>>>>>> Stashed changes
-=======
-target15.name=Button
->>>>>>> Stashed changes
 target15.showInterface=false
 target15.type=ClassTarget
 target15.width=120
 target15.x=0
 target15.y=0
 target16.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target16.name=SelectionButton
-=======
 target16.name=ArrowButton
->>>>>>> Stashed changes
-=======
-target16.name=ArrowButton
->>>>>>> Stashed changes
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=120
 target16.x=0
 target16.y=0
-<<<<<<< Updated upstream
-=======
 target17.height=70
-<<<<<<< Updated upstream
-target17.name=Menu
-=======
 target17.name=Ghost
->>>>>>> Stashed changes
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=120
 target17.x=0
 target17.y=0
 target18.height=70
-<<<<<<< Updated upstream
-target18.name=Waiter
-=======
 target18.name=Menu
->>>>>>> Stashed changes
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=120
 target18.x=0
 target18.y=0
 target19.height=70
-<<<<<<< Updated upstream
-target19.name=SelectionButton
-=======
 target19.name=Waiter
->>>>>>> Stashed changes
 target19.showInterface=false
 target19.type=ClassTarget
 target19.width=120
 target19.x=0
 target19.y=0
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 target2.height=70
 target2.name=Table
 target2.showInterface=false
@@ -254,22 +157,14 @@ target5.width=130
 target5.x=0
 target5.y=0
 target6.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target6.name=StartWorld
-=======
 target6.name=Staff
->>>>>>> Stashed changes
-=======
-target6.name=Staff
->>>>>>> Stashed changes
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
-target7.name=EndScreen
+target7.name=StartWorld
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
@@ -283,34 +178,14 @@ target8.width=120
 target8.x=0
 target8.y=0
 target9.height=70
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-target9.name=StartButton
-=======
 target9.name=SuperStatBar
->>>>>>> Stashed changes
-=======
-target9.name=SuperStatBar
->>>>>>> Stashed changes
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-<<<<<<< Updated upstream
 width=1440
 world.lastInstantiated=StartWorld
-<<<<<<< Updated upstream
-xPosition=76
-yPosition=141
-=======
-xPosition=48
-yPosition=108
->>>>>>> Stashed changes
-=======
-width=1425
-world.lastInstantiated=StartWorld
-xPosition=7
-yPosition=33
->>>>>>> Stashed changes
+xPosition=85
+yPosition=26
