@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Credit: Pinterest "16 Bit Video Game Images - Browse 9332 Stock Photos, Vectors, and Video"
  * @version (a version number or a date)
  */
-public class Money extends SuperStatBar
+public class Money extends Actor
 {
     // Track index of the coin
     private int coinIndex = 0;

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ContinueButton
-comment0.text=\n\ Write\ a\ description\ of\ class\ ContinueButton\ here.\n\ \n\ @author\ (Marina)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ ContinueButton\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=world
 comment1.target=ContinueButton(StoryWorld)
 comment2.params=

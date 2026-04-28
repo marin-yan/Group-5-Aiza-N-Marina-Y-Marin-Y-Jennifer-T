@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=CoinCounter
+comment0.text=\n\ Write\ a\ description\ of\ class\ CoinCounter\ here.\n\ \n\ @author\ (Aiza)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=CoinCounter()
+comment2.params=amount
+comment2.target=void\ addCoins(int)
+comment3.params=
+comment3.target=int\ getCoins()
+comment4.params=
+comment4.target=void\ updateImage()
+comment5.params=
+comment5.target=void\ act()
+numComments=6
