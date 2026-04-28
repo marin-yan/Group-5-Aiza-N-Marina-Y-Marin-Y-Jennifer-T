@@ -86,7 +86,7 @@ public class Waiter extends Staff
         for(int i = 0; i < customers.size(); i++){
             Customer customer = customers.get(i);
             
-            if(customer.hasOrdered()){
+            if(customer.hasOrdered() && customer.getX() < 600){
                 targetCustomer = customer;
                 state = 1;
                 return;
