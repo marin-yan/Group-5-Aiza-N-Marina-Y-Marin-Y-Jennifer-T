@@ -29,8 +29,11 @@ public class Customer extends SuperSmoothMover
     protected int counter = 0;
     
     // Speed of the customer
-    protected int speed = 5;
+    protected int speed = 4;
     protected int animationSpeed;
+    
+    // Track moving
+    protected boolean moving = false;
     
     // Initializing the arrays
     protected GreenfootImage[] walkDown;
@@ -46,7 +49,9 @@ public class Customer extends SuperSmoothMover
     private Menu menu = new Menu();
     private OrderIcon orderIcon;
     private int orderedFoodIndex;
-    boolean ordered = false;
+    private boolean ordered = false;
+    private boolean served = false;
+    private boolean gaveMoney = false;
     
     public Customer() {
         setImage("customer.png");
@@ -59,10 +64,11 @@ public class Customer extends SuperSmoothMover
     public void act()  {
         if (!seated && targetTable != null ){
             moveToTable();
-        } else if (seated && !ordered) {
+        }else if (served){
+            leaveRestaurant();
+        }else if (seated){
             showOrderIcon();
             orderFood();
-            ordered = true;
         }
     }
     
@@ -89,6 +95,10 @@ public class Customer extends SuperSmoothMover
     }
     
     public void orderFood() {
+        if(ordered){
+            return;
+        }
+        
         orderedFoodIndex = Greenfoot.getRandomNumber(menu.getMenuSize());
         int randomOrder = Greenfoot.getRandomNumber(menu.getMenuSize()) + 1;
         
@@ -100,6 +110,8 @@ public class Customer extends SuperSmoothMover
         
         GreenfootImage orderedImage = menu.getMenuImages()[orderedFoodIndex];
         orderIcon.setImage(orderedImage);
+        
+        ordered = true;
     }
         
     public void walkingDown(){
@@ -282,5 +294,68 @@ public class Customer extends SuperSmoothMover
     
     public boolean hasOrdered(){
         return ordered;
+    }
+    
+    public void setOrdered(boolean value){
+        ordered = value;
+    }
+    
+    public void setServed(boolean value){
+        served = value;
+    }
+    
+    public void leaveRestaurant(){
+        if(orderIcon != null){
+            getWorld().removeObject(orderIcon);
+            orderIcon = null;
+        }
+        
+        if(!gaveMoney){
+            // Add the coin
+            getWorld().addObject(new Money(), getX() + 40, getY());
+            gaveMoney = true;
+        }
+        
+        if(!at(ENTRY_X, ENTRY_Y)){
+            moveTo(ENTRY_X, ENTRY_Y);
+        }else{
+            getWorld().removeObject(this);
+        }
+        }
+    
+    public void moveTo(int x, int y){
+        int dx = x - getX();
+        int dy = y - getY();
+
+        // Move horizontally first
+        if(Math.abs(dx) > 2){
+            moving = true;
+
+            if (dx > 0){
+                facing = "right";
+                setLocation(getX() + speed, getY());
+            }else{
+                facing = "left";
+                setLocation(getX() - speed, getY());
+            }
+        }else if(Math.abs(dy) > 2){ // Then move vertically
+            moving = true;
+    
+            if(dy > 0){
+                facing = "down";
+                setLocation(getX(), getY() + speed);
+            }else{
+                facing = "up";
+                setLocation(getX(), getY() - speed);
+            }
+        }else{
+            moving = false;
+        }
+        
+        move();
+    }
+    
+    public boolean at(int x, int y){
+        return Math.abs(getPreciseX() - x) < 5 && Math.abs(getPreciseY() - y) < 5;
     }
 }
