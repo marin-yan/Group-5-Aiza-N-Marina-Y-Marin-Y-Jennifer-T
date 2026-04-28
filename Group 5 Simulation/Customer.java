@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Customer extends SuperSmoothMover
 {
-    private static final int ENTRY_X = 405;
+    private static final int LEFT_ENTRY_X = 405;
+    private static final int RIGHT_ENTRY_X = 810;
     private static final int ENTRY_Y = 210;
-    private static final int FIRST_TABLE_X = 200;
-    private static final int FIRST_TABLE_Y = 500;
-    private static final int THIRD_TABLE_X = 200;
-    private static final int THIRD_TABLE_Y = 650;
+    private static final int LEFT_SPECIAL_X = 200;
+    private static final int RIGHT_SPECIAL_X = 1000;
+    private static final int TOP_ROW_Y = 500;
+    private static final int BOTTOM_ROW_Y = 650;
     private static final int COUNTER_X = 225;
     private static final int COUNTER_Y = 275;
     private static final double WALK_SPEED = 2.2;
@@ -45,6 +46,8 @@ public class Customer extends SuperSmoothMover
     protected Table targetTable;
     protected boolean seated = false;
     private int pathStage = 0;
+    private boolean isLeftSide = true;
+    private int entryX = LEFT_ENTRY_X;
     
     private Menu menu = new Menu();
     private OrderIcon orderIcon;
@@ -59,7 +62,7 @@ public class Customer extends SuperSmoothMover
     }
     
     public void addedToWorld(World world) {
-        setLocation(ENTRY_X, ENTRY_Y);
+        setLocation(entryX, ENTRY_Y);
     }
     
     public void act()  {
@@ -169,14 +172,19 @@ public class Customer extends SuperSmoothMover
         }
     }
     
+    public void configureSide(boolean isLeftSide) {
+        this.isLeftSide = isLeftSide;
+        entryX = isLeftSide ? LEFT_ENTRY_X : RIGHT_ENTRY_X;
+    }
+    
     public void moveToTable() {
-        if (isFirstTableTarget()) {
-            followFirstTablePath();
+        if (isTopSpecialTableTarget()) {
+            followTopSpecialTablePath();
             return;
         }
         
-        if (isThirdTableTarget()) {
-            followThirdTablePath();
+        if (isBottomSpecialTableTarget()) {
+            followBottomSpecialTablePath();
             return;
         }
         
@@ -205,21 +213,21 @@ public class Customer extends SuperSmoothMover
         }
     }
     
-    private boolean isFirstTableTarget() {
+    private boolean isTopSpecialTableTarget() {
         return targetTable != null
-            && targetTable.getX() == FIRST_TABLE_X
-            && targetTable.getY() == FIRST_TABLE_Y;
+            && targetTable.getX() == getSpecialTableX()
+            && targetTable.getY() == TOP_ROW_Y;
     }
     
-    private boolean isThirdTableTarget() {
+    private boolean isBottomSpecialTableTarget() {
         return targetTable != null
-            && targetTable.getX() == THIRD_TABLE_X
-            && targetTable.getY() == THIRD_TABLE_Y;
+            && targetTable.getX() == getSpecialTableX()
+            && targetTable.getY() == BOTTOM_ROW_Y;
     }
     
-    private void followFirstTablePath() {
+    private void followTopSpecialTablePath() {
         if (pathStage == 0) {
-            if (Math.abs(getY() - FIRST_TABLE_Y) > 2) {
+            if (Math.abs(getY() - TOP_ROW_Y) > 2) {
                 facing = "down";
                 move();
                 return;
@@ -228,8 +236,8 @@ public class Customer extends SuperSmoothMover
         }
         
         if (pathStage == 1) {
-            if (Math.abs(getX() - FIRST_TABLE_X) > 2) {
-                facing = "left";
+            if (Math.abs(getX() - getSpecialTableX()) > 2) {
+                facing = isLeftSide ? "left" : "right";
                 move();
                 return;
             }
@@ -239,9 +247,9 @@ public class Customer extends SuperSmoothMover
         moveDirectlyToTargetTable();
     }
     
-    private void followThirdTablePath() {
+    private void followBottomSpecialTablePath() {
         if (pathStage == 0) {
-            if (Math.abs(getY() - FIRST_TABLE_Y) > 2) {
+            if (Math.abs(getY() - TOP_ROW_Y) > 2) {
                 facing = "down";
                 move();
                 return;
@@ -250,8 +258,8 @@ public class Customer extends SuperSmoothMover
         }
         
         if (pathStage == 1) {
-            if (Math.abs(getX() - THIRD_TABLE_X) > 2) {
-                facing = "left";
+            if (Math.abs(getX() - getSpecialTableX()) > 2) {
+                facing = isLeftSide ? "left" : "right";
                 move();
                 return;
             }
@@ -321,12 +329,20 @@ public class Customer extends SuperSmoothMover
             gaveMoney = true;
         }
         
-        if(!at(ENTRY_X, ENTRY_Y)){
-            moveTo(ENTRY_X, ENTRY_Y);
+        if(!at(entryX, ENTRY_Y)){
+            moveTo(entryX, ENTRY_Y);
         }else{
             getWorld().removeObject(this);
         }
         }
+
+    public boolean isOnLeftSide() {
+        return isLeftSide;
+    }
+
+    private int getSpecialTableX() {
+        return isLeftSide ? LEFT_SPECIAL_X : RIGHT_SPECIAL_X;
+    }
     
     public void moveTo(int x, int y){
         int dx = x - getX();
