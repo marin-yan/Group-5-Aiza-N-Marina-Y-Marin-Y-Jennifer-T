@@ -17,7 +17,7 @@ public class Menu extends Actor
     
     private GreenfootImage[] menuImages = {
         new GreenfootImage("Menu/cookie.png"),
-        new GreenfootImage("Menu/cookiestack.jpg")
+        new GreenfootImage("Menu/cookiestack.png")
     };
     
     public void act()
