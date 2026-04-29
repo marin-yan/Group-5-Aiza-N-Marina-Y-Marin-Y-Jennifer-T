@@ -46,10 +46,8 @@ public class CustomizeWorld extends World
         textBg.setFont(new Font(25)); //"FontName, bold, italic, size"
         textBg.drawString("Waiter Count", 140, 545);
         textBg.drawString("Waiter Speed", 140, 625);
-        textBg.drawString("Carry Limit", 150, 705);
         textBg.drawString("Waiter Count", 750, 545);
         textBg.drawString("Waiter Speed", 750, 625);
-        textBg.drawString("Carry Limit", 760, 705);
         
         // Left display 
         display1 = new CharacterDisplay(character1);
