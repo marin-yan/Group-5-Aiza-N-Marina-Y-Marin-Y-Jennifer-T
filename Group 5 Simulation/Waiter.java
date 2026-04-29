@@ -17,6 +17,15 @@ public class Waiter extends Staff
     private CheckIcon checkL = new CheckIcon();
     private CheckIcon checkR = new CheckIcon();
     
+    // Path Points 
+    private static final int kitchenLX = 119;
+    private static final int kitchenLY = 733;
+    private static final int middleLX = 300;
+    private static final int middleLY = 555;
+    private static final int upperLX = middleLX;
+    private static final int upperLY = 390;
+
+    
     public Waiter(boolean isLeftSide){
         this.isLeftSide = isLeftSide;
         animationSpeed = 10;
@@ -68,60 +77,84 @@ public class Waiter extends Staff
             findCustomerL();
         }else if(state == 1){
             // Starting point - go to the customer directly
+            
             if(at(100, 390)){
                 state = 3;
             }
-            moveTo(300, 555);
-            if(at(300, 555)){
-                if(targetCustomerL.getY() < 555){
-                    state = 2;
-                }else{
-                    state = 3;
+            
+            // If at the same level - go to the customer directly 
+            int customerX = targetCustomerL.getX();
+            boolean sameLane = Math.abs(customerX - middleLX) < 100;
+            
+            if(sameLane){
+                state = 3;
+            }else{
+                moveTo(middleLX, middleLY);
+                if(at(middleLX, middleLY)){
+                    if(targetCustomerL.getY() < 555){
+                        state = 2;
+                    }else{
+                        state = 3;
+                    }
                 }
             }
         }else if(state == 2){
             // Upper point
-            moveTo(300, 390);
-            if(at(300, 390)){
+            moveTo(upperLX, upperLY);
+            if(at(upperLX, upperLY)){
                 state = 3;
             }
         }else if(state == 3){
-            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 10);
-            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 10)){
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 15);
+            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 15)){
                 getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
-                state = 4;
-            }  
+                
+                int customerDistance =(targetCustomerL.getX() - kitchenLX) * (targetCustomerL.getX() - kitchenLX) + (targetCustomerL.getY() - kitchenLY) * (targetCustomerL.getY() - kitchenLY);
+                int middleDistance = (middleLX - kitchenLX) * (middleLX - kitchenLX) + (middleLY - kitchenLY) * (middleLY - kitchenLY);
+                if(customerDistance < middleDistance){
+                    state = 5;
+                }else{
+                    state = 4;
+                }
+            }
         }else if(state == 4){
             // Middle point
-            moveTo(300, 555);
-            if(at(300, 555)){
+            moveTo(middleLX, middleLY);
+            if(at(middleLX, middleLY)){
                 state = 5;
             }
         }else if(state == 5){
             // Kitchen area - left side 
-            moveTo(119, 733);
-            if(at(119, 733)){
+            moveTo(kitchenLX, kitchenLY);
+            if(at(kitchenLX, kitchenLY)){
                 state = 6;
             }
         }else if(state == 6){
-            // Middle point
-            moveTo(300, 555);
-            if(at(300, 555)){
-                if(targetCustomerL.getY() < 555){
-                    state = 7;
-                }else{
-                    state = 8;
+            int customerX = targetCustomerL.getX();
+            boolean sameLane = Math.abs(customerX - middleLX) < 100;
+            
+            if(sameLane){
+                state = 8;
+            }else{
+                // Middle point
+                moveTo(middleLX, middleLY);
+                if(at(middleLX, middleLY)){
+                    if(targetCustomerL.getY() < 555){
+                        state = 7;
+                    }else{
+                        state = 8;
+                    }
                 }
             }
         }else if(state == 7){
             // Upper point - Move up if customers are on upper lane
-            moveTo(300, 390);
-            if(at(300, 390)){
+            moveTo(upperLX, upperLY);
+            if(at(upperLX, upperLY)){
                 state = 8;
             }
         }else if(state == 8){
-            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 10);
-            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 10)){
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 15);
+            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 15)){
                 getWorld().removeObject(checkL);
                 targetCustomerL.setOrdered(false);
                 targetCustomerL.setServed(true);

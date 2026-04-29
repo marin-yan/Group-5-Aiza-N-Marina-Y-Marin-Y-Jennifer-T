@@ -27,7 +27,7 @@ public class Owner extends Staff
     private static final int C_X = 315;
     private static final int C_Y = 300;
     
-    private static final int D_X = 10;
+    private static final int D_X = 2;
     private static final int D_Y = 300;
     
     private static final int E_X = 12;
