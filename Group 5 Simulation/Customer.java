@@ -365,26 +365,28 @@ public class Customer extends SuperSmoothMover
 
             if (dx > 0){
                 facing = "right";
-                setLocation(getX() + speed, getY());
+                //setLocation(getX() + speed, getY());
             }else{
                 facing = "left";
-                setLocation(getX() - speed, getY());
+                //setLocation(getX() - speed, getY());
             }
         }else if(Math.abs(dy) > 2){ // Then move vertically
             moving = true;
     
             if(dy > 0){
                 facing = "down";
-                setLocation(getX(), getY() + speed);
+                //setLocation(getX(), getY() + speed);
             }else{
                 facing = "up";
-                setLocation(getX(), getY() - speed);
+                //setLocation(getX(), getY() - speed);
             }
         }else{
             moving = false;
         }
         
-        move();
+        if(moving){
+            move();
+        }
     }
     
     public boolean at(int x, int y){

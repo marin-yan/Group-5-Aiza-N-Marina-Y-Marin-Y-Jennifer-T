@@ -84,12 +84,9 @@ public class RestaurantWorld extends World
         addObject(new Owner(character1, true), 390, 210);
         addObject(new Owner(character2, false), 810, 210);
         
-        // Add the waiter(s)
-        //addObject(new Waiter(), 35, 390);
-        
-        //changed original line (commented above if needed) to adjust waiters on both sides
-        addObject(new Waiter(), 100, 390); //left
-        //addObject(new Waiter(false), 1000, 390); //right 
+        //Changed original line (commented above if needed) to adjust waiters on both sides
+        addObject(new Waiter(true), 100, 390); //left
+        addObject(new Waiter(false), 1100, 390); //right 
         
         //Left side
         leftCounter = new CoinCounter();
