@@ -21,6 +21,12 @@ public class CustomizeWorld extends World
     private int character2 = 0;
     private CharacterDisplay display2;
     
+    // Waiter Count
+    private int value1 = 0;
+    private WaiterCount displayI;
+    private int value2 = 0;
+    private WaiterCount displayII;
+    
     private Button readyButton;
     
     /**
@@ -55,11 +61,22 @@ public class CustomizeWorld extends World
         addObject(new ArrowButton(1, -1), 190, 405);
         addObject(new ArrowButton(1, 1), 395,405);
         
+        displayI = new WaiterCount(value1);
+        addObject(displayI, 392, 535);
+        
         // Right display
         display2 = new CharacterDisplay(character2);
         addObject(display2, 880, 300);
         addObject(new ArrowButton(2, -1), 790, 405);
         addObject(new ArrowButton(2, 1), 995, 405);
+        
+        displayII = new WaiterCount(value2);
+        addObject(displayII, 992, 535);
+        
+        addObject(new AdjustmentButton(1, -1), 340, 535);
+        addObject(new AdjustmentButton(1, 1), 445, 535);
+        addObject(new AdjustmentButton(2, -1), 940, 535);
+        addObject(new AdjustmentButton(2, 1), 1045, 535);
         
         // ready Button
         readyButton = new Button("Ready", 150);
@@ -109,6 +126,40 @@ public class CustomizeWorld extends World
             }else{
                 addObject(display2, 895, 290);
             }
+        }
+    }
+    
+    public void changeWaiterCount(int value, int direction){
+        if(value == 1){
+            value1 += direction;
+            
+            if(value1 > 3){
+                value1 = 0;
+            }
+            
+            if(value1 < 0){
+                value1 = 3;
+            }
+            
+            removeObject(displayI);
+            displayI = new WaiterCount(value1);
+            addObject(displayI, 392, 535);
+        }
+        
+        if(value == 2){
+            value2 += direction;
+            
+            if(value2 > 3){
+                value2 = 0;
+            }
+            
+            if(value2 < 0){
+                value2 = 3;
+            }
+            
+            removeObject(displayII);
+            displayII = new WaiterCount(value2);
+            addObject(displayII, 992, 535);
         }
     }
     
