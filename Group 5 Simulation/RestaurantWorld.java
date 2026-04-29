@@ -91,6 +91,18 @@ public class RestaurantWorld extends World
         addObject(new Waiter(), 100, 390); //left
         //addObject(new Waiter(false), 1000, 390); //right 
         
+        //Left side
+        leftCounter = new CoinCounter();
+        leftBar = new LevelStatBar();
+        addObject(leftCounter, 120, 30);
+        addObject(leftBar, 300, 30);
+        
+        //Right side
+        rightCounter = new CoinCounter();
+        rightBar = new LevelStatBar();
+        addObject(rightCounter, 720, 30);
+        addObject(rightBar, 900, 30);
+        
         setupTables();
     }
     
@@ -223,5 +235,16 @@ public class RestaurantWorld extends World
         }
         
         return count;
+    }
+    
+    //helper method
+    public void addCoins(boolean isLeftTeam, int amount) {
+        if(isLeftTeam) {
+            leftCounter.addCoins(amount);
+            leftBar.addCoins(amount);
+        } else {
+            rightCounter.addCoins(amount);
+            rightBar.addCoins(amount);
+        }
     }
 }

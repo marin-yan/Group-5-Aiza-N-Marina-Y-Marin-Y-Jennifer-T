@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Staff here.
  * 
- * @author (Jennifer) 
+ * @author (Jennifer) (Stat bar additions -- Aiza)
  * @version (a version number or a date)
  */
 public class Staff extends SuperSmoothMover
@@ -32,6 +32,9 @@ public class Staff extends SuperSmoothMover
     protected GreenfootImage[] walkUp;
     protected GreenfootImage[] walkRight;
     protected GreenfootImage[] walkLeft;
+    
+    //for stat bar
+
     
     public void act()
     {

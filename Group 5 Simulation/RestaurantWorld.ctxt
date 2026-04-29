@@ -16,4 +16,6 @@ comment6.params=isLeftSide
 comment6.target=Table\ getNextTableInOrder(boolean)
 comment7.params=isLeftSide
 comment7.target=int\ countCustomersOnSide(boolean)
-numComments=8
+comment8.params=isLeftTeam\ amount
+comment8.target=void\ addCoins(boolean,\ int)
+numComments=9

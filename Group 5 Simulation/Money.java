@@ -23,6 +23,9 @@ public class Money extends Actor
     
     private int timer = 120; // 2 secs
     
+    //for stat bar
+    private boolean isLeftTeam;
+    
     public Money(){
         coins = new GreenfootImage[7];
         for(int i = 0; i < coins.length; i++){
@@ -38,6 +41,7 @@ public class Money extends Actor
     public void act(){
         timer--;
         if(timer <= 0){
+            giveCoins();
             getWorld().removeObject(this);
         }else{
             counter++;
@@ -47,5 +51,17 @@ public class Money extends Actor
                 coinIndex = (coinIndex + 1) % coins.length;
             }
         }
+    }
+    
+    //for stat bar
+    public void setTeam(boolean isLeftTeam) {
+        this.isLeftTeam = isLeftTeam;
+    }
+    
+    private void giveCoins()
+    {
+        RestaurantWorld world = (RestaurantWorld)getWorld();
+        boolean isLeftTeam = getX() < world.getWidth() / 2;
+        world.addCoins(isLeftTeam, 1);
     }
 }
