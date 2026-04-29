@@ -345,7 +345,7 @@ public class Customer extends SuperSmoothMover
         }else{
             getWorld().removeObject(this);
         }
-        }
+    }
 
     public boolean isOnLeftSide() {
         return isLeftSide;
