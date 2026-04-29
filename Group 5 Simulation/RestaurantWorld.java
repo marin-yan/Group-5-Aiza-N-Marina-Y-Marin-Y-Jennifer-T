@@ -182,7 +182,7 @@ public class RestaurantWorld extends World
     public void act() {
         if (leftBar.hasFinishedGame() || rightBar.hasFinishedGame())
         {
-            Greenfoot.setWorld(new EndScreen(leftBar.getTotalCoins(), rightBar.getTotalCoins(), character1, character2));
+            Greenfoot.setWorld(new EndScreen(leftBar.getTotalCoins(), rightBar.getTotalCoins(), character1, character2, leftBar.getLevel(), rightBar.getLevel()));
         }
         
         spawnCounter++;

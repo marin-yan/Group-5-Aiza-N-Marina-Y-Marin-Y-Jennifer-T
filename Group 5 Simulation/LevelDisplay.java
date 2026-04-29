@@ -19,7 +19,7 @@ public class LevelDisplay extends Actor
 
     private void updateImage()
     {
-        GreenfootImage img = new GreenfootImage("Level " + level, 20, Color.BLACK, new Color(0,0,0,0));
+        GreenfootImage img = new GreenfootImage("Level " + level, 23, Color.BLACK, new Color(0,0,0,0));
         setImage(img);
     }
 
