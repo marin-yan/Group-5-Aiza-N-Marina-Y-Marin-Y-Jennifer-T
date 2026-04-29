@@ -27,6 +27,9 @@ public class Staff extends SuperSmoothMover
     
     protected int state = 0;
     
+    // Two sides 
+    protected boolean isLeftSide;
+    
     // Initializing the arrays
     protected GreenfootImage[] walkDown;
     protected GreenfootImage[] walkUp;

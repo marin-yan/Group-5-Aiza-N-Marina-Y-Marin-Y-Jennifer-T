@@ -17,7 +17,6 @@ public class Owner extends Staff
     // Here should have a button for players to choose the character they want
     // character 2 and 3 could have special ending
     private int num;
-    private boolean isLeftSide;
     
     private static final int A_X = 390;
     private static final int A_Y = 275;

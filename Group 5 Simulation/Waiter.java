@@ -11,9 +11,11 @@ import java.util.List;
  */
 public class Waiter extends Staff
 {   
-    private Customer targetCustomer;
+    private Customer targetCustomerL;
+    private Customer targetCustomerR;
     
-    public Waiter(){
+    public Waiter(boolean isLeftSide){
+        this.isLeftSide = isLeftSide;
         animationSpeed = 10;
         speed = 1;
         
@@ -51,15 +53,19 @@ public class Waiter extends Staff
     }
     
     public void act(){
-        serveCustomer();
+        if(isLeftSide){
+            serveCustomerL();
+        }else{
+            serveCustomerR();
+        }
     }
     
-    public void serveCustomer(){
+    public void serveCustomerL(){
         if(state == 0){
-            findCustomer();
+            findCustomerL();
         }else if(state == 1){
-            moveTo(targetCustomer.getX(), targetCustomer.getY());
-            if(at(targetCustomer.getX(), targetCustomer.getY())){
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY());
+            if(at(targetCustomerL.getX(), targetCustomerL.getY())){
                 state = 2;
             }
         }else if(state == 2){
@@ -69,25 +75,65 @@ public class Waiter extends Staff
                 state = 3;
             }
         }else if(state == 3){
-            moveTo(targetCustomer.getX(), targetCustomer.getY());
-            if(at(targetCustomer.getX(), targetCustomer.getY())){
-                targetCustomer.setOrdered(false);
-                targetCustomer.setServed(true);
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY());
+            if(at(targetCustomerL.getX(), targetCustomerL.getY())){
+                targetCustomerL.setOrdered(false);
+                targetCustomerL.setServed(true);
                 
-                targetCustomer = null;
+                targetCustomerL = null;
                 state = 0;
             }
         }
     }
     
-    public void findCustomer(){
+    public void serveCustomerR(){
+        if(state == 0){
+            findCustomerR();
+        }else if(state == 1){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY());
+            if(at(targetCustomerR.getX(), targetCustomerR.getY())){
+                state = 2;
+            }
+        }else if(state == 2){
+            // Kitchen area - right side
+            moveTo(1200, 400);
+            if(at(1200, 400)){
+                state = 3;
+            }
+        }else if(state == 3){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY());
+            if(at(targetCustomerR.getX(), targetCustomerR.getY())){
+                targetCustomerR.setOrdered(false);
+                targetCustomerR.setServed(true);
+                
+                targetCustomerR = null;
+                state = 0;
+            }
+        }
+    }
+    
+    public void findCustomerL(){
         List<Customer> customers = getWorld().getObjects(Customer.class);
         
         for(int i = 0; i < customers.size(); i++){
             Customer customer = customers.get(i);
             
             if(customer.hasOrdered() && customer.getX() < 600){
-                targetCustomer = customer;
+                targetCustomerL = customer;
+                state = 1;
+                return;
+            }
+        }
+    }
+    
+    public void findCustomerR(){
+        List<Customer> customersR = getWorld().getObjects(Customer.class);
+        
+        for(int i = 0; i < customersR.size(); i++){
+            Customer customerR = customersR.get(i);
+            
+            if(customerR.hasOrdered() && customerR.getX() > 600){
+                targetCustomerR = customerR;
                 state = 1;
                 return;
             }
