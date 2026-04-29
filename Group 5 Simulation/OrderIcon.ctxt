@@ -3,4 +3,6 @@ comment0.target=OrderIcon
 comment0.text=\n\ Small\ order\ icon\ shown\ above\ a\ seated\ customer.\n
 comment1.params=
 comment1.target=OrderIcon()
-numComments=2
+comment2.params=foodImage
+comment2.target=void\ setFoodImage(greenfoot.GreenfootImage)
+numComments=3
