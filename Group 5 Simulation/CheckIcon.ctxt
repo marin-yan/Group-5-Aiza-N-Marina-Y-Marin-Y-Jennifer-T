@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=CheckIcon
+comment0.text=\n\ Write\ a\ description\ of\ class\ CheckIcon\ here.\n\ \n\ @author\ (Jennifer)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=CheckIcon()
+comment2.params=
+comment2.target=void\ act()
+numComments=3
