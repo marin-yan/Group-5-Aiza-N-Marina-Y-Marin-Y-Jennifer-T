@@ -109,6 +109,8 @@ public class RestaurantWorld extends World
         addObject(rightBar, 900, 30);
         
         setupTables();
+        
+        setPaintOrder(Waiter.class, OrderIcon.class, CheckIcon.class, Table.class);
     }
     
     // Set up tables' positions according to the level

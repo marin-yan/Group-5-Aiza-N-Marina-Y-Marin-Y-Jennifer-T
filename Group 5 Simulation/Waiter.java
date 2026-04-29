@@ -71,14 +71,26 @@ public class Waiter extends Staff
             if(at(targetCustomerL.getX(), targetCustomerL.getY())){
                 getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
                 state = 2;
-            }
+            }  
         }else if(state == 2){
-            // Kitchen area - left side    //top: (70, 650)   right: () Need to adjust
-            moveTo(65, 650);
-            if(at(65, 650)){
+            // Middle point
+            moveTo(300, 555);
+            if(at(300, 555)){
                 state = 3;
             }
         }else if(state == 3){
+            // Kitchen area - left side 
+            moveTo(119, 733);
+            if(at(119, 733)){
+                state = 4;
+            }
+        }else if(state == 4){
+            // Middle point
+            moveTo(300, 555);
+            if(at(300, 555)){
+                state = 5;
+            }
+        }else if(state == 5){
             moveTo(targetCustomerL.getX(), targetCustomerL.getY());
             if(at(targetCustomerL.getX(), targetCustomerL.getY())){
                 getWorld().removeObject(checkL);
@@ -102,8 +114,8 @@ public class Waiter extends Staff
             }
         }else if(state == 2){
             // Kitchen area - right side
-            moveTo(1200, 400);
-            if(at(1200, 400)){
+            moveTo(1072, 740);
+            if(at(1072, 740)){
                 state = 3;
             }
         }else if(state == 3){
