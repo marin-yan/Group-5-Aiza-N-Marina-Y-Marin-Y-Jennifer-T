@@ -30,10 +30,10 @@ public class CoinCounter extends SuperStatBar
     private void updateImage()
     {
         image = new GreenfootImage(150, 40);
-        image.setColor(Color.BLACK);
+        image.setColor(new Color(66, 118, 70));
         image.fill();
 
-        image.setColor(Color.YELLOW);
+        image.setColor(new Color(203, 182, 88));
         image.setFont(new Font("Arial", true, false, 20));
         image.drawString("Coins: " + coins, 10, 25);
 

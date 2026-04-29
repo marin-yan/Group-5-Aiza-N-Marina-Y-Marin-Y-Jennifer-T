@@ -10,13 +10,13 @@ public class LevelStatBar extends SuperStatBar
 {   
     //stat bar for levels variables
     private int totalCoins = 0;
-    private int coinsPerLevel = 50;
+    private int coinsPerLevel = 8;
     private int level = 1;
     private int maxLevel = 3;
 
     public LevelStatBar()
     {
-        super(50, 0, null, 200, 20, 0, Color.GREEN, Color.GRAY, false, Color.BLACK, 2);
+        super(8, 0, null, 200, 20, 0, new Color(66, 118, 70), new Color(254, 234, 213), false, Color.BLACK, 2);
     }
 
     public void addCoins(int amount)
