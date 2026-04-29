@@ -14,6 +14,9 @@ public class Waiter extends Staff
     private Customer targetCustomerL;
     private Customer targetCustomerR;
     
+    private CheckIcon checkL = new CheckIcon();
+    private CheckIcon checkR = new CheckIcon();
+    
     public Waiter(boolean isLeftSide){
         this.isLeftSide = isLeftSide;
         animationSpeed = 10;
@@ -66,6 +69,7 @@ public class Waiter extends Staff
         }else if(state == 1){
             moveTo(targetCustomerL.getX(), targetCustomerL.getY());
             if(at(targetCustomerL.getX(), targetCustomerL.getY())){
+                getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
                 state = 2;
             }
         }else if(state == 2){
@@ -77,6 +81,7 @@ public class Waiter extends Staff
         }else if(state == 3){
             moveTo(targetCustomerL.getX(), targetCustomerL.getY());
             if(at(targetCustomerL.getX(), targetCustomerL.getY())){
+                getWorld().removeObject(checkL);
                 targetCustomerL.setOrdered(false);
                 targetCustomerL.setServed(true);
                 
@@ -92,6 +97,7 @@ public class Waiter extends Staff
         }else if(state == 1){
             moveTo(targetCustomerR.getX(), targetCustomerR.getY());
             if(at(targetCustomerR.getX(), targetCustomerR.getY())){
+                getWorld().addObject(checkR, targetCustomerR.getX(), targetCustomerR.getY() + 65);
                 state = 2;
             }
         }else if(state == 2){
@@ -103,6 +109,7 @@ public class Waiter extends Staff
         }else if(state == 3){
             moveTo(targetCustomerR.getX(), targetCustomerR.getY());
             if(at(targetCustomerR.getX(), targetCustomerR.getY())){
+                getWorld().removeObject(checkR);
                 targetCustomerR.setOrdered(false);
                 targetCustomerR.setServed(true);
                 
