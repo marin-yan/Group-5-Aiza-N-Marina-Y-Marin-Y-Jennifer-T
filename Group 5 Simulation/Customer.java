@@ -113,7 +113,7 @@ public class Customer extends SuperSmoothMover
         }
         
         GreenfootImage orderedImage = menu.getMenuImages()[orderedFoodIndex];
-        orderIcon.setImage(orderedImage);
+        orderIcon.setFoodImage(orderedImage);
         
         ordered = true;
     }
@@ -189,7 +189,7 @@ public class Customer extends SuperSmoothMover
         }
         
         int targetX = targetTable.getX();
-        int targetY = targetTable.getY() - 40;
+        int targetY = targetTable.getY() - 75;
         
         if (Math.abs(getX() - targetX) > 2) {
             if (getX() < targetX) {
@@ -210,6 +210,7 @@ public class Customer extends SuperSmoothMover
         }
         } else {
             seated = true;
+            faceFront();
         }
     }
     
@@ -270,8 +271,8 @@ public class Customer extends SuperSmoothMover
     }
     
     private void moveDirectlyToTargetTable() {
-        int targetX = targetTable.getX() - 60;
-        int targetY = targetTable.getY() - 30;
+        int targetX = targetTable.getX();
+        int targetY = targetTable.getY() - 80;
         
         if (Math.abs(getX() - targetX) > 2) {
             if (getX() < targetX) {
@@ -291,6 +292,7 @@ public class Customer extends SuperSmoothMover
             }
         } else {
             seated = true;
+            faceFront();
         }
     }
     
@@ -298,6 +300,15 @@ public class Customer extends SuperSmoothMover
         if (orderIcon == null) {
             orderIcon = new OrderIcon();
             getWorld().addObject(orderIcon, getX() + 70, getY() - 70);
+        }
+    }
+
+    private void faceFront() {
+        facing = "down";
+        lastFacing = "down";
+        walkingIndex = 0;
+        if (walkDown != null && walkDown.length > 0) {
+            setImage(walkDown[0]);
         }
     }
     

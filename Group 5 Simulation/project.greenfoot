@@ -6,7 +6,6 @@ dependency10.from=RestaurantWorld
 dependency10.to=CoinCounter
 dependency10.type=UsesDependency
 dependency11.from=RestaurantWorld
-<<<<<<< Updated upstream
 dependency11.to=LevelStatBar
 dependency11.type=UsesDependency
 dependency12.from=RestaurantWorld
@@ -32,38 +31,10 @@ dependency18.to=Table
 dependency18.type=UsesDependency
 dependency19.from=Customer
 dependency19.to=Menu
-=======
-dependency11.to=Waiter
-dependency11.type=UsesDependency
-dependency12.from=RestaurantWorld
-dependency12.to=Table
-dependency12.type=UsesDependency
-dependency13.from=RestaurantWorld
-dependency13.to=Customer
-dependency13.type=UsesDependency
-dependency14.from=RestaurantWorld
-dependency14.to=Frog
-dependency14.type=UsesDependency
-dependency15.from=RestaurantWorld
-dependency15.to=Ghost
-dependency15.type=UsesDependency
-dependency16.from=Customer
-dependency16.to=Table
-dependency16.type=UsesDependency
-dependency17.from=Customer
-dependency17.to=Menu
-dependency17.type=UsesDependency
-dependency18.from=Customer
-dependency18.to=OrderIcon
-dependency18.type=UsesDependency
-dependency19.from=Customer
-dependency19.to=Money
->>>>>>> Stashed changes
 dependency19.type=UsesDependency
 dependency2.from=StoryWorld
 dependency2.to=GordonRamsay
 dependency2.type=UsesDependency
-<<<<<<< Updated upstream
 dependency20.from=Customer
 dependency20.to=OrderIcon
 dependency20.type=UsesDependency
@@ -88,26 +59,6 @@ dependency26.type=UsesDependency
 dependency27.from=StartButton
 dependency27.to=RestaurantWorld
 dependency27.type=UsesDependency
-=======
-dependency20.from=Owner
-dependency20.to=CounterOwner
-dependency20.type=UsesDependency
-dependency21.from=Waiter
-dependency21.to=Customer
-dependency21.type=UsesDependency
-dependency22.from=ContinueButton
-dependency22.to=StoryWorld
-dependency22.type=UsesDependency
-dependency23.from=ArrowButton
-dependency23.to=CustomizeWorld
-dependency23.type=UsesDependency
-dependency24.from=SelectionButton
-dependency24.to=RestaurantWorld
-dependency24.type=UsesDependency
-dependency25.from=StartButton
-dependency25.to=RestaurantWorld
-dependency25.type=UsesDependency
->>>>>>> Stashed changes
 dependency3.from=StoryWorld
 dependency3.to=CustomizeWorld
 dependency3.type=UsesDependency
@@ -129,19 +80,13 @@ dependency8.type=UsesDependency
 dependency9.from=CustomizeWorld
 dependency9.to=RestaurantWorld
 dependency9.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-<<<<<<< Updated upstream
+editor.fx.0.height=728
+editor.fx.0.width=800
+editor.fx.0.x=670
+editor.fx.0.y=121
 height=816
 package.numDependencies=27
 package.numTargets=27
-=======
-height=804
-package.numDependencies=25
-package.numTargets=25
->>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -155,11 +100,7 @@ readme.name=@README
 readme.width=48
 readme.x=10
 readme.y=10
-<<<<<<< Updated upstream
-simulation.speed=62
-=======
-simulation.speed=70
->>>>>>> Stashed changes
+simulation.speed=75
 target1.height=70
 target1.name=Owner
 target1.showInterface=false
@@ -350,7 +291,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-width=1425
-world.lastInstantiated=StartWorld
-xPosition=7
+width=1470
+world.lastInstantiated=RestaurantWorld
+xPosition=0
 yPosition=33
