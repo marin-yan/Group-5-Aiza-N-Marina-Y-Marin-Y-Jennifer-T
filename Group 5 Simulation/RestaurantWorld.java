@@ -3,9 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (background image, tables - Jennifer) (Buttons + stat bar -- Aiza)
+ * @author (background image, tables, ovens - Jennifer) (Buttons + stat bar -- Aiza)
  * Credit: reference Pinterest "Animal restaurant app" - Kaleidos
  *         drew and created by Michelle T. (90%) & Jennifer T. (10%)
+ *         Pinterest - ovens
+ *         
  * @version (a version number or a date)
  */
 public class RestaurantWorld extends World
@@ -28,6 +30,8 @@ public class RestaurantWorld extends World
     private GreenfootImage backgroundImage_player2;
     private GreenfootImage background;
     private GreenfootImage bg;
+    private GreenfootImage oven1;
+    private GreenfootImage oven2;
     private int middleLineThickness;
     
     //variables for buttons
@@ -71,8 +75,12 @@ public class RestaurantWorld extends World
         background = new GreenfootImage(getWidth(), getHeight());
         backgroundImage_player1 = new GreenfootImage("images/Background/backgroundImage_player1.png");
         backgroundImage_player2 = new GreenfootImage("images/Background/backgroundImage_player2.png");
+        oven1 = new GreenfootImage("images/Background/oven1.png");
+        oven2 = new GreenfootImage("images/Background/oven2.png");
         background.drawImage(backgroundImage_player1, 0, 0);
         background.drawImage(backgroundImage_player2, getWidth() / 2 - 20, 0);
+        background.drawImage(oven1, -25, 655);
+        background.drawImage(oven2, 1075, 660);
         setBackground (background);
         
         bg = getBackground();

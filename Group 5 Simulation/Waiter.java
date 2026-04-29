@@ -69,9 +69,9 @@ public class Waiter extends Staff
                 state = 2;
             }
         }else if(state == 2){
-            // Kitchen area - left side
-            moveTo(0, 400);
-            if(at(0, 400)){
+            // Kitchen area - left side    //top: (70, 650)   right: () Need to adjust
+            moveTo(65, 650);
+            if(at(65, 650)){
                 state = 3;
             }
         }else if(state == 3){
