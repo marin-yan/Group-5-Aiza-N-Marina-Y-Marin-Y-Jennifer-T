@@ -17,15 +17,26 @@ public class EndScreen extends World
     private GreenfootImage background; // brown
     private GreenfootImage bg; // white
     private GreenfootImage bg1;
+    private int character1;
+    private int character2;
+    
+    Actor leftCharacter;
+    Actor rightCharacter;
     
     //to decide winner or loser
     private int leftCoins;
     private int rightCoins;
     
-    public EndScreen(int leftCoins, int rightCoins)
+    public EndScreen(int leftCoins, int rightCoins, int character1, int character2)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
+        
+        this.character1 = character1;
+        this.character2 = character2;
+        
+        this.leftCoins = leftCoins;
+        this.rightCoins = rightCoins;
         background = new GreenfootImage("images/Background/customizeWorldbg.JPG");
         bg = new GreenfootImage("images/Background/characterBg.png");
         bg1 = new GreenfootImage("images/Background/characterBg.png");
@@ -34,19 +45,43 @@ public class EndScreen extends World
         background.drawImage(bg1, 575, -100);
         setBackground(background);
         
+        
+        if (character1 == 0) {
+            leftCharacter = new CharacterDisplay(0);
+        } else if (character1 == 1) {
+            leftCharacter = new CharacterDisplay(1);
+        } else if (character1 == 2) {
+            leftCharacter = new CharacterDisplay(2);
+        } else {
+            leftCharacter = new CharacterDisplay(3);
+        }
+        
+        if (character2 == 0) {
+            rightCharacter = new CharacterDisplay(0);
+        } else if (character2 == 1) {
+            rightCharacter = new CharacterDisplay(1);
+        } else if (character2 == 2) {
+            rightCharacter = new CharacterDisplay(2);
+        } else {
+            rightCharacter = new CharacterDisplay(3);
+        }
+        
+        addObject(leftCharacter, 300, 400);
+        addObject(rightCharacter, 900, 400);
+        
         //determine the winner
         String leftResult;
         String rightResult;
         
         if (leftCoins > rightCoins)
         {
-            leftResult = "WINNER";
-            rightResult = "LOST";
+            leftResult = "WINNER!!";
+            rightResult = "LOST :(";
         }
         else if (rightCoins > leftCoins)
         {
-            leftResult = "LOST";
-            rightResult = "WINNER";
+            leftResult = "LOST :(";
+            rightResult = "WINNER!!";
         }
         else
         {
