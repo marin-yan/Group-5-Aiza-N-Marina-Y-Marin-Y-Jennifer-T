@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartWorld extends World
 {
     private Button startButton;
+    private GreenfootSound introMusic;
     
     public StartWorld()
     {    
@@ -18,12 +19,24 @@ public class StartWorld extends World
         startButton = new Button("Start", 150);
         addObject(startButton, getWidth() / 2, getHeight() / 5 * 4 + 20);
         Greenfoot.setWorld(this);
+        
+        introMusic = new GreenfootSound("intro music playful.wav");
+        introMusic.setVolume(50);
     }
     
     public void act()
     {
         if (Greenfoot.mouseClicked(startButton)) {
+            stopped();
             Greenfoot.setWorld(new StoryWorld()); 
         }
+    }
+    
+    public void started() {
+        introMusic.playLoop();
+    }
+    
+    public void stopped() {
+        introMusic.stop();
     }
 }

@@ -26,6 +26,9 @@ public class Money extends Actor
     //for stat bar
     private boolean isLeftTeam;
     
+    private GreenfootSound[] coinSound;
+    private int coinSoundIndex = 0;
+    
     public Money(){
         coins = new GreenfootImage[7];
         for(int i = 0; i < coins.length; i++){
@@ -36,6 +39,12 @@ public class Money extends Actor
             }
         }
         setImage(coins[3]);
+        
+        coinSound = new GreenfootSound[10]; // 10 instances for multiple rapid plays
+        for (int i = 0; i < coinSound.length; i++) {
+            coinSound[i] = new GreenfootSound("coin.wav");
+            coinSound[i].setVolume(65);
+        }
     }
     
     public void act(){
@@ -43,6 +52,12 @@ public class Money extends Actor
         if(timer <= 0){
             giveCoins();
             getWorld().removeObject(this);
+            
+            coinSound[coinSoundIndex].play();
+            coinSoundIndex++;
+            if (coinSoundIndex >= coinSound.length) {
+                coinSoundIndex = 0;
+            }
         }else{
             counter++;
             animationSpeed = 25;

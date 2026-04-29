@@ -8,9 +8,18 @@ public class Button extends Actor
 {
     private GreenfootImage image;
     private static final Font buttonFont = new Font ("Comic Sans MS", true, false, 24);
-
+    private GreenfootSound[] clickSound;
+    private int clickSoundIndex;
+    
     public Button (String text, int width){
         drawButton (text, width);
+        
+        clickSoundIndex = 0;
+        clickSound = new GreenfootSound[20];
+        for (int i = 0; i < clickSound.length; i++) {
+            clickSound[i] = new GreenfootSound("mouse click.wav");
+            clickSound[i].setVolume(80);
+        }
     }
     
     private void drawButton (String text, int width){
@@ -43,6 +52,12 @@ public class Button extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
+            clickSound[clickSoundIndex].play();
+            clickSoundIndex++;
+            if (clickSoundIndex > clickSound.length - 1) {
+                clickSoundIndex = 0;
+            }
+            
             onClick();
         }
     }
