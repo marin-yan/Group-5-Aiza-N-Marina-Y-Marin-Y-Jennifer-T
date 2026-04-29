@@ -210,6 +210,7 @@ public class Customer extends SuperSmoothMover
         }
         } else {
             seated = true;
+            faceFront();
         }
     }
     
@@ -291,6 +292,7 @@ public class Customer extends SuperSmoothMover
             }
         } else {
             seated = true;
+            faceFront();
         }
     }
     
@@ -298,6 +300,15 @@ public class Customer extends SuperSmoothMover
         if (orderIcon == null) {
             orderIcon = new OrderIcon();
             getWorld().addObject(orderIcon, getX() + 70, getY() - 70);
+        }
+    }
+
+    private void faceFront() {
+        facing = "down";
+        lastFacing = "down";
+        walkingIndex = 0;
+        if (walkDown != null && walkDown.length > 0) {
+            setImage(walkDown[0]);
         }
     }
     
