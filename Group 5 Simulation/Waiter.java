@@ -67,23 +67,30 @@ public class Waiter extends Staff
         if(state == 0){
             findCustomerL();
         }else if(state == 1){
-            moveTo(targetCustomerL.getX(), targetCustomerL.getY());
-            if(at(targetCustomerL.getX(), targetCustomerL.getY())){
-                getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
-                state = 2;
-            }  
-        }else if(state == 2){
-            // Middle point
+            // Starting point - go to the customer directly
+            if(at(100, 390)){
+                state = 3;
+            }
             moveTo(300, 555);
             if(at(300, 555)){
+                if(targetCustomerL.getY() < 555){
+                    state = 2;
+                }else{
+                    state = 3;
+                }
+            }
+        }else if(state == 2){
+            // Upper point
+            moveTo(300, 390);
+            if(at(300, 390)){
                 state = 3;
             }
         }else if(state == 3){
-            // Kitchen area - left side 
-            moveTo(119, 733);
-            if(at(119, 733)){
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 10);
+            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 10)){
+                getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
                 state = 4;
-            }
+            }  
         }else if(state == 4){
             // Middle point
             moveTo(300, 555);
@@ -91,8 +98,30 @@ public class Waiter extends Staff
                 state = 5;
             }
         }else if(state == 5){
-            moveTo(targetCustomerL.getX(), targetCustomerL.getY());
-            if(at(targetCustomerL.getX(), targetCustomerL.getY())){
+            // Kitchen area - left side 
+            moveTo(119, 733);
+            if(at(119, 733)){
+                state = 6;
+            }
+        }else if(state == 6){
+            // Middle point
+            moveTo(300, 555);
+            if(at(300, 555)){
+                if(targetCustomerL.getY() < 555){
+                    state = 7;
+                }else{
+                    state = 8;
+                }
+            }
+        }else if(state == 7){
+            // Upper point - Move up if customers are on upper lane
+            moveTo(300, 390);
+            if(at(300, 390)){
+                state = 8;
+            }
+        }else if(state == 8){
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 10);
+            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 10)){
                 getWorld().removeObject(checkL);
                 targetCustomerL.setOrdered(false);
                 targetCustomerL.setServed(true);
@@ -107,8 +136,8 @@ public class Waiter extends Staff
         if(state == 0){
             findCustomerR();
         }else if(state == 1){
-            moveTo(targetCustomerR.getX(), targetCustomerR.getY());
-            if(at(targetCustomerR.getX(), targetCustomerR.getY())){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 10);
+            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 10)){
                 getWorld().addObject(checkR, targetCustomerR.getX(), targetCustomerR.getY() + 65);
                 state = 2;
             }
@@ -119,8 +148,8 @@ public class Waiter extends Staff
                 state = 3;
             }
         }else if(state == 3){
-            moveTo(targetCustomerR.getX(), targetCustomerR.getY());
-            if(at(targetCustomerR.getX(), targetCustomerR.getY())){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 10);
+            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 10)){
                 getWorld().removeObject(checkR);
                 targetCustomerR.setOrdered(false);
                 targetCustomerR.setServed(true);

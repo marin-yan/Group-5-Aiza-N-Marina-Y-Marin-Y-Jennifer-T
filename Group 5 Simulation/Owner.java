@@ -27,10 +27,10 @@ public class Owner extends Staff
     private static final int C_X = 315;
     private static final int C_Y = 300;
     
-    private static final int D_X = 15;
+    private static final int D_X = 10;
     private static final int D_Y = 300;
     
-    private static final int E_X = 15;
+    private static final int E_X = 12;
     private static final int E_Y = 205;
     
     
@@ -120,8 +120,6 @@ public class Owner extends Staff
         if(state == 0){
             moveTo(A_X, A_Y);
             if(at(A_X, A_Y)){
-                // Can have a welcome sign here
-                //getWorld().showText("Welcome to my restaurant!", 300, 80);
                 state = 1;
             }
         }else if(state == 1){
@@ -166,8 +164,8 @@ public class Owner extends Staff
                 state = 3;
             }
         }else if(state == 3){
-            moveTo(1185, D_Y);
-            if(at(1185, D_Y)){
+            moveTo(1188, D_Y);
+            if(at(1188, D_Y)){
                 state = 4;
             }
         }else if(state == 4){
