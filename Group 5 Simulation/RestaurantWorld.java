@@ -119,14 +119,24 @@ public class RestaurantWorld extends World
         //Left side
         leftCounter = new CoinCounter();
         leftBar = new LevelStatBar();
+        LevelDisplay leftLevelText = new LevelDisplay(1);
+        
+        leftBar.setLevelDisplay(leftLevelText);
+        
         addObject(leftCounter, 120, 30);
         addObject(leftBar, 300, 30);
+        addObject(leftLevelText, 450, 30);
         
         //Right side
         rightCounter = new CoinCounter();
         rightBar = new LevelStatBar();
+        LevelDisplay rightLevelText = new LevelDisplay(1);
+        
+        rightBar.setLevelDisplay(rightLevelText);
+        
         addObject(rightCounter, 720, 30);
         addObject(rightBar, 900, 30);
+        addObject(rightLevelText, 1050, 30);
         
         setPaintOrder(Waiter.class, OrderIcon.class, Customer.class, CheckIcon.class, Table.class, Owner.class);
         
@@ -198,6 +208,11 @@ public class RestaurantWorld extends World
     }
     
     public void act() {
+        if (leftBar.hasFinishedGame() || rightBar.hasFinishedGame())
+        {
+            Greenfoot.setWorld(new EndScreen(leftBar.getTotalCoins(), rightBar.getTotalCoins(), character1, character2, leftBar.getLevel(), rightBar.getLevel()));
+        }
+        
         spawnCounter++;
         // keeps track of how many customers have been spawned 
         
