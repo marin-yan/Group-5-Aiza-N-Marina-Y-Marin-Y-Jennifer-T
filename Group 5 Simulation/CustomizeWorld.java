@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class CustomizeWorld here.
  * 
- * @author (Jennifer)
+ * @author (Jennifer and Marin)
  * Credit: Pinterest "Bg for edits" - zeee
  *         Pinterest -JUNGLORS
  * @version (a version number or a date)
@@ -20,6 +20,19 @@ public class CustomizeWorld extends World
     private CharacterDisplay display1;
     private int character2 = 0;
     private CharacterDisplay display2;
+    
+    // Waiter Count
+    private int value1 = 0;
+    private WaiterCount displayI;
+    private int value2 = 0;
+    private WaiterCount displayII;
+    
+    // Waiter Speed
+    private int valueOne = 0;
+    private WaiterCount displayOne;
+    private int valueTwo = 0;
+    private WaiterCount displayTwo;
+    
     
     private Button readyButton;
     
@@ -55,11 +68,35 @@ public class CustomizeWorld extends World
         addObject(new ArrowButton(1, -1), 190, 405);
         addObject(new ArrowButton(1, 1), 395,405);
         
+        displayI = new WaiterCount(value1);
+        addObject(displayI, 392, 535);
+        
+        displayOne = new WaiterCount(valueOne);
+        addObject(displayOne, 392, 615);
+    
+        
         // Right display
         display2 = new CharacterDisplay(character2);
         addObject(display2, 880, 300);
         addObject(new ArrowButton(2, -1), 790, 405);
         addObject(new ArrowButton(2, 1), 995, 405);
+        
+        displayII = new WaiterCount(value2);
+        addObject(displayII, 992, 535);
+        displayTwo = new WaiterCount(valueTwo);
+        addObject(displayTwo, 992, 615);
+        
+        addObject(new AdjustmentButton(1, -1, 1), 340, 535);
+        addObject(new AdjustmentButton(1, 1, 1), 445, 535);
+        addObject(new AdjustmentButton(2, -1, 1), 940, 535);
+        addObject(new AdjustmentButton(2, 1, 1), 1045, 535);
+        
+        
+        addObject(new AdjustmentButton(1, -1, 2), 340, 615);
+        addObject(new AdjustmentButton(1, 1, 2), 445, 615);
+        
+        addObject(new AdjustmentButton(2, -1, 2), 940, 615);
+        addObject(new AdjustmentButton(2, 1, 2), 1045, 615);
         
         // ready Button
         readyButton = new Button("Ready", 150);
@@ -112,9 +149,77 @@ public class CustomizeWorld extends World
         }
     }
     
+    public void changeWaiterCount(int value, int direction){
+        if(value == 1){
+            value1 += direction;
+            
+            if(value1 > 3){
+                value1 = 3;
+            }
+            
+            if(value1 < 0){
+                value1 = 0;
+            }
+            
+            removeObject(displayI);
+            displayI = new WaiterCount(value1);
+            addObject(displayI, 392, 535);
+        }
+        
+        if(value == 2){
+            value2 += direction;
+            
+            if(value2 > 3){
+                value2 = 3;
+            }
+            
+            if(value2 < 0){
+                value2 = 0;
+            }
+            
+            removeObject(displayII);
+            displayII = new WaiterCount(value2);
+            addObject(displayII, 992, 535);
+        }
+    }
+    
+    public void changeWaiterSpeed(int value, int direction){
+        if(value == 1){
+            valueOne += direction;
+            
+            if(valueOne > 3){
+                valueOne = 3;
+            }
+            
+            if(valueOne < 0){
+                valueOne = 0;
+            }
+            
+            removeObject(displayOne);
+            displayOne = new WaiterCount(valueOne);
+            addObject(displayOne, 392, 615);
+        }
+        
+        if(value == 2){
+            valueTwo += direction;
+            
+            if(valueTwo > 3){
+                valueTwo = 3;
+            }
+            
+            if(valueTwo < 0){
+                valueTwo = 0;
+            }
+            
+            removeObject(displayTwo);
+            displayTwo = new WaiterCount(valueTwo);
+            addObject(displayTwo, 992, 615);
+        }
+    }
+    
     public void act(){
         if(Greenfoot.mouseClicked(readyButton)){
-            Greenfoot.setWorld(new RestaurantWorld(character1, character2));
+            Greenfoot.setWorld(new RestaurantWorld(character1, character2, value1 + 1, value2 + 1, valueOne + 1, valueTwo + 1));
         }
     }
 }

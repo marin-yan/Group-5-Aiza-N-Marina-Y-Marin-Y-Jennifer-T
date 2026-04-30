@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=AdjustmentButton
+comment0.text=\n\ Write\ a\ description\ of\ class\ AdjustmentButton\ here.\n\ \n\ @author\ (Marin)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=value\ direction\ type
+comment1.target=AdjustmentButton(int,\ int,\ int)
+comment2.params=direction
+comment2.target=java.lang.String\ getArrowText(int)
+comment3.params=
+comment3.target=void\ onClick()
+numComments=4
