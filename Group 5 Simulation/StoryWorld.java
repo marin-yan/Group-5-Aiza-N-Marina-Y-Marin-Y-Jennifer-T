@@ -2,8 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 /**
- * Write a description of class StoryWorld here.
- * 
  * @author (Marina with help from Aiza) 
  * @version (a version number or a date)
  */
