@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Menu
+<<<<<<< Updated upstream
 comment0.text=\n\ Write\ a\ description\ of\ class\ Menu\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ Menu\ here.\n\ \n\ @author\ (Marin)\ (Jennifer\ -\ adjust\ images)\n\ Credit\:\ Pinterest\ -\ cookies,\ cafe\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+>>>>>>> Stashed changes
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
