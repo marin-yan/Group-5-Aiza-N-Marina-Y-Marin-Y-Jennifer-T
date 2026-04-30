@@ -1,14 +1,6 @@
 #BlueJ class context
 comment0.target=Menu
-<<<<<<< HEAD
-comment0.text=\n\ Write\ a\ description\ of\ class\ Menu\ here.\n\ \n\ @author\ (Marin)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-=======
-<<<<<<< Updated upstream
-comment0.text=\n\ Write\ a\ description\ of\ class\ Menu\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-=======
-comment0.text=\n\ Write\ a\ description\ of\ class\ Menu\ here.\n\ \n\ @author\ (Marin)\ (Jennifer\ -\ adjust\ images)\n\ Credit\:\ Pinterest\ -\ cookies,\ cafe\n\ @version\ (a\ version\ number\ or\ a\ date)\n
->>>>>>> Stashed changes
->>>>>>> smallChanges--Jennifer
+comment0.text=\n\ Write\ a\ description\ of\ class\ Menu\ here.\n\ \n<<<<<<<\ HEAD\n\ @author\ (Marin)\ \n\=\=\=\=\=\=\=\n<<<<<<<\ Updated\ upstream\n\ @author\ (your\ name)\ \n\=\=\=\=\=\=\=\n\ @author\ (Marin)\ (Jennifer\ -\ adjust\ images)\n\ Credit\:\ Pinterest\ -\ cookies,\ cafe\n>>>>>>>\ Stashed\ changes\n>>>>>>>\ smallChanges--Jennifer\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
