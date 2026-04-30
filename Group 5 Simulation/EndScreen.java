@@ -20,5 +20,10 @@ public class EndScreen extends World
         super(1200, 800, 1); 
         endImage = new GreenfootImage("images/Background/end.JPG");
         setBackground(endImage);
+        
+        GreenfootImage textBg = getBackground();
+        textBg.setColor(Color.BLACK);
+        textBg.setFont(new Font("Monospaced", true, false, 100));
+        textBg.drawString("THE END", 425, 280);
     }
 }
