@@ -3,7 +3,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Menu here.
  * 
+<<<<<<< HEAD
  * @author (Marin) 
+=======
+<<<<<<< Updated upstream
+ * @author (your name) 
+=======
+ * @author (Marin) (Jennifer - adjust images)
+ * Credit: Pinterest - cookies, cafe
+>>>>>>> Stashed changes
+>>>>>>> smallChanges--Jennifer
  * @version (a version number or a date)
  */
 public class Menu extends Actor
@@ -13,11 +22,11 @@ public class Menu extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    private String[] menuOptions = {"Cookie", "Stack of Cookies"};
+    private String[] menuOptions = {"Cookie", "Cafe"};
     
     private GreenfootImage[] menuImages = {
-        new GreenfootImage("Menu/cookie.png"),
-        new GreenfootImage("Menu/cookiestack.png")
+        new GreenfootImage("Menu/cookie_new.png"),
+        new GreenfootImage("Menu/cafe.png")
     };
     
     public void act()
