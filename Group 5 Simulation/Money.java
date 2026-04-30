@@ -4,8 +4,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class Money here.
  * 
  * @author (animation - Jennifer)
- * Credit: Pinterest "16 Bit Video Game Images - Browse 9332 Stock Photos, Vectors, and Video"
- * @version (a version number or a date)
+ * Credit: 
+ *  Pinterest "16 Bit Video Game Images - Browse 9332 Stock Photos, Vectors, and Video"
+ *  coinSound - zapsplat.com Retro 80s style game sound, coin collect, classic arcade
  */
 public class Money extends Actor
 {

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=StartWorld
-comment0.text=\n\ Write\ a\ description\ of\ class\ StartScreen\ here.\n\ \n\ @author\ (Marina)\ \n\ Credits\:\ \n\ \ Background\ -\ Chatgpt\n\ \ introMusic\ -\ zapsplat.com\ \u201CCheeky\ Monkey\u201D\ \u2013\ playful,\ cheeky\ an\ simple\ music\ loop,\ great\ for\ game\ or\ app\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ StartScreen\ here.\r\n\ \r\n\ @author\ (Marina)\ \r\n\ Credits\:\ \r\n\ \ Background\ -\ Chatgpt\r\n\ \ introMusic\ -\ zapsplat.com\ \u201CCheeky\ Monkey\u201D\ \u2013\ playful,\ cheeky\ an\ simple\ music\ loop,\ great\ for\ game\ or\ app\r\n
 comment1.params=
 comment1.target=StartWorld()
 comment2.params=
