@@ -3,7 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (background image, tables, ovens - Jennifer) (Buttons + stat bar -- Aiza)
+ * @author (background image, tables, ovens - Jennifer) 
+ * (Customer related methods - Marin)
+ * (Buttons + stat bar -- Aiza)
+ * 
  * Credit: reference Pinterest "Animal restaurant app" - Kaleidos
  *         drew and created by Michelle T. (90%) & Jennifer T. (10%)
  *         Michelle T. - kitchen
@@ -197,12 +200,15 @@ public class RestaurantWorld extends World
     
     public void act() {
         spawnCounter++;
+        // keeps track of how many customers have been spawned 
         
         if (spawnCounter >= spawnDelay) {
+            // spawns a customer only if less than 4 on left
             if (countCustomersOnSide(true) < maxCustomers) {
                 spawnRandomCustomer(true);
             }
             
+            // on right
             if (countCustomersOnSide(false) < maxCustomers) {
                 spawnRandomCustomer(false);
             }
@@ -224,6 +230,8 @@ public class RestaurantWorld extends World
     
     private void spawnRandomCustomer(boolean isLeftSide) {
         Customer customer;
+        
+        // chooses 1 or 2
         int randomCustomer = Greenfoot.getRandomNumber(2) +1 ;
         
         if (randomCustomer == 1) {
@@ -232,6 +240,7 @@ public class RestaurantWorld extends World
             customer = new Ghost();
         }
         
+        // sets the sides
         customer.configureSide(isLeftSide);
         addObject(customer, isLeftSide ? 405 : 810, 210);
         Table nextTable = getNextTableInOrder(isLeftSide);
@@ -262,12 +271,14 @@ public class RestaurantWorld extends World
     }
 
     private int countCustomersOnSide(boolean isLeftSide) {
+        // customer list
         java.util.List<Customer> customers = getObjects(Customer.class);
         int count = 0;
         
         for (Customer customer : customers) {
             if (customer.isOnLeftSide() == isLeftSide) {
                 count++;
+                // keeps track of how many are on each side
             }
         }
         

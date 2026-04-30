@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Menu
-comment0.text=\n\ Write\ a\ description\ of\ class\ Menu\ here.\n\ \n\ @author\ (Marin)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ The\ menu\ allows\ the\ customers\ to\ order\ food.\n\ \n\ @author\ (Marin)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=

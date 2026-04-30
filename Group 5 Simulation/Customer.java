@@ -3,11 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Customer here.
  * 
- * @author (Jennifer, Marin) 
+ * @author (Jennifer -- customer movement images,  & leaveRestaurant()
+ * Marin -- the rest of the methods) 
  * @version (a version number or a date)
  */
 public class Customer extends SuperSmoothMover
 {
+    // the coordinates for the customers
     private static final int LEFT_ENTRY_X = 405;
     private static final int RIGHT_ENTRY_X = 810;
     private static final int ENTRY_Y = 210;
@@ -19,7 +21,7 @@ public class Customer extends SuperSmoothMover
     private static final int COUNTER_Y = 275;
     private static final double WALK_SPEED = 2.2;
     
-    // Initial direction
+    // Initial direction, the direction that the customer is facing
     String facing = "down";
     String lastFacing = "";
     
@@ -45,10 +47,13 @@ public class Customer extends SuperSmoothMover
     
     protected Table targetTable;
     protected boolean seated = false;
+    
+    // used for the movement to special tables
     private int pathStage = 0;
     private boolean isLeftSide = true;
     private int entryX = LEFT_ENTRY_X;
     
+    // letting the customer know the menu
     private Menu menu = new Menu();
     private OrderIcon orderIcon;
     private int orderedFoodIndex;
@@ -67,9 +72,11 @@ public class Customer extends SuperSmoothMover
     }
     
     public void act()  {
+        // moves to table if not yet seated
         if (!seated && targetTable != null ){
             moveToTable();
         }else if (served){
+            // leaves the restaurant
             leaveRestaurant();
         }else if (seated){
             showOrderIcon();
@@ -77,34 +84,15 @@ public class Customer extends SuperSmoothMover
         }
     }
     
-    private void walkToCounter() {
-        if (atCounter)
-        {
-            return;
-        }
-        
-        double dx = COUNTER_X - getPreciseX();
-        double dy = COUNTER_Y - getPreciseY();
-        double distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance <= WALK_SPEED)
-        {
-            setLocation(COUNTER_X, COUNTER_Y);
-            atCounter = true;
-            return;
-        }
-        
-        double stepX = (dx / distance) * WALK_SPEED;
-        double stepY = (dy / distance) * WALK_SPEED;
-        setLocation(getPreciseX() + stepX, getPreciseY() + stepY);
-    }
     
     public void orderFood() {
+        // order once
         if(ordered){
             return;
         }
         
         orderedFoodIndex = Greenfoot.getRandomNumber(menu.getMenuSize());
+        // lets the customers order randomly
         int randomOrder = Greenfoot.getRandomNumber(menu.getMenuSize()) + 1;
         
         if (randomOrder == 1) {
@@ -115,7 +103,7 @@ public class Customer extends SuperSmoothMover
         
         GreenfootImage orderedImage = menu.getMenuImages()[orderedFoodIndex];
         orderIcon.setFoodImage(orderedImage);
-        
+        // shows the order in a picture
         ordered = true;
     }
         
@@ -165,20 +153,27 @@ public class Customer extends SuperSmoothMover
         }
     }
     
+    // assigns a table to the customer
     public void setTargetTable (Table table) {
         targetTable = table;
         pathStage = 0;
+        
+        // marks the table as occupied
         if (targetTable != null) {
             targetTable.setOccupied(true);
         }
     }
     
+    // decides which side of the restaurant the customer belongs to
     public void configureSide(boolean isLeftSide) {
         this.isLeftSide = isLeftSide;
         entryX = isLeftSide ? LEFT_ENTRY_X : RIGHT_ENTRY_X;
     }
     
+    // moves the customers to their assigned table
     public void moveToTable() {
+        // for the tables on the left: tables in the first column
+        // for the tables on the right: tables in the second column
         if (isTopSpecialTableTarget()) {
             followTopSpecialTablePath();
             return;
@@ -189,9 +184,12 @@ public class Customer extends SuperSmoothMover
             return;
         }
         
+        // sets the final position of the customers
+        
         int targetX = targetTable.getX();
         int targetY = targetTable.getY() - 75;
         
+        // moves horizontally
         if (Math.abs(getX() - targetX) > 2) {
             if (getX() < targetX) {
                 facing = "right";
@@ -200,6 +198,7 @@ public class Customer extends SuperSmoothMover
                 facing = "left";
                 move();
             }
+            // vertically
         } else if (Math.abs(getY() - targetY) > 2) {
         
         if (getY() < targetY) {
@@ -210,11 +209,13 @@ public class Customer extends SuperSmoothMover
             move();
         }
         } else {
+            // sits down
             seated = true;
             faceFront();
         }
     }
     
+    // determines the path of the special tables
     private boolean isTopSpecialTableTarget() {
         return targetTable != null
             && targetTable.getX() == getSpecialTableX()
@@ -249,6 +250,7 @@ public class Customer extends SuperSmoothMover
         moveDirectlyToTargetTable();
     }
     
+    // the pathways
     private void followBottomSpecialTablePath() {
         if (pathStage == 0) {
             if (Math.abs(getY() - TOP_ROW_Y) > 2) {
@@ -271,6 +273,7 @@ public class Customer extends SuperSmoothMover
         moveDirectlyToTargetTable();
     }
     
+    // the pathways
     private void moveDirectlyToTargetTable() {
         int targetX = targetTable.getX();
         int targetY = targetTable.getY() - 80;

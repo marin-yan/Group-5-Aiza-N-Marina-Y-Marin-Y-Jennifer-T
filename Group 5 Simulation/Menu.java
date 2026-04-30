@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
+ * The menu allows the customers to order food.
  * 
  * @author (Marin) 
  * @version (a version number or a date)
@@ -11,6 +11,9 @@ public class Menu extends Actor
     /**
      * Act - do whatever the Menu wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
+     * Credits: https://www.freeiconspng.com/img/47942
+     * https://www.vecteezy.com/
+     * 
      */
     
     private String[] menuOptions = {"Cookie", "Stack of Cookies"};

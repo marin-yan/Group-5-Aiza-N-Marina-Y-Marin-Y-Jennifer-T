@@ -150,18 +150,25 @@ public class CustomizeWorld extends World
     }
     
     public void changeWaiterCount(int value, int direction){
+        // modifying waiter count for option 1
         if(value == 1){
+            // increase or decrease the value based on direction
             value1 += direction;
             
+            // prevent the value from going above 3
             if(value1 > 3){
                 value1 = 3;
             }
             
+            // prevent the value from going below 0
             if(value1 < 0){
                 value1 = 0;
             }
             
+            // remove the old object
             removeObject(displayI);
+            
+            // create a new display
             displayI = new WaiterCount(value1);
             addObject(displayI, 392, 535);
         }
