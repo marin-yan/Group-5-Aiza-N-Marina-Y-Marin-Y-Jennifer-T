@@ -5,7 +5,11 @@ import java.util.ArrayList;
  * Write a description of class StoryWorld here.
  * 
  * @author (Marina with help from Aiza) 
- * @version (a version number or a date)
+ * 
+ * Credit:
+ *  Background - ChatGPT with edits from Marina
+ *  dialogueSound - zapsplat.com Game sound, simple beep blip
+ *  Gordon Ramsay - liberatedpixelcup.github.io
  */
 public class StoryWorld extends World
 {
@@ -22,7 +26,7 @@ public class StoryWorld extends World
     private String displayedText = "";
     // counts characters displayed in current line 
     private int charCount = 0;
-    // controls typing speed
+    // controls dialogue speed
     private int delayCounter = 0;
     private GreenfootImage background;
     private boolean lineComplete = false;
@@ -37,6 +41,9 @@ public class StoryWorld extends World
     private ContinueButton continueButton;
     private boolean buttonAdded = false;
     
+    private GreenfootSound[] dialogueSound;
+    private int dialogueSoundIndex = 0;
+    
     /**
      * Constructor for objects of class StoryWorld.
      * 
@@ -48,6 +55,12 @@ public class StoryWorld extends World
         background = new GreenfootImage("images/Background/StoryWorld.png");
         setBackground(background);
         Greenfoot.setWorld(this);
+        
+        dialogueSound = new GreenfootSound[20]; 
+        for (int i = 0; i < dialogueSound.length; i++) {
+            dialogueSound[i] = new GreenfootSound("dialogue.wav");
+            dialogueSound[i].setVolume(60); 
+        }
         
         addObject (new GordonRamsay(), 350, 300);
         
@@ -71,6 +84,12 @@ public class StoryWorld extends World
                 charCount++;
                 displayedText = fullText[currentLine].message.substring(0, charCount);
                 updateWorldText();
+                
+                dialogueSound[dialogueSoundIndex].play();
+                dialogueSoundIndex++;
+                if (dialogueSoundIndex >= dialogueSound.length) {
+                    dialogueSoundIndex = 0;
+                }
             }
             
         } else if (!lineComplete && charCount >= fullText[currentLine].message.length()) {

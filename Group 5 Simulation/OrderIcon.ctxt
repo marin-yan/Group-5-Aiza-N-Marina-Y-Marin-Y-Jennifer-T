@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=OrderIcon
-comment0.text=\n\ Small\ order\ icon\ shown\ above\ a\ seated\ customer.\n
+comment0.text=\r\n\ Small\ order\ icon\ shown\ above\ a\ seated\ customer.\r\n\ \r\n\ Credits\:\ \r\n\ \ orderSound\ -\ zapsplat.com\ Cartoon\ bubble\ pop,\ also\ good\ as\ a\ pop\ up\ tone\ 7\r\n
 comment1.params=
 comment1.target=OrderIcon()
 comment2.params=foodImage

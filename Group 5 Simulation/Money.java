@@ -5,7 +5,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author (animation - Jennifer)
  * Credit: Pinterest "16 Bit Video Game Images - Browse 9332 Stock Photos, Vectors, and Video"
- * @version (a version number or a date)
+ *  coinSound - zapsplat.com Retro 80s style game sound, coin collect, classic arcade
+
  */
 public class Money extends Actor
 {
@@ -26,6 +27,9 @@ public class Money extends Actor
     //for stat bar
     private boolean isLeftTeam;
     
+    private GreenfootSound[] coinSound;
+    private int coinSoundIndex = 0;
+    
     public Money(){
         coins = new GreenfootImage[7];
         for(int i = 0; i < coins.length; i++){
@@ -36,6 +40,12 @@ public class Money extends Actor
             }
         }
         setImage(coins[3]);
+        
+        coinSound = new GreenfootSound[20]; 
+        for (int i = 0; i < coinSound.length; i++) {
+            coinSound[i] = new GreenfootSound("coin.wav");
+            coinSound[i].setVolume(70); 
+        }
     }
     
     public void act(){
@@ -43,6 +53,12 @@ public class Money extends Actor
         if(timer <= 0){
             giveCoins();
             getWorld().removeObject(this);
+            
+            coinSound[coinSoundIndex].play();
+            coinSoundIndex++;
+            if (coinSoundIndex >= coinSound.length) {
+                coinSoundIndex = 0;
+            }
         }else{
             counter++;
             animationSpeed = 25;
