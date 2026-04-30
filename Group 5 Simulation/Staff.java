@@ -91,6 +91,6 @@ public class Staff extends SuperSmoothMover
     }
     
     public boolean at(int x, int y){
-        return Math.abs(getPreciseX() - x) < 10 && Math.abs(getPreciseY() - y) < 10;
+        return Math.abs(getPreciseX() - x) < 11 && Math.abs(getPreciseY() - y) < 11;
     }
 }

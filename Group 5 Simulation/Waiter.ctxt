@@ -15,4 +15,6 @@ comment6.params=
 comment6.target=void\ findCustomerR()
 comment7.params=x\ y
 comment7.target=void\ moveTo(int,\ int)
-numComments=8
+comment8.params=x1\ y1\ x2\ y2
+comment8.target=int\ distance(int,\ int,\ int,\ int)
+numComments=9

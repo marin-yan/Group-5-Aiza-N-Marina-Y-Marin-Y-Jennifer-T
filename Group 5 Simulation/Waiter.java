@@ -80,12 +80,20 @@ public class Waiter extends Staff
             if(at(100, 390)){
                 state = 3;
             }
-            moveTo(middleLX, middleLY);
-            if(at(middleLX, middleLY)){
-                if(targetCustomerL.getY() < 555){
-                    state = 2;
-                }else{
-                    state = 3;
+            
+            int middleDistance = distance(middleLX, middleLY, targetCustomerL.getX(), targetCustomerL.getY());
+            int upperDistance  = distance(upperLX, upperLY, targetCustomerL.getX(), targetCustomerL.getY());
+            
+            if(upperDistance < middleDistance){
+                state = 2;
+            }else{
+                moveTo(middleLX, middleLY);
+                if(at(middleLX, middleLY)){
+                    if(targetCustomerL.getY() < 555){
+                        state = 2;
+                    }else{
+                        state = 3;
+                    }
                 }
             }
         }else if(state == 2){
@@ -99,8 +107,9 @@ public class Waiter extends Staff
             if(at(targetCustomerL.getX(), targetCustomerL.getY() - 15)){
                 getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
                 
-                int customerDistance =(targetCustomerL.getX() - kitchenLX) * (targetCustomerL.getX() - kitchenLX) + (targetCustomerL.getY() - kitchenLY) * (targetCustomerL.getY() - kitchenLY);
-                int middleDistance = (middleLX - kitchenLX) * (middleLX - kitchenLX) + (middleLY - kitchenLY) * (middleLY - kitchenLY);
+                int customerDistance = distance(targetCustomerL.getX(), targetCustomerL.getY(), kitchenLX, kitchenLY);
+                int middleDistance = distance(middleLX, middleLY, kitchenLX, kitchenLY);
+    
                 if(customerDistance < middleDistance){
                     state = 5;
                 }else{
@@ -234,5 +243,9 @@ public class Waiter extends Staff
         }
         
         move();
+    }
+    
+    public int distance(int x1, int y1, int x2, int y2){
+        return (x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2);
     }
 }
