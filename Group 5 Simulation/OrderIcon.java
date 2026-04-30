@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Small order icon shown above a seated customer.
+ * Author: Marin
  */
 public class OrderIcon extends Actor
 {
