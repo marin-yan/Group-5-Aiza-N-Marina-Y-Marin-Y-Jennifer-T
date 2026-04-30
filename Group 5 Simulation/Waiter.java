@@ -77,25 +77,15 @@ public class Waiter extends Staff
             findCustomerL();
         }else if(state == 1){
             // Starting point - go to the customer directly
-            
             if(at(100, 390)){
                 state = 3;
             }
-            
-            // If at the same level - go to the customer directly 
-            int customerX = targetCustomerL.getX();
-            boolean sameLane = Math.abs(customerX - middleLX) < 100;
-            
-            if(sameLane){
-                state = 3;
-            }else{
-                moveTo(middleLX, middleLY);
-                if(at(middleLX, middleLY)){
-                    if(targetCustomerL.getY() < 555){
-                        state = 2;
-                    }else{
-                        state = 3;
-                    }
+            moveTo(middleLX, middleLY);
+            if(at(middleLX, middleLY)){
+                if(targetCustomerL.getY() < 555){
+                    state = 2;
+                }else{
+                    state = 3;
                 }
             }
         }else if(state == 2){
@@ -130,20 +120,13 @@ public class Waiter extends Staff
                 state = 6;
             }
         }else if(state == 6){
-            int customerX = targetCustomerL.getX();
-            boolean sameLane = Math.abs(customerX - middleLX) < 100;
-            
-            if(sameLane){
-                state = 8;
-            }else{
-                // Middle point
-                moveTo(middleLX, middleLY);
-                if(at(middleLX, middleLY)){
-                    if(targetCustomerL.getY() < 555){
-                        state = 7;
-                    }else{
-                        state = 8;
-                    }
+            // Middle point
+            moveTo(middleLX, middleLY);
+            if(at(middleLX, middleLY)){
+                if(targetCustomerL.getY() < 555){
+                    state = 7;
+                }else{
+                    state = 8;
                 }
             }
         }else if(state == 7){
@@ -229,7 +212,7 @@ public class Waiter extends Staff
         if(Math.abs(dx) > 2){
             moving = true;
 
-            if (dx > 0){
+            if(dx > 0){
                 facing = "right";
                 setLocation(getX() + speed, getY());
             }else{
