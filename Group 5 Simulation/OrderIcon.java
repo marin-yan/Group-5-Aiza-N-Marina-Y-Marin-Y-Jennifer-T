@@ -22,11 +22,11 @@ public class OrderIcon extends Actor
         
         orderSound = new GreenfootSound[10]; 
         for (int i = 0; i < orderSound.length; i++) {
-            //orderSound[i] = new GreenfootSound("order.wav");
-            //orderSound[i].setVolume(70); 
+            orderSound[i] = new GreenfootSound("order.wav");
+            orderSound[i].setVolume(70); 
         }
         
-        //orderSound[orderSoundIndex].play();
+        orderSound[orderSoundIndex].play();
         orderSoundIndex++;
         if (orderSoundIndex >= orderSound.length) {
             orderSoundIndex = 0;
