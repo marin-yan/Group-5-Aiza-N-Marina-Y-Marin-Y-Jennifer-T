@@ -5,7 +5,10 @@ import java.util.ArrayList;
  * Write a description of class StoryWorld here.
  * 
  * @author (Marina with help from Aiza) 
- * @version (a version number or a date)
+ * Credits:
+ *  Gordon Ramsay - liberatedpixelcup.github.io 
+ *  Background - Chatgpt with edits from Marina
+ *  dialogueSound - zapsplat.com Game sound, simple beep blip
  */
 public class StoryWorld extends World
 {

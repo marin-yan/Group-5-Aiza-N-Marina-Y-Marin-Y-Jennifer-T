@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Credits to Mr. Cohen for the Button Class
+ * Credits: Mr. Cohen for the Button Class
  * Edited by Aiza
  */
 public class Button extends Actor

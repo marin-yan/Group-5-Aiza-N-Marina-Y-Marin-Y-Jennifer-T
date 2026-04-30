@@ -4,7 +4,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class StartScreen here.
  * 
  * @author (Marina) 
- * @version (a version number or a date)
+ * Credits: 
+ *  Background - Chatgpt
+ *  introMusic - zapsplat.com “Cheeky Monkey” – playful, cheeky an simple music loop, great for game or app
  */
 public class StartWorld extends World
 {
