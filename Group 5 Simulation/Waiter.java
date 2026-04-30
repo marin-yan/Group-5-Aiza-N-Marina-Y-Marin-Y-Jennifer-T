@@ -24,7 +24,13 @@ public class Waiter extends Staff
     private static final int middleLY = 555;
     private static final int upperLX = middleLX;
     private static final int upperLY = 390;
-
+    
+    private static final int kitchenRX = 1072;
+    private static final int kitchenRY = 740;
+    private static final int middleRX = 900;
+    private static final int middleRY = 555;
+    private static final int upperRX = middleRX;
+    private static final int upperRY = 390;
     
     public Waiter(boolean isLeftSide){
         this.isLeftSide = isLeftSide;
@@ -157,24 +163,81 @@ public class Waiter extends Staff
         }
     }
     
-    public void serveCustomerR(){
+public void serveCustomerR(){
         if(state == 0){
             findCustomerR();
         }else if(state == 1){
-            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 10);
-            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 10)){
-                getWorld().addObject(checkR, targetCustomerR.getX(), targetCustomerR.getY() + 65);
+            // Starting point - go to the customer directly
+            if(at(100, 390)){
+                state = 3;
+            }
+            
+            int middleDistance = distance(middleRX, middleRY, targetCustomerR.getX(), targetCustomerR.getY());
+            int upperDistance  = distance(upperRX, upperRY, targetCustomerR.getX(), targetCustomerR.getY());
+            
+            if(upperDistance < middleDistance){
                 state = 2;
+            }else{
+                moveTo(middleRX, middleRY);
+                if(at(middleRX, middleRY)){
+                    if(targetCustomerR.getY() < 555){
+                        state = 2;
+                    }else{
+                        state = 3;
+                    }
+                }
             }
         }else if(state == 2){
-            // Kitchen area - right side
-            moveTo(1072, 740);
-            if(at(1072, 740)){
+            // Upper point
+            moveTo(upperRX, upperRY);
+            if(at(upperRX, upperRY)){
                 state = 3;
             }
         }else if(state == 3){
-            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 10);
-            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 10)){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 15);
+            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 15)){
+                getWorld().addObject(checkR, targetCustomerR.getX(), targetCustomerR.getY() + 65);
+                
+                int customerDistance = distance(targetCustomerR.getX(), targetCustomerR.getY(), kitchenRX, kitchenRY);
+                int middleDistance = distance(middleRX, middleRY, kitchenRX, kitchenRY);
+    
+                if(customerDistance < middleDistance){
+                    state = 5;
+                }else{
+                    state = 4;
+                }
+            }
+        }else if(state == 4){
+            // Middle point
+            moveTo(middleRX, middleRY);
+            if(at(middleRX, middleRY)){
+                state = 5;
+            }
+        }else if(state == 5){
+            // Kitchen area - left side 
+            moveTo(kitchenRX, kitchenRY);
+            if(at(kitchenRX, kitchenRY)){
+                state = 6;
+            }
+        }else if(state == 6){
+            // Middle point
+            moveTo(middleRX, middleRY);
+            if(at(middleRX, middleRY)){
+                if(targetCustomerR.getY() < 555){
+                    state = 7;
+                }else{
+                    state = 8;
+                }
+            }
+        }else if(state == 7){
+            // Upper point - Move up if customers are on upper lane
+            moveTo(upperRX, upperRY);
+            if(at(upperRX, upperRY)){
+                state = 8;
+            }
+        }else if(state == 8){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 15);
+            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 15)){
                 getWorld().removeObject(checkR);
                 targetCustomerR.setOrdered(false);
                 targetCustomerR.setServed(true);
