@@ -55,6 +55,7 @@ public class Customer extends SuperSmoothMover
     private boolean ordered = false;
     private boolean served = false;
     private boolean gaveMoney = false;
+    private boolean claimedByWaiter = false;
 
     
     public Customer() {
@@ -318,10 +319,21 @@ public class Customer extends SuperSmoothMover
     
     public void setOrdered(boolean value){
         ordered = value;
+        if (!value) {
+            claimedByWaiter = false;
+        }
     }
     
     public void setServed(boolean value){
         served = value;
+    }
+
+    public boolean isClaimedByWaiter() {
+        return claimedByWaiter;
+    }
+
+    public void setClaimedByWaiter(boolean value) {
+        claimedByWaiter = value;
     }
     
     public void leaveRestaurant(){

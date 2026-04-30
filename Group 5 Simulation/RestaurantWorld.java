@@ -45,10 +45,14 @@ public class RestaurantWorld extends World
     // Characters chosen by the user
     private int character1;
     private int character2;
+    private int waiterCountLeft;
+    private int waiterCountRight;
+    private int waiterSpeedLeft;
+    private int waiterSpeedRight;
     
     // for customers
     private int spawnCounter = 0;
-    private int spawnDelay = 800;
+    private int spawnDelay = 300;
     private int maxCustomers = 4;
     
     //variables for stat bar 
@@ -63,6 +67,16 @@ public class RestaurantWorld extends World
      * 
      */
     public RestaurantWorld(int character1, int character2)
+    {
+        this(character1, character2, 1, 1, 1, 1);
+    }
+
+    public RestaurantWorld(int character1, int character2, int waiterCountLeft, int waiterCountRight)
+    {
+        this(character1, character2, waiterCountLeft, waiterCountRight, 1, 1);
+    }
+
+    public RestaurantWorld(int character1, int character2, int waiterCountLeft, int waiterCountRight, int waiterSpeedLeft, int waiterSpeedRight)
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
@@ -70,6 +84,10 @@ public class RestaurantWorld extends World
         // Set up characters 
         this.character1 = character1;
         this.character2 = character2;
+        this.waiterCountLeft = waiterCountLeft;
+        this.waiterCountRight = waiterCountRight;
+        this.waiterSpeedLeft = waiterSpeedLeft;
+        this.waiterSpeedRight = waiterSpeedRight;
         
         // Set up background image
         background = new GreenfootImage(getWidth(), getHeight());
@@ -92,9 +110,8 @@ public class RestaurantWorld extends World
         addObject(new Owner(character1, true), 390, 210);
         addObject(new Owner(character2, false), 810, 210);
         
-        //Changed original line (commented above if needed) to adjust waiters on both sides
-        addObject(new Waiter(true), 100, 390); //left
-        addObject(new Waiter(false), 1100, 390); //right 
+        addWaiters(true, waiterCountLeft, waiterSpeedLeft);
+        addWaiters(false, waiterCountRight, waiterSpeedRight);
         
         //Left side
         leftCounter = new CoinCounter();
@@ -107,6 +124,8 @@ public class RestaurantWorld extends World
         rightBar = new LevelStatBar();
         addObject(rightCounter, 720, 30);
         addObject(rightBar, 900, 30);
+        
+        setPaintOrder(Waiter.class, OrderIcon.class, Customer.class, CheckIcon.class, Table.class);
         
         setupTables();
     }
@@ -187,6 +206,17 @@ public class RestaurantWorld extends World
             }
             
             spawnCounter = 0;
+        }
+    }
+
+    private void addWaiters(boolean isLeftSide, int waiterCount, int waiterSpeed) {
+        int baseX = isLeftSide ? 100 : 1100;
+        int baseY = 390;
+        int spacing = 60;
+
+        for (int i = 0; i < waiterCount; i++) {
+            int waiterX = isLeftSide ? baseX + (i * spacing) : baseX - (i * spacing);
+            addObject(new Waiter(isLeftSide, waiterSpeed), waiterX, baseY);
         }
     }
     

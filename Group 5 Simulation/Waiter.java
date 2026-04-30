@@ -18,9 +18,13 @@ public class Waiter extends Staff
     private CheckIcon checkR = new CheckIcon();
     
     public Waiter(boolean isLeftSide){
+        this(isLeftSide, 1);
+    }
+    
+    public Waiter(boolean isLeftSide, int speedValue){
         this.isLeftSide = isLeftSide;
         animationSpeed = 10;
-        speed = 1;
+        speed = speedValue;
         
         // Set variables
         walkDown = new GreenfootImage[4];
@@ -125,8 +129,9 @@ public class Waiter extends Staff
         for(int i = 0; i < customers.size(); i++){
             Customer customer = customers.get(i);
             
-            if(customer.hasOrdered() && customer.getX() < 600){
+            if(customer.hasOrdered() && !customer.isClaimedByWaiter() && customer.getX() < 600){
                 targetCustomerL = customer;
+                targetCustomerL.setClaimedByWaiter(true);
                 state = 1;
                 return;
             }
@@ -139,8 +144,9 @@ public class Waiter extends Staff
         for(int i = 0; i < customersR.size(); i++){
             Customer customerR = customersR.get(i);
             
-            if(customerR.hasOrdered() && customerR.getX() > 600){
+            if(customerR.hasOrdered() && !customerR.isClaimedByWaiter() && customerR.getX() > 600){
                 targetCustomerR = customerR;
+                targetCustomerR.setClaimedByWaiter(true);
                 state = 1;
                 return;
             }
@@ -174,8 +180,19 @@ public class Waiter extends Staff
             }
         }else{
             moving = false;
+            faceFront();
+            return;
         }
         
         move();
+    }
+
+    private void faceFront(){
+        facing = "down";
+        lastFacing = "down";
+        walkingIndex = 0;
+        if (walkDown != null && walkDown.length > 0) {
+            setImage(walkDown[0]);
+        }
     }
 }

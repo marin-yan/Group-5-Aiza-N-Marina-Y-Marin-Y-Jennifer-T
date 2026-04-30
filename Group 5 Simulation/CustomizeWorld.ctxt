@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=CustomizeWorld
-comment0.text=\n\ Write\ a\ description\ of\ class\ CustomizeWorld\ here.\n\ \n\ @author\ (Jennifer)\n\ Credit\:\ Pinterest\ "Bg\ for\ edits"\ -\ zeee\n\ \ \ \ \ \ \ \ \ Pinterest\ -JUNGLORS\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ CustomizeWorld\ here.\n\ \n\ @author\ (Jennifer\ and\ Marin)\n\ Credit\:\ Pinterest\ "Bg\ for\ edits"\ -\ zeee\n\ \ \ \ \ \ \ \ \ Pinterest\ -JUNGLORS\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=CustomizeWorld()
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ CustomizeWorld.\n\ \n
@@ -8,6 +8,8 @@ comment2.params=player\ direction
 comment2.target=void\ changeCharacter(int,\ int)
 comment3.params=value\ direction
 comment3.target=void\ changeWaiterCount(int,\ int)
-comment4.params=
-comment4.target=void\ act()
-numComments=5
+comment4.params=value\ direction
+comment4.target=void\ changeWaiterSpeed(int,\ int)
+comment5.params=
+comment5.target=void\ act()
+numComments=6
