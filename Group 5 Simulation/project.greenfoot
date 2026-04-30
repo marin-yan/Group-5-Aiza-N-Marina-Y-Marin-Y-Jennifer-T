@@ -2,6 +2,7 @@
 dependency1.from=StoryWorld
 dependency1.to=ContinueButton
 dependency1.type=UsesDependency
+<<<<<<< Updated upstream
 dependency10.from=RestaurantWorld
 dependency10.to=CoinCounter
 dependency10.type=UsesDependency
@@ -16,21 +17,41 @@ dependency13.to=Waiter
 dependency13.type=UsesDependency
 dependency14.from=RestaurantWorld
 dependency14.to=LevelDisplay
+=======
+dependency10.from=CustomizeWorld
+dependency10.to=RestaurantWorld
+dependency10.type=UsesDependency
+dependency11.from=RestaurantWorld
+dependency11.to=CoinCounter
+dependency11.type=UsesDependency
+dependency12.from=RestaurantWorld
+dependency12.to=LevelStatBar
+dependency12.type=UsesDependency
+dependency13.from=RestaurantWorld
+dependency13.to=Owner
+dependency13.type=UsesDependency
+dependency14.from=RestaurantWorld
+dependency14.to=Table
+>>>>>>> Stashed changes
 dependency14.type=UsesDependency
 dependency15.from=RestaurantWorld
-dependency15.to=Table
+dependency15.to=Waiter
 dependency15.type=UsesDependency
 dependency16.from=RestaurantWorld
+<<<<<<< Updated upstream
 dependency16.to=EndScreen
+=======
+dependency16.to=Customer
+>>>>>>> Stashed changes
 dependency16.type=UsesDependency
 dependency17.from=RestaurantWorld
-dependency17.to=Customer
+dependency17.to=Frog
 dependency17.type=UsesDependency
 dependency18.from=RestaurantWorld
-dependency18.to=Frog
+dependency18.to=Ghost
 dependency18.type=UsesDependency
 dependency19.from=RestaurantWorld
-dependency19.to=Ghost
+dependency19.to=OrderIcon
 dependency19.type=UsesDependency
 dependency2.from=StoryWorld
 dependency2.to=GordonRamsay
@@ -80,11 +101,15 @@ dependency4.type=UsesDependency
 dependency5.from=StartWorld
 dependency5.to=StoryWorld
 dependency5.type=UsesDependency
-dependency6.from=CustomizeWorld
+dependency6.from=EndScreen
 dependency6.to=CharacterDisplay
 dependency6.type=UsesDependency
 dependency7.from=CustomizeWorld
+<<<<<<< Updated upstream
 dependency7.to=Button
+=======
+dependency7.to=CharacterDisplay
+>>>>>>> Stashed changes
 dependency7.type=UsesDependency
 dependency8.from=CustomizeWorld
 dependency8.to=ArrowButton
@@ -94,8 +119,13 @@ dependency9.to=RestaurantWorld
 dependency9.type=UsesDependency
 editor.fx.0.height=728
 editor.fx.0.width=865
+<<<<<<< Updated upstream
 editor.fx.0.x=480
 editor.fx.0.y=68
+=======
+editor.fx.0.x=261
+editor.fx.0.y=54
+>>>>>>> Stashed changes
 height=819
 package.numDependencies=31
 package.numTargets=28
