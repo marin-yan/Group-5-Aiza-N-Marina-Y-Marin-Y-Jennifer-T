@@ -2,15 +2,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Credits to Mr. Cohen for the Button Class
- * Edited by Aiza
+ * Edited by Aiza, sounds by Marina
+ * 
+ * Credits: 
+ *  clickSound - zapsplat.com Computer mouse single click 4
  */
 public class Button extends Actor
 {
     private GreenfootImage image;
     private static final Font buttonFont = new Font ("Comic Sans MS", true, false, 24);
 
+    private static GreenfootSound[] clickSound;
+    private static int clickSoundIndex;
+    
     public Button (String text, int width){
         drawButton (text, width);
+        
+        clickSoundIndex = 0;
+        clickSound = new GreenfootSound[20];
+        for (int i = 0; i < clickSound.length; i++) {
+            clickSound[i] = new GreenfootSound("mouse click.wav");
+            clickSound[i].setVolume(90);
+        }
     }
     
     private void drawButton (String text, int width){
@@ -43,6 +56,12 @@ public class Button extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
+            clickSound[clickSoundIndex].play();
+            clickSoundIndex++;
+            if (clickSoundIndex > clickSound.length - 1) {
+                clickSoundIndex = 0;
+            }
+            
             onClick();
         }
     }
