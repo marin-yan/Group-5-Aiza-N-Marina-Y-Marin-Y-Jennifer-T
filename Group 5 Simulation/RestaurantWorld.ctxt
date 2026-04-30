@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=RestaurantWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (background\ image,\ tables,\ ovens\ -\ Jennifer)\ (Buttons\ +\ stat\ bar\ --\ Aiza)\r\n\ Credit\:\ reference\ Pinterest\ "Animal\ restaurant\ app"\ -\ Kaleidos\r\n\ \ \ \ \ \ \ \ \ drew\ and\ created\ by\ Michelle\ T.\ (90%)\ &\ Jennifer\ T.\ (10%)\r\n\ \ \ \ \ \ \ \ \ Michelle\ T.\ -\ kitchen\r\n\ \ \ \ \ \ \ \ \ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (background\ image,\ tables,\ ovens\ -\ Jennifer)\ (Buttons\ +\ stat\ bar\ --\ Aiza)\n\ Credit\:\ reference\ Pinterest\ "Animal\ restaurant\ app"\ -\ Kaleidos\n\ \ \ \ \ \ \ \ \ drew\ and\ created\ by\ Michelle\ T.\ (90%)\ &\ Jennifer\ T.\ (10%)\n\ \ \ \ \ \ \ \ \ Michelle\ T.\ -\ kitchen\n\ \ \ \ \ \ \ \ \ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=character1\ character2
 comment1.target=RestaurantWorld(int,\ int)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\n\ \n
 comment10.params=isLeftSide
 comment10.target=int\ countCustomersOnSide(boolean)
 comment11.params=isLeftTeam\ amount
