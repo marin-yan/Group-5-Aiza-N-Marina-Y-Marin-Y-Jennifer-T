@@ -17,6 +17,21 @@ public class Waiter extends Staff
     private CheckIcon checkL = new CheckIcon();
     private CheckIcon checkR = new CheckIcon();
     
+    // Path Points 
+    private static final int kitchenLX = 115;
+    private static final int kitchenLY = 740;
+    private static final int middleLX = 300;
+    private static final int middleLY = 555;
+    private static final int upperLX = middleLX;
+    private static final int upperLY = 390;
+    
+    private static final int kitchenRX = 1085;
+    private static final int kitchenRY = 740;
+    private static final int middleRX = 900;
+    private static final int middleRY = 555;
+    private static final int upperRX = middleRX;
+    private static final int upperRY = 390;
+    
     public Waiter(boolean isLeftSide){
         this(isLeftSide, 1);
     }
@@ -71,20 +86,77 @@ public class Waiter extends Staff
         if(state == 0){
             findCustomerL();
         }else if(state == 1){
-            moveTo(targetCustomerL.getX(), targetCustomerL.getY());
-            if(at(targetCustomerL.getX(), targetCustomerL.getY())){
-                getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
+            // Starting point - go to the customer directly
+            if(at(100, 390)){
+                state = 3;
+            }
+            
+            int middleDistance = distance(middleLX, middleLY, targetCustomerL.getX(), targetCustomerL.getY());
+            int upperDistance  = distance(upperLX, upperLY, targetCustomerL.getX(), targetCustomerL.getY());
+            
+            if(upperDistance < middleDistance){
                 state = 2;
+            }else{
+                moveTo(middleLX, middleLY);
+                if(at(middleLX, middleLY)){
+                    if(targetCustomerL.getY() < 555){
+                        state = 2;
+                    }else{
+                        state = 3;
+                    }
+                }
             }
         }else if(state == 2){
-            // Kitchen area - left side    //top: (70, 650)   right: () Need to adjust
-            moveTo(65, 650);
-            if(at(65, 650)){
+            // Upper point
+            moveTo(upperLX, upperLY);
+            if(at(upperLX, upperLY)){
                 state = 3;
             }
         }else if(state == 3){
-            moveTo(targetCustomerL.getX(), targetCustomerL.getY());
-            if(at(targetCustomerL.getX(), targetCustomerL.getY())){
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 15);
+            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 15)){
+                getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
+                
+                int customerDistance = distance(targetCustomerL.getX(), targetCustomerL.getY(), kitchenLX, kitchenLY);
+                int middleDistance = distance(middleLX, middleLY, kitchenLX, kitchenLY);
+    
+                if(customerDistance < middleDistance){
+                    state = 5;
+                }else{
+                    state = 4;
+                }
+            }
+        }else if(state == 4){
+            // Middle point
+            moveTo(middleLX, middleLY);
+            if(at(middleLX, middleLY)){
+                state = 5;
+            }
+        }else if(state == 5){
+            // Kitchen area - left side 
+            moveTo(kitchenLX, kitchenLY);
+            if(at(kitchenLX, kitchenLY)){
+                state = 6;
+            }
+        }else if(state == 6){
+            // Middle point
+            moveTo(middleLX, middleLY);
+            if(at(middleLX, middleLY)){
+                if(targetCustomerL.getY() < 555){
+                    state = 7;
+                }else{
+                    state = 8;
+                }
+            }
+        }else if(state == 7){
+            // Upper point - Move up if customers are on upper lane
+            moveTo(upperLX, upperLY);
+            if(at(upperLX, upperLY)){
+                state = 8;
+            }
+        }else if(state == 8){
+            moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 15);
+            if(at(targetCustomerL.getX(), targetCustomerL.getY() - 15)){
                 getWorld().removeObject(checkL);
                 targetCustomerL.setOrdered(false);
                 targetCustomerL.setServed(true);
@@ -93,26 +165,88 @@ public class Waiter extends Staff
                 state = 0;
             }
         }
+        
+        if(targetCustomerL == null){
+                setImage(walkDown[0]);
+            }
     }
+
     
     public void serveCustomerR(){
         if(state == 0){
             findCustomerR();
         }else if(state == 1){
-            moveTo(targetCustomerR.getX(), targetCustomerR.getY());
-            if(at(targetCustomerR.getX(), targetCustomerR.getY())){
-                getWorld().addObject(checkR, targetCustomerR.getX(), targetCustomerR.getY() + 65);
+            // Starting point - go to the customer directly
+            if(at(100, 390)){
+                state = 3;
+            }
+            
+            int middleDistance = distance(middleRX, middleRY, targetCustomerR.getX(), targetCustomerR.getY());
+            int upperDistance  = distance(upperRX, upperRY, targetCustomerR.getX(), targetCustomerR.getY());
+            
+            if(upperDistance < middleDistance){
                 state = 2;
+            }else{
+                moveTo(middleRX, middleRY);
+                if(at(middleRX, middleRY)){
+                    if(targetCustomerR.getY() < 555){
+                        state = 2;
+                    }else{
+                        state = 3;
+                    }
+                }
             }
         }else if(state == 2){
-            // Kitchen area - right side
-            moveTo(1200, 400);
-            if(at(1200, 400)){
+            // Upper point
+            moveTo(upperRX, upperRY);
+            if(at(upperRX, upperRY)){
                 state = 3;
             }
         }else if(state == 3){
-            moveTo(targetCustomerR.getX(), targetCustomerR.getY());
-            if(at(targetCustomerR.getX(), targetCustomerR.getY())){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 15);
+            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 15)){
+                getWorld().addObject(checkR, targetCustomerR.getX(), targetCustomerR.getY() + 65);
+                
+                int customerDistance = distance(targetCustomerR.getX(), targetCustomerR.getY(), kitchenRX, kitchenRY);
+                int middleDistance = distance(middleRX, middleRY, kitchenRX, kitchenRY);
+    
+                if(customerDistance < middleDistance){
+                    state = 5;
+                }else{
+                    state = 4;
+                }
+            }
+        }else if(state == 4){
+            // Middle point
+            moveTo(middleRX, middleRY);
+            if(at(middleRX, middleRY)){
+                state = 5;
+            }
+        }else if(state == 5){
+            // Kitchen area - left side 
+            moveTo(kitchenRX, kitchenRY);
+            if(at(kitchenRX, kitchenRY)){
+                state = 6;
+            }
+        }else if(state == 6){
+            // Middle point
+            moveTo(middleRX, middleRY);
+            if(at(middleRX, middleRY)){
+                if(targetCustomerR.getY() < 555){
+                    state = 7;
+                }else{
+                    state = 8;
+                }
+            }
+        }else if(state == 7){
+            // Upper point - Move up if customers are on upper lane
+            moveTo(upperRX, upperRY);
+            if(at(upperRX, upperRY)){
+                state = 8;
+            }
+        }else if(state == 8){
+            moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 15);
+            if(at(targetCustomerR.getX(), targetCustomerR.getY() - 15)){
                 getWorld().removeObject(checkR);
                 targetCustomerR.setOrdered(false);
                 targetCustomerR.setServed(true);
@@ -121,8 +255,12 @@ public class Waiter extends Staff
                 state = 0;
             }
         }
+        
+        if(targetCustomerR == null){
+            setImage(walkDown[0]);
+        }
     }
-    
+
     public void findCustomerL(){
         List<Customer> customers = getWorld().getObjects(Customer.class);
         
@@ -194,5 +332,9 @@ public class Waiter extends Staff
         if (walkDown != null && walkDown.length > 0) {
             setImage(walkDown[0]);
         }
+    }
+    
+    public int distance(int x1, int y1, int x2, int y2){
+        return (x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2);
     }
 }

@@ -125,7 +125,7 @@ public class RestaurantWorld extends World
         addObject(rightCounter, 720, 30);
         addObject(rightBar, 900, 30);
         
-        setPaintOrder(Waiter.class, OrderIcon.class, Customer.class, CheckIcon.class, Table.class);
+        setPaintOrder(Waiter.class, OrderIcon.class, Customer.class, CheckIcon.class, Table.class, Owner.class);
         
         setupTables();
         
