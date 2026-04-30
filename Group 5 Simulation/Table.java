@@ -12,9 +12,8 @@ public class Table extends Actor
     private GreenfootImage tableImage;
     private boolean occupied = false;
     
-    public Table(){
-        // Set image
-        tableImage = new GreenfootImage("images/Table.png");
+    public Table(int level){
+        setLevel(level);
         tableImage.scale(85, 85);
         setImage(tableImage);
     }
@@ -22,6 +21,18 @@ public class Table extends Actor
     public void act()
     {
         // Add your action code here.
+    }
+    
+    public void setLevel (int level){
+        // Set image
+        if(level == 1){   
+            tableImage = new GreenfootImage("images/Table1.png");
+        }else if(level == 2){
+            tableImage = new GreenfootImage("images/Table2.png");
+        }else if(level == 3){
+            tableImage = new GreenfootImage("images/Table3.png");
+        }
+        setImage(tableImage);
     }
     
     public boolean isOccupied() {

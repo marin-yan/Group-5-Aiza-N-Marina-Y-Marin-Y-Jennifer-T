@@ -10,7 +10,6 @@ public class WaiterCount extends Actor
 {
     private String v;
     
-    
     public WaiterCount(int num){
         if(num == 0){
             v = "1";

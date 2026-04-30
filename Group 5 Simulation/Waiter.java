@@ -115,7 +115,7 @@ public class Waiter extends Staff
         }else if(state == 3){
             moveTo(targetCustomerL.getX(), targetCustomerL.getY() - 15);
             if(at(targetCustomerL.getX(), targetCustomerL.getY() - 15)){
-                getWorld().addObject(checkL, targetCustomerL.getX(), targetCustomerL.getY() + 65);
+                getWorld().addObject(checkL, targetCustomerL.getX() + 2, targetCustomerL.getY() + 55);
                 
                 int customerDistance = distance(targetCustomerL.getX(), targetCustomerL.getY(), kitchenLX, kitchenLY);
                 int middleDistance = distance(middleLX, middleLY, kitchenLX, kitchenLY);
@@ -205,7 +205,7 @@ public class Waiter extends Staff
         }else if(state == 3){
             moveTo(targetCustomerR.getX(), targetCustomerR.getY() - 15);
             if(at(targetCustomerR.getX(), targetCustomerR.getY() - 15)){
-                getWorld().addObject(checkR, targetCustomerR.getX(), targetCustomerR.getY() + 65);
+                getWorld().addObject(checkR, targetCustomerR.getX() + 2, targetCustomerR.getY() + 55);
                 
                 int customerDistance = distance(targetCustomerR.getX(), targetCustomerR.getY(), kitchenRX, kitchenRY);
                 int middleDistance = distance(middleRX, middleRY, kitchenRX, kitchenRY);

@@ -1,12 +1,14 @@
 #BlueJ class context
 comment0.target=Table
 comment0.text=\n\ Write\ a\ description\ of\ class\ Table\ here.\n\ \n\ @author\ (Jennifer)\n\ Credit\:\ Pinterest\ "Animal\ Restaurant\ app"\ -\ Kaleidos\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Table()
+comment1.params=level
+comment1.target=Table(int)
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=boolean\ isOccupied()
-comment4.params=occupied
-comment4.target=void\ setOccupied(boolean)
-numComments=5
+comment3.params=level
+comment3.target=void\ setLevel(int)
+comment4.params=
+comment4.target=boolean\ isOccupied()
+comment5.params=occupied
+comment5.target=void\ setOccupied(boolean)
+numComments=6
