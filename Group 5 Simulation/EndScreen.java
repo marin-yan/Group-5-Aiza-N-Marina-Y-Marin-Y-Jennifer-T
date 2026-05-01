@@ -3,20 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class EndScreen here.
  * 
- * @author (Aiza) 
+ * @author (Aiza) (edit by Jennifer)
+ * Credit: Pinterest -Saigin Ermino
  * @version (a version number or a date)
  */
 public class EndScreen extends World
-{
-
-    /**
-     * Constructor for objects of class EndScreen.
-     * 
-     */
+{   
+    private GreenfootImage background;
     
-    private GreenfootImage background; // brown
-    private GreenfootImage bg; // white
-    private GreenfootImage bg1;
     private int character1;
     private int character2;
     
@@ -44,12 +38,7 @@ public class EndScreen extends World
         this.leftLevel = leftLevel;
         this.rightLevel = rightLevel;
         
-        background = new GreenfootImage("images/Background/customizeWorldbg.JPG");
-        bg = new GreenfootImage("images/Background/characterBg.png");
-        bg1 = new GreenfootImage("images/Background/characterBg.png");
-        bg1.mirrorHorizontally();
-        background.drawImage(bg, -25, -100);
-        background.drawImage(bg1, 575, -100);
+        background = new GreenfootImage("images/Background/end.JPG");
         setBackground(background);
         
         
@@ -73,8 +62,8 @@ public class EndScreen extends World
             rightCharacter = new CharacterDisplay(3);
         }
         
-        addObject(leftCharacter, 300, 400);
-        addObject(rightCharacter, 900, 400);
+        addObject(leftCharacter, 400, 350);
+        addObject(rightCharacter, 800, 350);
         
         //determine the winner
         String leftResult;
@@ -100,11 +89,15 @@ public class EndScreen extends World
         GreenfootImage textBg = getBackground();
         textBg.setColor(Color.BLACK);
         textBg.setFont(new Font(25)); //"FontName, bold, italic, size"
-        textBg.drawString("Coin Count: " + leftCoins, 140, 545);
-        textBg.drawString("Level: " + leftLevel, 140, 625);
-        textBg.drawString(leftResult, 150, 705);
-        textBg.drawString("Coin Count: " + rightCoins, 750, 545);
-        textBg.drawString("Level: " + rightLevel, 750, 625);
-        textBg.drawString(rightResult, 760, 705);
+        
+        // Left side
+        textBg.drawString("Coin Count: " + leftCoins, 320, 500);
+        textBg.drawString("Level: " + leftLevel, 350, 540);
+        textBg.drawString(leftResult, 360, 590);
+        
+        // Right side
+        textBg.drawString("Coin Count: " + rightCoins, 720, 500);
+        textBg.drawString("Level: " + rightLevel, 750, 540);
+        textBg.drawString(rightResult, 760, 590);
     }
 }

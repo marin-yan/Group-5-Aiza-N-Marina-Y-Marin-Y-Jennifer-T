@@ -18,7 +18,7 @@ public class LevelStatBar extends SuperStatBar
 
     public LevelStatBar()
     {
-        super(20, 0, null, 200, 20, 0, new Color(201, 123, 99), new Color(255, 248, 240), false, new Color(45, 32, 24), 2);
+        super(8, 0, null, 200, 20, 0, new Color(201, 123, 99), new Color(255, 248, 240), false, new Color(45, 32, 24), 2);
     }
 
     public void addCoins(int amount)
